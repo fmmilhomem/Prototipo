@@ -41,6 +41,7 @@ namespace Prototipo
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+            //TESTE
         }
 
         private void btnQueroCadastrar_Click(object sender, EventArgs e)
