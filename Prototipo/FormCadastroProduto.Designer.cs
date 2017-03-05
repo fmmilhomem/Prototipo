@@ -30,6 +30,7 @@
         {
             this.btnSalvar = new System.Windows.Forms.Button();
             this.bntCancelar = new System.Windows.Forms.Button();
+            this.txtTeste = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnSalvar
@@ -50,16 +51,25 @@
             this.bntCancelar.Text = "Cancelar";
             this.bntCancelar.UseVisualStyleBackColor = true;
             // 
+            // txtTeste
+            // 
+            this.txtTeste.Location = new System.Drawing.Point(98, 61);
+            this.txtTeste.Name = "txtTeste";
+            this.txtTeste.Size = new System.Drawing.Size(100, 20);
+            this.txtTeste.TabIndex = 2;
+            // 
             // FormCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Controls.Add(this.txtTeste);
             this.Controls.Add(this.bntCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Name = "FormCadastroProduto";
             this.Text = "FormCadastroProduto";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -67,5 +77,6 @@
 
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button bntCancelar;
+        private System.Windows.Forms.TextBox txtTeste;
     }
 }
