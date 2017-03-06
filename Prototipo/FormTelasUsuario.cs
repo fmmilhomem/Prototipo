@@ -19,25 +19,28 @@ namespace Prototipo
 
         private void btnCadastroCliente_Click(object sender, EventArgs e)
         {
+            this.Close();
             FormCadastroCliente frm = new FormCadastroCliente();
             frm.Show();
-            this.Hide();
+            
         }
 
 
 
         private void btnPedido_Click(object sender, EventArgs e)
         {
-            FormCadastroCliente frm = new FormCadastroCliente();
+            this.Close();
+            FormNovoPedido frm = new FormNovoPedido();
             frm.Show();
-            this.Hide();
+            
         }
 
         private void btnCadastroProduto_Click(object sender, EventArgs e)
         {
+            this.Close();
             FormCadastroProduto frm = new FormCadastroProduto();
             frm.Show();
-            this.Hide();
+            
         }
 
         private void btnSair_Click(object sender, EventArgs e)

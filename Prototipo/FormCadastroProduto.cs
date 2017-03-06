@@ -31,9 +31,9 @@ namespace Prototipo
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
+            this.Close();
             FormTelasUsuario frm = new FormTelasUsuario();
             frm.Show();
-            this.Hide();
         }
     }
 }

@@ -64,6 +64,12 @@
     <Compile Include="FormCadastroProduto.Designer.cs">
       <DependentUpon>FormCadastroProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConsultarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultarPedido.Designer.cs">
+      <DependentUpon>FormConsultarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNovoPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNovoPedido.Designer.cs">
+      <DependentUpon>FormNovoPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTelasUsuario.cs">
       <SubType>Form</SubType>
@@ -93,11 +105,17 @@
     <EmbeddedResource Include="FormCadastroProduto.resx">
       <DependentUpon>FormCadastroProduto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultarPedido.resx">
+      <DependentUpon>FormConsultarPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEstoque.resx">
       <DependentUpon>FormEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNovoPedido.resx">
+      <DependentUpon>FormNovoPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTelasUsuario.resx">
       <DependentUpon>FormTelasUsuario.cs</DependentUpon>

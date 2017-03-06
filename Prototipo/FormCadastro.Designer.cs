@@ -38,7 +38,7 @@
             this.txtTipoPerfil = new System.Windows.Forms.TextBox();
             this.lblCadastro = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.btnTelaLogin = new System.Windows.Forms.Button();
             this.lblCadastroInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -125,15 +125,15 @@
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
-            // btnCancelar
+            // btnSair
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(49, 274);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(87, 35);
-            this.btnCancelar.TabIndex = 10;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnSair.Location = new System.Drawing.Point(49, 274);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(87, 35);
+            this.btnSair.TabIndex = 10;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnTelaLogin
             // 
@@ -163,7 +163,7 @@
             this.ClientSize = new System.Drawing.Size(465, 321);
             this.Controls.Add(this.lblCadastroInfo);
             this.Controls.Add(this.btnTelaLogin);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.lblCadastro);
             this.Controls.Add(this.txtTipoPerfil);
@@ -197,7 +197,7 @@
         private System.Windows.Forms.TextBox txtTipoPerfil;
         private System.Windows.Forms.Label lblCadastro;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnTelaLogin;
         private System.Windows.Forms.Label lblCadastroInfo;
     }

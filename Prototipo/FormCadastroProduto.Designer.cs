@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.txtPreco = new System.Windows.Forms.TextBox();
-            this.txtCPF = new System.Windows.Forms.TextBox();
+            this.txtIdCod = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblIdProduto = new System.Windows.Forms.Label();
@@ -55,12 +55,12 @@
             this.txtPreco.TabIndex = 25;
             this.txtPreco.TextChanged += new System.EventHandler(this.txtCelular_TextChanged);
             // 
-            // txtCPF
+            // txtIdCod
             // 
-            this.txtCPF.Location = new System.Drawing.Point(12, 25);
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(101, 20);
-            this.txtCPF.TabIndex = 24;
+            this.txtIdCod.Location = new System.Drawing.Point(12, 41);
+            this.txtIdCod.Name = "txtIdCod";
+            this.txtIdCod.Size = new System.Drawing.Size(101, 20);
+            this.txtIdCod.TabIndex = 24;
             // 
             // txtNome
             // 
@@ -81,7 +81,7 @@
             // lblIdProduto
             // 
             this.lblIdProduto.AutoSize = true;
-            this.lblIdProduto.Location = new System.Drawing.Point(12, 9);
+            this.lblIdProduto.Location = new System.Drawing.Point(12, 25);
             this.lblIdProduto.Name = "lblIdProduto";
             this.lblIdProduto.Size = new System.Drawing.Size(29, 13);
             this.lblIdProduto.TabIndex = 18;
@@ -152,7 +152,7 @@
             // chkBoxAtivo
             // 
             this.chkBoxAtivo.AutoSize = true;
-            this.chkBoxAtivo.Location = new System.Drawing.Point(120, 25);
+            this.chkBoxAtivo.Location = new System.Drawing.Point(192, 41);
             this.chkBoxAtivo.Name = "chkBoxAtivo";
             this.chkBoxAtivo.Size = new System.Drawing.Size(87, 17);
             this.chkBoxAtivo.TabIndex = 33;
@@ -200,7 +200,7 @@
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.txtPreco);
-            this.Controls.Add(this.txtCPF);
+            this.Controls.Add(this.txtIdCod);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblPreco);
             this.Controls.Add(this.lblIdProduto);
@@ -216,7 +216,7 @@
 
         #endregion
         private System.Windows.Forms.TextBox txtPreco;
-        private System.Windows.Forms.TextBox txtCPF;
+        private System.Windows.Forms.TextBox txtIdCod;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.Label lblIdProduto;

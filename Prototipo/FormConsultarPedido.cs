@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Prototipo
 {
-    public partial class FormEstoque : Form
+    public partial class FormConsultarPedido : Form
     {
-        public FormEstoque()
+        public FormConsultarPedido()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace Prototipo
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
-            FormTelasUsuario frm = new FormTelasUsuario();
+            FormNovoPedido frm = new FormNovoPedido();
             frm.Show();
         }
     }
