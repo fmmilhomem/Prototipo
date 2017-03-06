@@ -30,6 +30,7 @@ namespace Prototipo
                 MessageBox.Show("Logado com sucesso!");
                 FormTelasUsuario telas = new FormTelasUsuario();
                 telas.Show();
+                this.Hide();
             }
             else
             {
@@ -40,8 +41,8 @@ namespace Prototipo
      
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            //TESTE
+            //Saindo
+            Application.Exit();            
         }
 
         private void btnQueroCadastrar_Click(object sender, EventArgs e)

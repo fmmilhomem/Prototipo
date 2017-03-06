@@ -45,5 +45,12 @@ namespace Prototipo
                 e.Handled = true;
             }
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FormTelasUsuario frm = new FormTelasUsuario();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

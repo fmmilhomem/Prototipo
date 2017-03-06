@@ -57,6 +57,7 @@
             this.btnSair.Text = "Sair";
             this.btnSair.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnCadastroProduto
             // 
@@ -69,6 +70,7 @@
             this.btnCadastroProduto.Text = "Cadastro Produto";
             this.btnCadastroProduto.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnCadastroProduto.UseVisualStyleBackColor = true;
+            this.btnCadastroProduto.Click += new System.EventHandler(this.btnCadastroProduto_Click);
             // 
             // btnCadastroCliente
             // 
@@ -94,6 +96,7 @@
             this.btnPedido.Text = "Novo Pedido";
             this.btnPedido.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnPedido.UseVisualStyleBackColor = true;
+            this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
             // 
             // FormTelasUsuario
             // 

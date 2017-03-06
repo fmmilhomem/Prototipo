@@ -34,7 +34,7 @@
             this.lblSenha = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.lblQueroCadastrar = new System.Windows.Forms.Label();
             this.btnQueroCadastrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -94,16 +94,16 @@
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
-            // btnCancelar
+            // btnSair
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(331, 222);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(87, 28);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnSair.Location = new System.Drawing.Point(331, 222);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(87, 28);
+            this.btnSair.TabIndex = 7;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblQueroCadastrar
             // 
@@ -134,7 +134,7 @@
             this.ClientSize = new System.Drawing.Size(435, 284);
             this.Controls.Add(this.btnQueroCadastrar);
             this.Controls.Add(this.lblQueroCadastrar);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.lblSenha);
@@ -160,7 +160,7 @@
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnEntrar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label lblQueroCadastrar;
         private System.Windows.Forms.Button btnQueroCadastrar;
     }

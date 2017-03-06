@@ -10,23 +10,11 @@ using System.Windows.Forms;
 
 namespace Prototipo
 {
-    public partial class FormCadastroProduto : Form
+    public partial class FormEstoque : Form
     {
-        public FormCadastroProduto()
+        public FormEstoque()
         {
             InitializeComponent();
-        }
-
-        private void txtCelular_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEstoque_Click(object sender, EventArgs e)
-        {
-            FormEstoque frm = new FormEstoque();
-            frm.Show();
-            this.Hide();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
