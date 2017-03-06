@@ -46,12 +46,15 @@
             this.txtTelefoneResidencial = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.chkBoxNew = new System.Windows.Forms.CheckBox();
+            this.lblChkBoxNL = new System.Windows.Forms.Label();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFormCadastroCliente
             // 
             this.lblFormCadastroCliente.AutoSize = true;
-            this.lblFormCadastroCliente.Location = new System.Drawing.Point(65, 23);
+            this.lblFormCadastroCliente.Location = new System.Drawing.Point(39, 23);
             this.lblFormCadastroCliente.Name = "lblFormCadastroCliente";
             this.lblFormCadastroCliente.Size = new System.Drawing.Size(269, 16);
             this.lblFormCadastroCliente.TabIndex = 0;
@@ -60,7 +63,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(61, 64);
+            this.lblNome.Location = new System.Drawing.Point(39, 52);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(46, 16);
             this.lblNome.TabIndex = 1;
@@ -69,7 +72,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 133);
+            this.label1.Location = new System.Drawing.Point(39, 198);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 2;
@@ -79,7 +82,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(58, 99);
+            this.lblEmail.Location = new System.Drawing.Point(39, 98);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(49, 16);
             this.lblEmail.TabIndex = 3;
@@ -88,7 +91,7 @@
             // lblCPF
             // 
             this.lblCPF.AutoSize = true;
-            this.lblCPF.Location = new System.Drawing.Point(72, 167);
+            this.lblCPF.Location = new System.Drawing.Point(342, 52);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(35, 16);
             this.lblCPF.TabIndex = 4;
@@ -97,7 +100,7 @@
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
-            this.lblCelular.Location = new System.Drawing.Point(54, 199);
+            this.lblCelular.Location = new System.Drawing.Point(39, 143);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(53, 16);
             this.lblCelular.TabIndex = 5;
@@ -106,7 +109,7 @@
             // lblTelefoneComercia
             // 
             this.lblTelefoneComercia.AutoSize = true;
-            this.lblTelefoneComercia.Location = new System.Drawing.Point(15, 235);
+            this.lblTelefoneComercia.Location = new System.Drawing.Point(194, 143);
             this.lblTelefoneComercia.Name = "lblTelefoneComercia";
             this.lblTelefoneComercia.Size = new System.Drawing.Size(92, 16);
             this.lblTelefoneComercia.TabIndex = 6;
@@ -115,7 +118,7 @@
             // lblTelefoneResidencial
             // 
             this.lblTelefoneResidencial.AutoSize = true;
-            this.lblTelefoneResidencial.Location = new System.Drawing.Point(8, 269);
+            this.lblTelefoneResidencial.Location = new System.Drawing.Point(342, 143);
             this.lblTelefoneResidencial.Name = "lblTelefoneResidencial";
             this.lblTelefoneResidencial.Size = new System.Drawing.Size(99, 16);
             this.lblTelefoneResidencial.TabIndex = 7;
@@ -124,7 +127,7 @@
             // lblDataNascimento
             // 
             this.lblDataNascimento.AutoSize = true;
-            this.lblDataNascimento.Location = new System.Drawing.Point(12, 301);
+            this.lblDataNascimento.Location = new System.Drawing.Point(288, 198);
             this.lblDataNascimento.Name = "lblDataNascimento";
             this.lblDataNascimento.Size = new System.Drawing.Size(95, 16);
             this.lblDataNascimento.TabIndex = 8;
@@ -132,30 +135,30 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(354, 294);
+            this.btnCadastrar.Location = new System.Drawing.Point(391, 287);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.Size = new System.Drawing.Size(100, 31);
             this.btnCadastrar.TabIndex = 9;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(113, 57);
+            this.txtNome.Location = new System.Drawing.Point(42, 71);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(146, 23);
+            this.txtNome.Size = new System.Drawing.Size(298, 23);
             this.txtNome.TabIndex = 10;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(113, 92);
+            this.txtEmail.Location = new System.Drawing.Point(42, 117);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(146, 23);
+            this.txtEmail.Size = new System.Drawing.Size(449, 23);
             this.txtEmail.TabIndex = 11;
             // 
             // txtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(113, 159);
+            this.txtCPF.Location = new System.Drawing.Point(345, 71);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(146, 23);
             this.txtCPF.TabIndex = 12;
@@ -163,7 +166,7 @@
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(113, 199);
+            this.txtCelular.Location = new System.Drawing.Point(42, 162);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(146, 23);
             this.txtCelular.TabIndex = 13;
@@ -171,39 +174,69 @@
             // 
             // txtTelefoneComercial
             // 
-            this.txtTelefoneComercial.Location = new System.Drawing.Point(113, 232);
+            this.txtTelefoneComercial.Location = new System.Drawing.Point(194, 162);
             this.txtTelefoneComercial.Name = "txtTelefoneComercial";
             this.txtTelefoneComercial.Size = new System.Drawing.Size(146, 23);
             this.txtTelefoneComercial.TabIndex = 14;
             // 
             // txtTelefoneResidencial
             // 
-            this.txtTelefoneResidencial.Location = new System.Drawing.Point(113, 266);
+            this.txtTelefoneResidencial.Location = new System.Drawing.Point(345, 162);
             this.txtTelefoneResidencial.Name = "txtTelefoneResidencial";
             this.txtTelefoneResidencial.Size = new System.Drawing.Size(146, 23);
             this.txtTelefoneResidencial.TabIndex = 15;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(113, 130);
+            this.txtSenha.Location = new System.Drawing.Point(42, 217);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(146, 23);
             this.txtSenha.TabIndex = 16;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(113, 301);
+            this.dateTimePicker1.Location = new System.Drawing.Point(291, 217);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker1.TabIndex = 17;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // chkBoxNew
+            // 
+            this.chkBoxNew.AutoSize = true;
+            this.chkBoxNew.Location = new System.Drawing.Point(350, 254);
+            this.chkBoxNew.Name = "chkBoxNew";
+            this.chkBoxNew.Size = new System.Drawing.Size(15, 14);
+            this.chkBoxNew.TabIndex = 18;
+            this.chkBoxNew.UseVisualStyleBackColor = true;
+            // 
+            // lblChkBoxNL
+            // 
+            this.lblChkBoxNL.AutoSize = true;
+            this.lblChkBoxNL.Location = new System.Drawing.Point(371, 252);
+            this.lblChkBoxNL.Name = "lblChkBoxNL";
+            this.lblChkBoxNL.Size = new System.Drawing.Size(120, 16);
+            this.lblChkBoxNL.TabIndex = 19;
+            this.lblChkBoxNL.Text = "Receber Newsletter";
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(42, 287);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(100, 31);
+            this.btnVoltar.TabIndex = 20;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
             // 
             // FormCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(441, 329);
+            this.ClientSize = new System.Drawing.Size(528, 341);
+            this.Controls.Add(this.btnVoltar);
+            this.Controls.Add(this.lblChkBoxNL);
+            this.Controls.Add(this.chkBoxNew);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtTelefoneResidencial);
@@ -227,7 +260,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormCadastroCliente";
-            this.Text = "FormCadastroCliente";
+            this.Text = "Cadastro Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +286,8 @@
         private System.Windows.Forms.TextBox txtTelefoneResidencial;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.CheckBox chkBoxNew;
+        private System.Windows.Forms.Label lblChkBoxNL;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

@@ -46,7 +46,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(36, 80);
+            this.lblNome.Location = new System.Drawing.Point(46, 58);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(46, 16);
             this.lblNome.TabIndex = 0;
@@ -54,15 +54,15 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(88, 77);
+            this.txtNome.Location = new System.Drawing.Point(49, 77);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 23);
+            this.txtNome.Size = new System.Drawing.Size(173, 23);
             this.txtNome.TabIndex = 1;
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(36, 137);
+            this.lblLogin.Location = new System.Drawing.Point(46, 108);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(43, 16);
             this.lblLogin.TabIndex = 2;
@@ -71,7 +71,7 @@
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(30, 194);
+            this.lblSenha.Location = new System.Drawing.Point(46, 159);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(49, 16);
             this.lblSenha.TabIndex = 3;
@@ -80,7 +80,7 @@
             // lblTipoPerfil
             // 
             this.lblTipoPerfil.AutoSize = true;
-            this.lblTipoPerfil.Location = new System.Drawing.Point(18, 250);
+            this.lblTipoPerfil.Location = new System.Drawing.Point(46, 213);
             this.lblTipoPerfil.Name = "lblTipoPerfil";
             this.lblTipoPerfil.Size = new System.Drawing.Size(71, 16);
             this.lblTipoPerfil.TabIndex = 4;
@@ -88,29 +88,29 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(88, 134);
+            this.txtLogin.Location = new System.Drawing.Point(49, 127);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(100, 23);
+            this.txtLogin.Size = new System.Drawing.Size(173, 23);
             this.txtLogin.TabIndex = 5;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(88, 191);
+            this.txtSenha.Location = new System.Drawing.Point(49, 178);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(100, 23);
+            this.txtSenha.Size = new System.Drawing.Size(173, 23);
             this.txtSenha.TabIndex = 6;
             // 
             // txtTipoPerfil
             // 
-            this.txtTipoPerfil.Location = new System.Drawing.Point(88, 243);
+            this.txtTipoPerfil.Location = new System.Drawing.Point(49, 232);
             this.txtTipoPerfil.Name = "txtTipoPerfil";
-            this.txtTipoPerfil.Size = new System.Drawing.Size(100, 23);
+            this.txtTipoPerfil.Size = new System.Drawing.Size(173, 23);
             this.txtTipoPerfil.TabIndex = 7;
             // 
             // lblCadastro
             // 
             this.lblCadastro.AutoSize = true;
-            this.lblCadastro.Location = new System.Drawing.Point(19, 22);
+            this.lblCadastro.Location = new System.Drawing.Point(44, 28);
             this.lblCadastro.Name = "lblCadastro";
             this.lblCadastro.Size = new System.Drawing.Size(409, 16);
             this.lblCadastro.TabIndex = 8;
@@ -118,18 +118,18 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(270, 283);
+            this.btnCadastrar.Location = new System.Drawing.Point(330, 274);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.Size = new System.Drawing.Size(87, 35);
             this.btnCadastrar.TabIndex = 9;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(349, 283);
+            this.btnCancelar.Location = new System.Drawing.Point(49, 274);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(87, 35);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -137,9 +137,9 @@
             // 
             // btnTelaLogin
             // 
-            this.btnTelaLogin.Location = new System.Drawing.Point(292, 210);
+            this.btnTelaLogin.Location = new System.Drawing.Point(291, 94);
             this.btnTelaLogin.Name = "btnTelaLogin";
-            this.btnTelaLogin.Size = new System.Drawing.Size(84, 23);
+            this.btnTelaLogin.Size = new System.Drawing.Size(126, 30);
             this.btnTelaLogin.TabIndex = 11;
             this.btnTelaLogin.Text = "Clique Aqui";
             this.btnTelaLogin.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@
             // lblCadastroInfo
             // 
             this.lblCadastroInfo.AutoSize = true;
-            this.lblCadastroInfo.Location = new System.Drawing.Point(248, 182);
+            this.lblCadastroInfo.Location = new System.Drawing.Point(269, 70);
             this.lblCadastroInfo.Name = "lblCadastroInfo";
             this.lblCadastroInfo.Size = new System.Drawing.Size(180, 16);
             this.lblCadastroInfo.TabIndex = 12;
@@ -160,7 +160,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(436, 321);
+            this.ClientSize = new System.Drawing.Size(465, 321);
             this.Controls.Add(this.lblCadastroInfo);
             this.Controls.Add(this.btnTelaLogin);
             this.Controls.Add(this.btnCancelar);

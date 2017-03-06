@@ -17,7 +17,7 @@ namespace Prototipo
             InitializeComponent();
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void btnCadastroCliente_Click(object sender, EventArgs e)
         {
             FormCadastroCliente f = new FormCadastroCliente();
             f.Show();
