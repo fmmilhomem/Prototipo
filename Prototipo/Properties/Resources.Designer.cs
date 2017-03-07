@@ -63,16 +63,6 @@ namespace Prototipo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icoEntrar {
-            get {
-                object obj = ResourceManager.GetObject("icoEntrar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap iconCliente {
             get {
                 object obj = ResourceManager.GetObject("iconCliente", resourceCulture);
@@ -136,16 +126,6 @@ namespace Prototipo.Properties {
         internal static System.Drawing.Bitmap imgLogin {
             get {
                 object obj = ResourceManager.GetObject("imgLogin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap imgLogin1 {
-            get {
-                object obj = ResourceManager.GetObject("imgLogin1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

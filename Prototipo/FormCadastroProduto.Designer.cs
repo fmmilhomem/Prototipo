@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroProduto));
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.txtIdCod = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -190,7 +191,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(702, 377);
+            this.ClientSize = new System.Drawing.Size(661, 335);
             this.Controls.Add(this.btnEstoque);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lblDescricao);
@@ -208,6 +209,7 @@
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadastroProduto";
             this.Text = "Cadastro de Produto";
             ((System.ComponentModel.ISupportInitialize)(this.imgProduto)).EndInit();

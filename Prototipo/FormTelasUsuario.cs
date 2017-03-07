@@ -17,6 +17,18 @@ namespace Prototipo
             InitializeComponent();
         }
 
+        private void mnSubUser_Click(object sender, EventArgs e)
+        {
+            FormCadastro frm = new FormCadastro();
+            frm.ShowDialog();
+        }
+
+        private void mnSubSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
         private void btnCadastroCliente_Click(object sender, EventArgs e)
         {
             //this.Close();
@@ -24,8 +36,6 @@ namespace Prototipo
             frm.ShowDialog();
             
         }
-
-
 
         private void btnPedido_Click(object sender, EventArgs e)
         {

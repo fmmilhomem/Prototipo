@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsultarPedido));
             this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.txtPedido = new System.Windows.Forms.TextBox();
             this.lblIdPedido = new System.Windows.Forms.Label();
@@ -50,7 +51,7 @@
             // dgvPedido
             // 
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPedido.Location = new System.Drawing.Point(266, 31);
+            this.dgvPedido.Location = new System.Drawing.Point(280, 16);
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.Size = new System.Drawing.Size(348, 262);
             this.dgvPedido.TabIndex = 41;
@@ -173,7 +174,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(514, 315);
+            this.btnVoltar.Location = new System.Drawing.Point(528, 284);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(100, 31);
             this.btnVoltar.TabIndex = 56;
@@ -186,7 +187,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(710, 377);
+            this.ClientSize = new System.Drawing.Size(661, 335);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.lblEndereço);
@@ -204,8 +205,9 @@
             this.Controls.Add(this.lblIdPedido);
             this.Controls.Add(this.dgvPedido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConsultarPedido";
-            this.Text = "FormConsultarPedido";
+            this.Text = "Consultar Pedido";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

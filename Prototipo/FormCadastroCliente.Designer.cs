@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroCliente));
             this.lblFormCadastroCliente = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -252,7 +253,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(710, 377);
+            this.ClientSize = new System.Drawing.Size(661, 335);
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.lblEndereço);
             this.Controls.Add(this.btnVoltar);
@@ -279,6 +280,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormCadastroCliente";
             this.Text = "Cadastro Cliente";

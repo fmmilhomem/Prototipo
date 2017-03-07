@@ -132,7 +132,7 @@
             // 
             // txtPreço
             // 
-            this.txtPreço.Location = new System.Drawing.Point(29, 211);
+            this.txtPreço.Location = new System.Drawing.Point(29, 202);
             this.txtPreço.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPreço.Name = "txtPreço";
             this.txtPreço.Size = new System.Drawing.Size(180, 23);
@@ -141,7 +141,7 @@
             // lblPreco
             // 
             this.lblPreco.AutoSize = true;
-            this.lblPreco.Location = new System.Drawing.Point(29, 191);
+            this.lblPreco.Location = new System.Drawing.Point(29, 182);
             this.lblPreco.Name = "lblPreco";
             this.lblPreco.Size = new System.Drawing.Size(45, 16);
             this.lblPreco.TabIndex = 34;
@@ -150,7 +150,7 @@
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(29, 251);
+            this.lblCliente.Location = new System.Drawing.Point(29, 233);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(52, 16);
             this.lblCliente.TabIndex = 36;
@@ -159,7 +159,7 @@
             // cbCliente
             // 
             this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(29, 272);
+            this.cbCliente.Location = new System.Drawing.Point(29, 254);
             this.cbCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(180, 24);
@@ -167,7 +167,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(14, 326);
+            this.btnVoltar.Location = new System.Drawing.Point(28, 284);
             this.btnVoltar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(117, 38);
@@ -178,7 +178,7 @@
             // 
             // btnFecharPedido
             // 
-            this.btnFecharPedido.Location = new System.Drawing.Point(572, 326);
+            this.btnFecharPedido.Location = new System.Drawing.Point(532, 284);
             this.btnFecharPedido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFecharPedido.Name = "btnFecharPedido";
             this.btnFecharPedido.Size = new System.Drawing.Size(117, 38);
@@ -189,10 +189,10 @@
             // dgvPedido
             // 
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPedido.Location = new System.Drawing.Point(341, 36);
+            this.dgvPedido.Location = new System.Drawing.Point(301, 27);
             this.dgvPedido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvPedido.Name = "dgvPedido";
-            this.dgvPedido.Size = new System.Drawing.Size(348, 260);
+            this.dgvPedido.Size = new System.Drawing.Size(348, 246);
             this.dgvPedido.TabIndex = 40;
             // 
             // FormNovoPedido
@@ -200,7 +200,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(710, 377);
+            this.ClientSize = new System.Drawing.Size(661, 335);
             this.Controls.Add(this.dgvPedido);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnFecharPedido);
@@ -217,6 +217,7 @@
             this.Controls.Add(this.btnConsultarPedido);
             this.Controls.Add(this.txtPedido);
             this.Controls.Add(this.lblIdPedido);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

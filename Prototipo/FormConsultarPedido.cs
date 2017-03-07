@@ -19,9 +19,8 @@ namespace Prototipo
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
+            //Fecha tela de consulta
             this.Close();
-            FormNovoPedido frm = new FormNovoPedido();
-            frm.Show();
         }
     }
 }
