@@ -160,7 +160,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(465, 321);
+            this.ClientSize = new System.Drawing.Size(705, 375);
             this.Controls.Add(this.lblCadastroInfo);
             this.Controls.Add(this.btnTelaLogin);
             this.Controls.Add(this.btnSair);

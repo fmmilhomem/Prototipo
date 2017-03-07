@@ -30,7 +30,7 @@ namespace Prototipo
                 MessageBox.Show("Logado com sucesso!");
                 FormTelasUsuario telas = new FormTelasUsuario();
                 telas.Show();
-                this.Hide();
+                this.Close();
             }
             else
             {

@@ -189,7 +189,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 283);
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ClientSize = new System.Drawing.Size(702, 377);
             this.Controls.Add(this.btnEstoque);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lblDescricao);
@@ -206,6 +207,7 @@
             this.Controls.Add(this.lblIdProduto);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblNome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormCadastroProduto";
             this.Text = "Cadastro de Produto";
             ((System.ComponentModel.ISupportInitialize)(this.imgProduto)).EndInit();

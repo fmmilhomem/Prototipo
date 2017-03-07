@@ -19,9 +19,9 @@ namespace Prototipo
 
         private void btnCadastroCliente_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
             FormCadastroCliente frm = new FormCadastroCliente();
-            frm.Show();
+            frm.ShowDialog();
             
         }
 
@@ -29,17 +29,17 @@ namespace Prototipo
 
         private void btnPedido_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
             FormNovoPedido frm = new FormNovoPedido();
-            frm.Show();
+            frm.ShowDialog();
             
         }
 
         private void btnCadastroProduto_Click(object sender, EventArgs e)
         {
-            this.Close();
+           // this.Close();
             FormCadastroProduto frm = new FormCadastroProduto();
-            frm.Show();
+            frm.ShowDialog();
             
         }
 

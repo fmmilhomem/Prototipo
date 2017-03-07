@@ -185,7 +185,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 363);
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ClientSize = new System.Drawing.Size(710, 377);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.lblEndereço);
@@ -202,6 +203,7 @@
             this.Controls.Add(this.txtPedido);
             this.Controls.Add(this.lblIdPedido);
             this.Controls.Add(this.dgvPedido);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormConsultarPedido";
             this.Text = "FormConsultarPedido";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();

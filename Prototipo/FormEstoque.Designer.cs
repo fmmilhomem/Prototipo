@@ -30,7 +30,6 @@
         {
             this.txtBoxId = new System.Windows.Forms.TextBox();
             this.txtBoxNome = new System.Windows.Forms.TextBox();
-            this.imgProduto = new System.Windows.Forms.PictureBox();
             this.lblImgProduto = new System.Windows.Forms.Label();
             this.txtBoxQtd = new System.Windows.Forms.TextBox();
             this.lblIdProduto = new System.Windows.Forms.Label();
@@ -38,6 +37,7 @@
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.imgProduto = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,14 +54,6 @@
             this.txtBoxNome.Name = "txtBoxNome";
             this.txtBoxNome.Size = new System.Drawing.Size(100, 20);
             this.txtBoxNome.TabIndex = 1;
-            // 
-            // imgProduto
-            // 
-            this.imgProduto.Location = new System.Drawing.Point(182, 33);
-            this.imgProduto.Name = "imgProduto";
-            this.imgProduto.Size = new System.Drawing.Size(161, 165);
-            this.imgProduto.TabIndex = 32;
-            this.imgProduto.TabStop = false;
             // 
             // lblImgProduto
             // 
@@ -125,11 +117,20 @@
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
+            // imgProduto
+            // 
+            this.imgProduto.Location = new System.Drawing.Point(182, 33);
+            this.imgProduto.Name = "imgProduto";
+            this.imgProduto.Size = new System.Drawing.Size(161, 165);
+            this.imgProduto.TabIndex = 32;
+            this.imgProduto.TabStop = false;
+            // 
             // FormEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 294);
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ClientSize = new System.Drawing.Size(710, 377);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.lblQuantidade);
@@ -140,6 +141,8 @@
             this.Controls.Add(this.imgProduto);
             this.Controls.Add(this.txtBoxNome);
             this.Controls.Add(this.txtBoxId);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormEstoque";
             this.Text = "Estoque";
             ((System.ComponentModel.ISupportInitialize)(this.imgProduto)).EndInit();

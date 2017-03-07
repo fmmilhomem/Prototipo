@@ -40,7 +40,7 @@
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 40);
+            this.label1.Location = new System.Drawing.Point(231, 204);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 19);
             this.label1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.btnSair.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSair.Image = global::Prototipo.Properties.Resources.iconSair;
-            this.btnSair.Location = new System.Drawing.Point(225, 235);
+            this.btnSair.Location = new System.Drawing.Point(413, 214);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(180, 149);
             this.btnSair.TabIndex = 6;
@@ -63,7 +63,7 @@
             // 
             this.btnCadastroProduto.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnCadastroProduto.Image = global::Prototipo.Properties.Resources.iconProduto;
-            this.btnCadastroProduto.Location = new System.Drawing.Point(40, 235);
+            this.btnCadastroProduto.Location = new System.Drawing.Point(45, 214);
             this.btnCadastroProduto.Name = "btnCadastroProduto";
             this.btnCadastroProduto.Size = new System.Drawing.Size(180, 149);
             this.btnCadastroProduto.TabIndex = 5;
@@ -76,7 +76,7 @@
             // 
             this.btnCadastroCliente.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastroCliente.Image = global::Prototipo.Properties.Resources.iconCliente;
-            this.btnCadastroCliente.Location = new System.Drawing.Point(225, 80);
+            this.btnCadastroCliente.Location = new System.Drawing.Point(409, 29);
             this.btnCadastroCliente.Name = "btnCadastroCliente";
             this.btnCadastroCliente.Size = new System.Drawing.Size(180, 149);
             this.btnCadastroCliente.TabIndex = 4;
@@ -89,7 +89,7 @@
             // 
             this.btnPedido.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPedido.Image = global::Prototipo.Properties.Resources.iconPedido;
-            this.btnPedido.Location = new System.Drawing.Point(40, 80);
+            this.btnPedido.Location = new System.Drawing.Point(48, 31);
             this.btnPedido.Name = "btnPedido";
             this.btnPedido.Size = new System.Drawing.Size(180, 149);
             this.btnPedido.TabIndex = 3;
@@ -103,7 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(442, 449);
+            this.ClientSize = new System.Drawing.Size(710, 377);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCadastroProduto);
             this.Controls.Add(this.btnCadastroCliente);

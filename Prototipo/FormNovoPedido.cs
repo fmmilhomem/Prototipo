@@ -20,15 +20,15 @@ namespace Prototipo
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
-            FormTelasUsuario frm = new FormTelasUsuario();
-            frm.Show();
+            //FormTelasUsuario frm = new FormTelasUsuario();
+            //frm.Show();
         }
 
         private void btnConsultarPedido_Click(object sender, EventArgs e)
         {
             this.Close();
             FormConsultarPedido frm = new FormConsultarPedido();
-            frm.Show();
+            frm.ShowDialog();
         }
     }
 }
