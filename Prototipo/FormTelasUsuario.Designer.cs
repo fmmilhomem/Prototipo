@@ -177,14 +177,14 @@
             // mnSubUser
             // 
             this.mnSubUser.Name = "mnSubUser";
-            this.mnSubUser.Size = new System.Drawing.Size(152, 22);
+            this.mnSubUser.Size = new System.Drawing.Size(102, 22);
             this.mnSubUser.Text = "Users";
             this.mnSubUser.Click += new System.EventHandler(this.mnSubUser_Click);
             // 
             // mnSubSair
             // 
             this.mnSubSair.Name = "mnSubSair";
-            this.mnSubSair.Size = new System.Drawing.Size(152, 22);
+            this.mnSubSair.Size = new System.Drawing.Size(102, 22);
             this.mnSubSair.Text = "Sair";
             this.mnSubSair.Click += new System.EventHandler(this.mnSubSair_Click);
             // 
@@ -206,6 +206,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "FormTelasUsuario";
             this.Text = "Menu";
             this.contextMenuStrip2.ResumeLayout(false);

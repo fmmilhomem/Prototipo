@@ -222,6 +222,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "FormNovoPedido";
             this.Text = "Pedido";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();

@@ -206,6 +206,7 @@
             this.Controls.Add(this.dgvPedido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormConsultarPedido";
             this.Text = "Consultar Pedido";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
