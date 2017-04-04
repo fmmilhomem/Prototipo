@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototipo", "Prototipo\Prototipo.csproj", "{8EF23F47-F01A-4004-B5DD-53C43C733DBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConexaoDataBase", "ConexaoDataBase\ConexaoDataBase.csproj", "{CC515AF4-71F5-4F6B-88F3-19B64930183A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8EF23F47-F01A-4004-B5DD-53C43C733DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EF23F47-F01A-4004-B5DD-53C43C733DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EF23F47-F01A-4004-B5DD-53C43C733DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC515AF4-71F5-4F6B-88F3-19B64930183A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC515AF4-71F5-4F6B-88F3-19B64930183A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC515AF4-71F5-4F6B-88F3-19B64930183A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC515AF4-71F5-4F6B-88F3-19B64930183A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

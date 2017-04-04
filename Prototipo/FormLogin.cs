@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Prototipo
 {
@@ -17,7 +18,7 @@ namespace Prototipo
             InitializeComponent();
         }
 
-        
+
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
@@ -36,13 +37,13 @@ namespace Prototipo
             {
                 MessageBox.Show("Login ou senha errado");
             }
-        }
 
-     
+
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             //Saindo
-            Application.Exit();            
+            Application.Exit();
         }
 
         private void btnQueroCadastrar_Click(object sender, EventArgs e)

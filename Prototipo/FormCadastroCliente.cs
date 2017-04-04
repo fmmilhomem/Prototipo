@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using ConexaoDataBase;
 
 namespace Prototipo
 {
@@ -36,7 +38,7 @@ namespace Prototipo
             }
         }
 
-        
+
 
         private void txtCelular_TextChanged(object sender, KeyPressEventArgs e)
         {
@@ -52,5 +54,22 @@ namespace Prototipo
             //FormTelasUsuario frm = new FormTelasUsuario();
             //frm.ShowDialog();            
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            clsCliente c = new clsCliente();
+            c.nomeCompletoCliente = txtNome.Text;
+            c.cpfCliente = txtCPF.Text;
+            c.emailCliente = txtEmail.Text;
+            c.celularCliente = txtCelular.Text;
+            c.telComercialCliente = txtTelefoneComercial.Text;
+            c.telResidencialCliente = txtTelefoneResidencial.Text;
+            c.senhaCliente = txtSenha.Text;
+            c.dtNascCliente = dateTimePicker1.Value;
+            c.recebeNewsLetter = chkBoxNew.Checked;
+            c.Salvar();
+            MessageBox.Show("SUCESSO! CADASTROU!");
+        }
     }
 }
+

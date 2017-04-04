@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlAcessoAoBanco.cs" />
     <EmbeddedResource Include="FormCadastro.resx">
       <DependentUpon>FormCadastro.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +167,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icoAnexarImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConexaoDataBase\ConexaoDataBase.csproj">
+      <Project>{cc515af4-71f5-4f6b-88f3-19b64930183a}</Project>
+      <Name>ConexaoDataBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
