@@ -50,8 +50,6 @@
             this.chkBoxNew = new System.Windows.Forms.CheckBox();
             this.lblChkBoxNL = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.txtEndereco = new System.Windows.Forms.TextBox();
-            this.lblEndereço = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFormCadastroCliente
@@ -75,7 +73,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 235);
+            this.label1.Location = new System.Drawing.Point(43, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 2;
@@ -130,7 +128,7 @@
             // lblDataNascimento
             // 
             this.lblDataNascimento.AutoSize = true;
-            this.lblDataNascimento.Location = new System.Drawing.Point(211, 239);
+            this.lblDataNascimento.Location = new System.Drawing.Point(213, 200);
             this.lblDataNascimento.Name = "lblDataNascimento";
             this.lblDataNascimento.Size = new System.Drawing.Size(95, 16);
             this.lblDataNascimento.TabIndex = 8;
@@ -192,14 +190,14 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(42, 254);
+            this.txtSenha.Location = new System.Drawing.Point(42, 219);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(146, 23);
             this.txtSenha.TabIndex = 16;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(214, 258);
+            this.dateTimePicker1.Location = new System.Drawing.Point(216, 219);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker1.TabIndex = 17;
@@ -208,7 +206,7 @@
             // chkBoxNew
             // 
             this.chkBoxNew.AutoSize = true;
-            this.chkBoxNew.Location = new System.Drawing.Point(364, 304);
+            this.chkBoxNew.Location = new System.Drawing.Point(346, 287);
             this.chkBoxNew.Name = "chkBoxNew";
             this.chkBoxNew.Size = new System.Drawing.Size(15, 14);
             this.chkBoxNew.TabIndex = 18;
@@ -217,7 +215,7 @@
             // lblChkBoxNL
             // 
             this.lblChkBoxNL.AutoSize = true;
-            this.lblChkBoxNL.Location = new System.Drawing.Point(238, 302);
+            this.lblChkBoxNL.Location = new System.Drawing.Point(220, 287);
             this.lblChkBoxNL.Name = "lblChkBoxNL";
             this.lblChkBoxNL.Size = new System.Drawing.Size(120, 16);
             this.lblChkBoxNL.TabIndex = 19;
@@ -233,30 +231,12 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // txtEndereco
-            // 
-            this.txtEndereco.Location = new System.Drawing.Point(42, 209);
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(449, 23);
-            this.txtEndereco.TabIndex = 22;
-            // 
-            // lblEndereço
-            // 
-            this.lblEndereço.AutoSize = true;
-            this.lblEndereço.Location = new System.Drawing.Point(39, 190);
-            this.lblEndereço.Name = "lblEndereço";
-            this.lblEndereço.Size = new System.Drawing.Size(61, 16);
-            this.lblEndereço.TabIndex = 21;
-            this.lblEndereço.Text = "Endereço";
-            // 
             // FormCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(661, 335);
-            this.Controls.Add(this.txtEndereco);
-            this.Controls.Add(this.lblEndereço);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblChkBoxNL);
             this.Controls.Add(this.chkBoxNew);
@@ -314,7 +294,5 @@
         private System.Windows.Forms.CheckBox chkBoxNew;
         private System.Windows.Forms.Label lblChkBoxNL;
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.Label lblEndereço;
     }
 }
