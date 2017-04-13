@@ -50,6 +50,7 @@
             this.chkBoxNew = new System.Windows.Forms.CheckBox();
             this.lblChkBoxNL = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnListarClientes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFormCadastroCliente
@@ -231,12 +232,23 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // btnListarClientes
+            // 
+            this.btnListarClientes.Location = new System.Drawing.Point(562, 174);
+            this.btnListarClientes.Name = "btnListarClientes";
+            this.btnListarClientes.Size = new System.Drawing.Size(75, 68);
+            this.btnListarClientes.TabIndex = 22;
+            this.btnListarClientes.Text = "Tela Listar Clientes";
+            this.btnListarClientes.UseVisualStyleBackColor = true;
+            this.btnListarClientes.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FormCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(661, 335);
+            this.Controls.Add(this.btnListarClientes);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblChkBoxNL);
             this.Controls.Add(this.chkBoxNew);
@@ -294,5 +306,6 @@
         private System.Windows.Forms.CheckBox chkBoxNew;
         private System.Windows.Forms.Label lblChkBoxNL;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button btnListarClientes;
     }
 }

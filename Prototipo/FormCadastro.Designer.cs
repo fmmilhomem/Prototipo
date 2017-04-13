@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.btnTelaLogin = new System.Windows.Forms.Button();
             this.lblCadastroInfo = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // lblNome
@@ -154,6 +156,11 @@
             this.lblCadastroInfo.TabIndex = 12;
             this.lblCadastroInfo.Text = "Caso queira logar no sistema:";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -201,5 +208,6 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnTelaLogin;
         private System.Windows.Forms.Label lblCadastroInfo;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

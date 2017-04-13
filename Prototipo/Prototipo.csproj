@@ -94,6 +94,12 @@
     <Compile Include="FormTelasUsuario.Designer.cs">
       <DependentUpon>FormTelasUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarClientes.Designer.cs">
+      <DependentUpon>ListarClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlAcessoAoBanco.cs" />
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTelasUsuario.resx">
       <DependentUpon>FormTelasUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarClientes.resx">
+      <DependentUpon>ListarClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
