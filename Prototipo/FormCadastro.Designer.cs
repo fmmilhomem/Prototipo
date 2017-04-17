@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastro));
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
@@ -42,12 +42,12 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.btnTelaLogin = new System.Windows.Forms.Button();
             this.lblCadastroInfo = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
+            this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.Location = new System.Drawing.Point(46, 58);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(46, 16);
@@ -64,6 +64,7 @@
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
+            this.lblLogin.BackColor = System.Drawing.Color.Transparent;
             this.lblLogin.Location = new System.Drawing.Point(46, 108);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(43, 16);
@@ -73,6 +74,7 @@
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
+            this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Location = new System.Drawing.Point(46, 159);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(49, 16);
@@ -82,6 +84,7 @@
             // lblTipoPerfil
             // 
             this.lblTipoPerfil.AutoSize = true;
+            this.lblTipoPerfil.BackColor = System.Drawing.Color.Transparent;
             this.lblTipoPerfil.Location = new System.Drawing.Point(46, 213);
             this.lblTipoPerfil.Name = "lblTipoPerfil";
             this.lblTipoPerfil.Size = new System.Drawing.Size(71, 16);
@@ -99,6 +102,7 @@
             // 
             this.txtSenha.Location = new System.Drawing.Point(49, 178);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(173, 23);
             this.txtSenha.TabIndex = 6;
             // 
@@ -112,7 +116,8 @@
             // lblCadastro
             // 
             this.lblCadastro.AutoSize = true;
-            this.lblCadastro.Location = new System.Drawing.Point(44, 28);
+            this.lblCadastro.BackColor = System.Drawing.Color.Transparent;
+            this.lblCadastro.Location = new System.Drawing.Point(46, 30);
             this.lblCadastro.Name = "lblCadastro";
             this.lblCadastro.Size = new System.Drawing.Size(409, 16);
             this.lblCadastro.TabIndex = 8;
@@ -120,7 +125,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(330, 274);
+            this.btnCadastrar.Location = new System.Drawing.Point(368, 272);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(87, 35);
             this.btnCadastrar.TabIndex = 9;
@@ -129,7 +134,7 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(49, 274);
+            this.btnSair.Location = new System.Drawing.Point(49, 272);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(87, 35);
             this.btnSair.TabIndex = 10;
@@ -139,9 +144,9 @@
             // 
             // btnTelaLogin
             // 
-            this.btnTelaLogin.Location = new System.Drawing.Point(291, 94);
+            this.btnTelaLogin.Location = new System.Drawing.Point(301, 140);
             this.btnTelaLogin.Name = "btnTelaLogin";
-            this.btnTelaLogin.Size = new System.Drawing.Size(126, 30);
+            this.btnTelaLogin.Size = new System.Drawing.Size(87, 35);
             this.btnTelaLogin.TabIndex = 11;
             this.btnTelaLogin.Text = "Clique Aqui";
             this.btnTelaLogin.UseVisualStyleBackColor = true;
@@ -150,24 +155,21 @@
             // lblCadastroInfo
             // 
             this.lblCadastroInfo.AutoSize = true;
-            this.lblCadastroInfo.Location = new System.Drawing.Point(269, 70);
+            this.lblCadastroInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblCadastroInfo.Location = new System.Drawing.Point(256, 108);
             this.lblCadastroInfo.Name = "lblCadastroInfo";
             this.lblCadastroInfo.Size = new System.Drawing.Size(180, 16);
             this.lblCadastroInfo.TabIndex = 12;
             this.lblCadastroInfo.Text = "Caso queira logar no sistema:";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackgroundImage = global::Prototipo.Properties.Resources.imgFundo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(661, 335);
+            this.ClientSize = new System.Drawing.Size(501, 335);
             this.Controls.Add(this.lblCadastroInfo);
             this.Controls.Add(this.btnTelaLogin);
             this.Controls.Add(this.btnSair);
@@ -184,10 +186,13 @@
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormCadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cadastro";
+            this.Load += new System.EventHandler(this.FormCadastro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,6 +213,5 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnTelaLogin;
         private System.Windows.Forms.Label lblCadastroInfo;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

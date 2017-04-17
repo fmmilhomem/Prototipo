@@ -16,10 +16,7 @@ namespace Prototipo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormTelasUsuario());
-
-
-
+            Application.Run(new FormLogin());
         }
     }
 }

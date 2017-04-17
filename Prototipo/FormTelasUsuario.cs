@@ -23,6 +23,12 @@ namespace Prototipo
             frm.ShowDialog();
         }
 
+        private void mnSubConPedido_Click(object sender, EventArgs e)
+        {
+            FormConsultarPedido frm = new FormConsultarPedido();
+            frm.ShowDialog();
+        }
+
         private void mnSubSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -57,5 +63,7 @@ namespace Prototipo
         {
             Application.Exit();
         }
+
+     
     }
 }

@@ -28,10 +28,10 @@ namespace Prototipo
 
             if ((txtLogin.Text == login) && (txtSenha.Text == senha))
             {
-                MessageBox.Show("Logado com sucesso!");
+                MessageBox.Show("Logado com sucesso!");                
                 FormTelasUsuario telas = new FormTelasUsuario();
                 telas.Show();
-                this.Close();
+                this.Hide();
             }
             else
             {
@@ -48,9 +48,8 @@ namespace Prototipo
 
         private void btnQueroCadastrar_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormCadastro formcadastro = new FormCadastro();
-            formcadastro.Show();
+            formcadastro.ShowDialog();
         }
     }
 }

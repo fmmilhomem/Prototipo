@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Prototipo
 {
-    public partial class FormEstoque : Form
+    public partial class FormCadastroCategoria : Form
     {
-        public FormEstoque()
+        public FormCadastroCategoria()
         {
             InitializeComponent();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Close();      
+            this.Close();
         }
     }
 }

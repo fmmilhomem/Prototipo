@@ -46,6 +46,7 @@
             this.btnEstoque = new System.Windows.Forms.Button();
             this.abrirArqImg = new System.Windows.Forms.OpenFileDialog();
             this.imgBox = new System.Windows.Forms.PictureBox();
+            this.bntCategoria = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,9 +67,9 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(12, 82);
+            this.txtNome.Location = new System.Drawing.Point(12, 86);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(268, 20);
+            this.txtNome.Size = new System.Drawing.Size(297, 20);
             this.txtNome.TabIndex = 22;
             // 
             // lblPreco
@@ -95,7 +96,7 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.lblCategoria.Location = new System.Drawing.Point(9, 164);
+            this.lblCategoria.Location = new System.Drawing.Point(9, 171);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(55, 13);
             this.lblCategoria.TabIndex = 17;
@@ -105,7 +106,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
-            this.lblNome.Location = new System.Drawing.Point(9, 66);
+            this.lblNome.Location = new System.Drawing.Point(9, 70);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
             this.lblNome.TabIndex = 16;
@@ -114,9 +115,9 @@
             // cbCategoria
             // 
             this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(12, 180);
+            this.cbCategoria.Location = new System.Drawing.Point(12, 187);
             this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(268, 21);
+            this.cbCategoria.Size = new System.Drawing.Size(256, 21);
             this.cbCategoria.TabIndex = 28;
             // 
             // btnVoltar
@@ -131,7 +132,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(533, 275);
+            this.btnSalvar.Location = new System.Drawing.Point(525, 275);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 31);
             this.btnSalvar.TabIndex = 29;
@@ -142,7 +143,7 @@
             // 
             this.lblImgProduto.AutoSize = true;
             this.lblImgProduto.BackColor = System.Drawing.Color.Transparent;
-            this.lblImgProduto.Location = new System.Drawing.Point(335, 25);
+            this.lblImgProduto.Location = new System.Drawing.Point(378, 25);
             this.lblImgProduto.Name = "lblImgProduto";
             this.lblImgProduto.Size = new System.Drawing.Size(206, 13);
             this.lblImgProduto.TabIndex = 32;
@@ -161,16 +162,16 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(12, 130);
+            this.txtDescricao.Location = new System.Drawing.Point(12, 135);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(268, 20);
+            this.txtDescricao.Size = new System.Drawing.Size(297, 20);
             this.txtDescricao.TabIndex = 35;
             // 
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
             this.lblDescricao.BackColor = System.Drawing.Color.Transparent;
-            this.lblDescricao.Location = new System.Drawing.Point(9, 114);
+            this.lblDescricao.Location = new System.Drawing.Point(9, 119);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(58, 13);
             this.lblDescricao.TabIndex = 34;
@@ -178,7 +179,7 @@
             // 
             // btnEstoque
             // 
-            this.btnEstoque.Location = new System.Drawing.Point(279, 275);
+            this.btnEstoque.Location = new System.Drawing.Point(209, 43);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(100, 31);
             this.btnEstoque.TabIndex = 36;
@@ -197,13 +198,24 @@
             this.imgBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.imgBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.imgBox.InitialImage = null;
-            this.imgBox.Location = new System.Drawing.Point(338, 41);
+            this.imgBox.Location = new System.Drawing.Point(381, 41);
             this.imgBox.Name = "imgBox";
             this.imgBox.Size = new System.Drawing.Size(244, 218);
             this.imgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imgBox.TabIndex = 37;
             this.imgBox.TabStop = false;
             this.imgBox.DoubleClick += new System.EventHandler(this.imgBox_DoubleClick);
+            // 
+            // bntCategoria
+            // 
+            this.bntCategoria.Location = new System.Drawing.Point(274, 187);
+            this.bntCategoria.Name = "bntCategoria";
+            this.bntCategoria.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bntCategoria.Size = new System.Drawing.Size(35, 21);
+            this.bntCategoria.TabIndex = 38;
+            this.bntCategoria.Text = "+";
+            this.bntCategoria.UseVisualStyleBackColor = true;
+            this.bntCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // FormCadastroProduto
             // 
@@ -213,6 +225,7 @@
             this.BackgroundImage = global::Prototipo.Properties.Resources.imgFundo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(661, 335);
+            this.Controls.Add(this.bntCategoria);
             this.Controls.Add(this.btnEstoque);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lblDescricao);
@@ -258,5 +271,6 @@
         private System.Windows.Forms.Button btnEstoque;
         private System.Windows.Forms.PictureBox imgBox;
         private System.Windows.Forms.OpenFileDialog abrirArqImg;
+        private System.Windows.Forms.Button bntCategoria;
     }
 }

@@ -23,18 +23,19 @@ namespace ConexaoDataBase
             return cn;
         }
 
+        //CONEXÃO AZURE
         /*public static SqlConnection Conectar()
         {
             SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder();
             sb.UserID = "TSI";
             sb.Password = "SistemasInternet123";
-            sb.DataSource = "hippo - pi.database.windows.net";
+            sb.DataSource = "hippo-pi.database.windows.net";
             sb.InitialCatalog = "hippo";
 
             SqlConnection cn = new SqlConnection(sb.ConnectionString);
             cn.Open();
             return cn;
         }*/
-         // SERVER
+         
     }
 }

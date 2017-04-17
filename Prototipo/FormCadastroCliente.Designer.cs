@@ -56,6 +56,7 @@
             // lblFormCadastroCliente
             // 
             this.lblFormCadastroCliente.AutoSize = true;
+            this.lblFormCadastroCliente.BackColor = System.Drawing.Color.Transparent;
             this.lblFormCadastroCliente.Location = new System.Drawing.Point(39, 23);
             this.lblFormCadastroCliente.Name = "lblFormCadastroCliente";
             this.lblFormCadastroCliente.Size = new System.Drawing.Size(269, 16);
@@ -65,6 +66,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
+            this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.Location = new System.Drawing.Point(39, 52);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(46, 16);
@@ -74,7 +76,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 200);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(43, 196);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 2;
@@ -84,6 +87,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Location = new System.Drawing.Point(39, 98);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(49, 16);
@@ -93,7 +97,8 @@
             // lblCPF
             // 
             this.lblCPF.AutoSize = true;
-            this.lblCPF.Location = new System.Drawing.Point(342, 52);
+            this.lblCPF.BackColor = System.Drawing.Color.Transparent;
+            this.lblCPF.Location = new System.Drawing.Point(447, 52);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(35, 16);
             this.lblCPF.TabIndex = 4;
@@ -102,6 +107,7 @@
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
+            this.lblCelular.BackColor = System.Drawing.Color.Transparent;
             this.lblCelular.Location = new System.Drawing.Point(39, 143);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(53, 16);
@@ -111,7 +117,8 @@
             // lblTelefoneComercia
             // 
             this.lblTelefoneComercia.AutoSize = true;
-            this.lblTelefoneComercia.Location = new System.Drawing.Point(194, 143);
+            this.lblTelefoneComercia.BackColor = System.Drawing.Color.Transparent;
+            this.lblTelefoneComercia.Location = new System.Drawing.Point(455, 143);
             this.lblTelefoneComercia.Name = "lblTelefoneComercia";
             this.lblTelefoneComercia.Size = new System.Drawing.Size(92, 16);
             this.lblTelefoneComercia.TabIndex = 6;
@@ -120,7 +127,8 @@
             // lblTelefoneResidencial
             // 
             this.lblTelefoneResidencial.AutoSize = true;
-            this.lblTelefoneResidencial.Location = new System.Drawing.Point(342, 143);
+            this.lblTelefoneResidencial.BackColor = System.Drawing.Color.Transparent;
+            this.lblTelefoneResidencial.Location = new System.Drawing.Point(241, 143);
             this.lblTelefoneResidencial.Name = "lblTelefoneResidencial";
             this.lblTelefoneResidencial.Size = new System.Drawing.Size(99, 16);
             this.lblTelefoneResidencial.TabIndex = 7;
@@ -129,7 +137,8 @@
             // lblDataNascimento
             // 
             this.lblDataNascimento.AutoSize = true;
-            this.lblDataNascimento.Location = new System.Drawing.Point(213, 200);
+            this.lblDataNascimento.BackColor = System.Drawing.Color.Transparent;
+            this.lblDataNascimento.Location = new System.Drawing.Point(241, 196);
             this.lblDataNascimento.Name = "lblDataNascimento";
             this.lblDataNascimento.Size = new System.Drawing.Size(95, 16);
             this.lblDataNascimento.TabIndex = 8;
@@ -137,7 +146,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(391, 287);
+            this.btnCadastrar.Location = new System.Drawing.Point(522, 280);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(100, 31);
             this.btnCadastrar.TabIndex = 9;
@@ -149,21 +158,21 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(42, 71);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(298, 23);
+            this.txtNome.Size = new System.Drawing.Size(374, 23);
             this.txtNome.TabIndex = 10;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(42, 117);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(449, 23);
+            this.txtEmail.Size = new System.Drawing.Size(374, 23);
             this.txtEmail.TabIndex = 11;
             // 
             // txtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(345, 71);
+            this.txtCPF.Location = new System.Drawing.Point(450, 71);
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(146, 23);
+            this.txtCPF.Size = new System.Drawing.Size(172, 23);
             this.txtCPF.TabIndex = 12;
             this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_TextChanged);
             // 
@@ -171,52 +180,55 @@
             // 
             this.txtCelular.Location = new System.Drawing.Point(42, 162);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(146, 23);
+            this.txtCelular.Size = new System.Drawing.Size(172, 23);
             this.txtCelular.TabIndex = 13;
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_TextChanged);
             // 
             // txtTelefoneComercial
             // 
-            this.txtTelefoneComercial.Location = new System.Drawing.Point(194, 162);
+            this.txtTelefoneComercial.Location = new System.Drawing.Point(450, 162);
             this.txtTelefoneComercial.Name = "txtTelefoneComercial";
-            this.txtTelefoneComercial.Size = new System.Drawing.Size(146, 23);
+            this.txtTelefoneComercial.Size = new System.Drawing.Size(172, 23);
             this.txtTelefoneComercial.TabIndex = 14;
             // 
             // txtTelefoneResidencial
             // 
-            this.txtTelefoneResidencial.Location = new System.Drawing.Point(345, 162);
+            this.txtTelefoneResidencial.Location = new System.Drawing.Point(244, 162);
             this.txtTelefoneResidencial.Name = "txtTelefoneResidencial";
-            this.txtTelefoneResidencial.Size = new System.Drawing.Size(146, 23);
+            this.txtTelefoneResidencial.Size = new System.Drawing.Size(172, 23);
             this.txtTelefoneResidencial.TabIndex = 15;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(42, 219);
+            this.txtSenha.Location = new System.Drawing.Point(42, 215);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(146, 23);
             this.txtSenha.TabIndex = 16;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(216, 219);
+            this.dateTimePicker1.Location = new System.Drawing.Point(244, 215);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker1.Size = new System.Drawing.Size(172, 23);
             this.dateTimePicker1.TabIndex = 17;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // chkBoxNew
             // 
             this.chkBoxNew.AutoSize = true;
-            this.chkBoxNew.Location = new System.Drawing.Point(346, 287);
+            this.chkBoxNew.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.chkBoxNew.Location = new System.Drawing.Point(173, 254);
             this.chkBoxNew.Name = "chkBoxNew";
             this.chkBoxNew.Size = new System.Drawing.Size(15, 14);
             this.chkBoxNew.TabIndex = 18;
-            this.chkBoxNew.UseVisualStyleBackColor = true;
+            this.chkBoxNew.UseVisualStyleBackColor = false;
             // 
             // lblChkBoxNL
             // 
             this.lblChkBoxNL.AutoSize = true;
-            this.lblChkBoxNL.Location = new System.Drawing.Point(220, 287);
+            this.lblChkBoxNL.BackColor = System.Drawing.Color.Transparent;
+            this.lblChkBoxNL.Location = new System.Drawing.Point(43, 252);
             this.lblChkBoxNL.Name = "lblChkBoxNL";
             this.lblChkBoxNL.Size = new System.Drawing.Size(120, 16);
             this.lblChkBoxNL.TabIndex = 19;
@@ -234,11 +246,11 @@
             // 
             // btnListarClientes
             // 
-            this.btnListarClientes.Location = new System.Drawing.Point(562, 174);
+            this.btnListarClientes.Location = new System.Drawing.Point(522, 23);
             this.btnListarClientes.Name = "btnListarClientes";
-            this.btnListarClientes.Size = new System.Drawing.Size(75, 68);
+            this.btnListarClientes.Size = new System.Drawing.Size(100, 31);
             this.btnListarClientes.TabIndex = 22;
-            this.btnListarClientes.Text = "Tela Listar Clientes";
+            this.btnListarClientes.Text = "Listar Clientes";
             this.btnListarClientes.UseVisualStyleBackColor = true;
             this.btnListarClientes.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -247,11 +259,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(661, 335);
+            this.BackgroundImage = global::Prototipo.Properties.Resources.imgFundo;
+            this.ClientSize = new System.Drawing.Size(657, 331);
+            this.Controls.Add(this.chkBoxNew);
             this.Controls.Add(this.btnListarClientes);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblChkBoxNL);
-            this.Controls.Add(this.chkBoxNew);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtTelefoneResidencial);

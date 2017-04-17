@@ -20,8 +20,6 @@ namespace Prototipo
         private void btnTelaLogin_Click(object sender, EventArgs e)
         {
             this.Close();
-            FormLogin formlogin = new FormLogin();
-            formlogin.Show();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -29,6 +27,18 @@ namespace Prototipo
             Application.Exit();
         }
 
-       
+        private void FormCadastro_Load(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<FormTelasUsuario>().Count() > 0)
+            {
+                lblCadastroInfo.Visible = false;
+                btnTelaLogin.Visible = false;                
+            }
+            else
+            {
+                lblCadastroInfo.Visible = true;
+                btnTelaLogin.Visible = true;
+            }
+        }
     }
 }

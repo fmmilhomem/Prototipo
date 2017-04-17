@@ -30,6 +30,7 @@ namespace Prototipo
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
+            //Fecha tela de consulta
             this.Close();
         }
         /*private void dataGridView1_SelectionChanged(object sender, EventArgs e)

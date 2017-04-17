@@ -39,27 +39,31 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.imgProduto = new System.Windows.Forms.PictureBox();
+            this.btnProximo = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBoxId
             // 
-            this.txtBoxId.Location = new System.Drawing.Point(12, 33);
+            this.txtBoxId.Location = new System.Drawing.Point(44, 49);
             this.txtBoxId.Name = "txtBoxId";
             this.txtBoxId.Size = new System.Drawing.Size(42, 20);
             this.txtBoxId.TabIndex = 0;
             // 
             // txtBoxNome
             // 
-            this.txtBoxNome.Location = new System.Drawing.Point(12, 77);
+            this.txtBoxNome.Location = new System.Drawing.Point(44, 111);
             this.txtBoxNome.Name = "txtBoxNome";
-            this.txtBoxNome.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxNome.Size = new System.Drawing.Size(271, 20);
             this.txtBoxNome.TabIndex = 1;
             // 
             // lblImgProduto
             // 
             this.lblImgProduto.AutoSize = true;
-            this.lblImgProduto.Location = new System.Drawing.Point(179, 17);
+            this.lblImgProduto.BackColor = System.Drawing.Color.Transparent;
+            this.lblImgProduto.Location = new System.Drawing.Point(360, 33);
             this.lblImgProduto.Name = "lblImgProduto";
             this.lblImgProduto.Size = new System.Drawing.Size(87, 13);
             this.lblImgProduto.TabIndex = 33;
@@ -67,15 +71,16 @@
             // 
             // txtBoxQtd
             // 
-            this.txtBoxQtd.Location = new System.Drawing.Point(12, 119);
+            this.txtBoxQtd.Location = new System.Drawing.Point(47, 170);
             this.txtBoxQtd.Name = "txtBoxQtd";
-            this.txtBoxQtd.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxQtd.Size = new System.Drawing.Size(42, 20);
             this.txtBoxQtd.TabIndex = 34;
             // 
             // lblIdProduto
             // 
             this.lblIdProduto.AutoSize = true;
-            this.lblIdProduto.Location = new System.Drawing.Point(12, 17);
+            this.lblIdProduto.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdProduto.Location = new System.Drawing.Point(44, 33);
             this.lblIdProduto.Name = "lblIdProduto";
             this.lblIdProduto.Size = new System.Drawing.Size(29, 13);
             this.lblIdProduto.TabIndex = 35;
@@ -84,7 +89,8 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(12, 61);
+            this.lblNome.BackColor = System.Drawing.Color.Transparent;
+            this.lblNome.Location = new System.Drawing.Point(44, 95);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
             this.lblNome.TabIndex = 36;
@@ -93,7 +99,8 @@
             // lblQuantidade
             // 
             this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.Location = new System.Drawing.Point(12, 103);
+            this.lblQuantidade.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuantidade.Location = new System.Drawing.Point(47, 154);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(65, 13);
             this.lblQuantidade.TabIndex = 37;
@@ -101,17 +108,17 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(12, 245);
+            this.btnVoltar.Location = new System.Drawing.Point(44, 261);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(100, 31);
             this.btnVoltar.TabIndex = 39;
-            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.Text = "Fechar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(243, 245);
+            this.btnCadastrar.Location = new System.Drawing.Point(513, 261);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(100, 31);
             this.btnCadastrar.TabIndex = 38;
@@ -120,18 +127,49 @@
             // 
             // imgProduto
             // 
-            this.imgProduto.Location = new System.Drawing.Point(182, 33);
+            this.imgProduto.Location = new System.Drawing.Point(363, 49);
             this.imgProduto.Name = "imgProduto";
-            this.imgProduto.Size = new System.Drawing.Size(161, 165);
+            this.imgProduto.Size = new System.Drawing.Size(250, 195);
             this.imgProduto.TabIndex = 32;
             this.imgProduto.TabStop = false;
+            // 
+            // btnProximo
+            // 
+            this.btnProximo.Location = new System.Drawing.Point(118, 49);
+            this.btnProximo.Name = "btnProximo";
+            this.btnProximo.Size = new System.Drawing.Size(27, 23);
+            this.btnProximo.TabIndex = 47;
+            this.btnProximo.Text = ">";
+            this.btnProximo.UseVisualStyleBackColor = true;
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Location = new System.Drawing.Point(92, 49);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(27, 23);
+            this.btnAnterior.TabIndex = 46;
+            this.btnAnterior.Text = "<";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(256, 49);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(59, 23);
+            this.btnBuscar.TabIndex = 48;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // FormEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackgroundImage = global::Prototipo.Properties.Resources.imgFundo;
             this.ClientSize = new System.Drawing.Size(661, 335);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnProximo);
+            this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.lblQuantidade);
@@ -166,5 +204,8 @@
         private System.Windows.Forms.Label lblQuantidade;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btnProximo;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
