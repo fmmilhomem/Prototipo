@@ -24,7 +24,7 @@ namespace Prototipo
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void FormCadastro_Load(object sender, EventArgs e)
@@ -32,12 +32,14 @@ namespace Prototipo
             if (Application.OpenForms.OfType<FormTelasUsuario>().Count() > 0)
             {
                 lblCadastroInfo.Visible = false;
-                btnTelaLogin.Visible = false;                
+                btnTelaLogin.Visible = false;
+                btnSair.Text = "Voltar";
             }
             else
             {
                 lblCadastroInfo.Visible = true;
                 btnTelaLogin.Visible = true;
+                btnSair.Text = "Sair";
             }
         }
     }
