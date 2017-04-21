@@ -65,6 +65,7 @@
             // 
             this.lblImgProduto.AutoSize = true;
             this.lblImgProduto.BackColor = System.Drawing.Color.Transparent;
+            this.lblImgProduto.ForeColor = System.Drawing.Color.Black;
             this.lblImgProduto.Location = new System.Drawing.Point(360, 33);
             this.lblImgProduto.Name = "lblImgProduto";
             this.lblImgProduto.Size = new System.Drawing.Size(87, 13);
@@ -74,7 +75,7 @@
             // txtBoxQtd
             // 
             this.txtBoxQtd.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxQtd.Location = new System.Drawing.Point(47, 170);
+            this.txtBoxQtd.Location = new System.Drawing.Point(44, 170);
             this.txtBoxQtd.Name = "txtBoxQtd";
             this.txtBoxQtd.Size = new System.Drawing.Size(42, 20);
             this.txtBoxQtd.TabIndex = 34;
@@ -84,7 +85,7 @@
             this.lblIdProduto.AutoSize = true;
             this.lblIdProduto.BackColor = System.Drawing.Color.Transparent;
             this.lblIdProduto.ForeColor = System.Drawing.Color.Black;
-            this.lblIdProduto.Location = new System.Drawing.Point(44, 33);
+            this.lblIdProduto.Location = new System.Drawing.Point(41, 33);
             this.lblIdProduto.Name = "lblIdProduto";
             this.lblIdProduto.Size = new System.Drawing.Size(29, 13);
             this.lblIdProduto.TabIndex = 35;
@@ -95,7 +96,7 @@
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.ForeColor = System.Drawing.Color.Black;
-            this.lblNome.Location = new System.Drawing.Point(44, 95);
+            this.lblNome.Location = new System.Drawing.Point(41, 95);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
             this.lblNome.TabIndex = 36;
@@ -106,7 +107,7 @@
             this.lblQuantidade.AutoSize = true;
             this.lblQuantidade.BackColor = System.Drawing.Color.Transparent;
             this.lblQuantidade.ForeColor = System.Drawing.Color.Black;
-            this.lblQuantidade.Location = new System.Drawing.Point(47, 154);
+            this.lblQuantidade.Location = new System.Drawing.Point(41, 154);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(65, 13);
             this.lblQuantidade.TabIndex = 37;
@@ -130,7 +131,7 @@
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(100, 31);
             this.btnCadastrar.TabIndex = 38;
-            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.Text = "Salvar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
             // imgProduto
