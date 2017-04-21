@@ -57,6 +57,7 @@
             // 
             this.lblFormCadastroCliente.AutoSize = true;
             this.lblFormCadastroCliente.BackColor = System.Drawing.Color.Transparent;
+            this.lblFormCadastroCliente.ForeColor = System.Drawing.Color.Black;
             this.lblFormCadastroCliente.Location = new System.Drawing.Point(39, 23);
             this.lblFormCadastroCliente.Name = "lblFormCadastroCliente";
             this.lblFormCadastroCliente.Size = new System.Drawing.Size(269, 16);
@@ -67,6 +68,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
+            this.lblNome.ForeColor = System.Drawing.Color.Black;
             this.lblNome.Location = new System.Drawing.Point(39, 52);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(46, 16);
@@ -77,6 +79,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(43, 196);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
@@ -88,6 +91,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.ForeColor = System.Drawing.Color.Black;
             this.lblEmail.Location = new System.Drawing.Point(39, 98);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(49, 16);
@@ -98,6 +102,7 @@
             // 
             this.lblCPF.AutoSize = true;
             this.lblCPF.BackColor = System.Drawing.Color.Transparent;
+            this.lblCPF.ForeColor = System.Drawing.Color.Black;
             this.lblCPF.Location = new System.Drawing.Point(447, 52);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(35, 16);
@@ -108,6 +113,7 @@
             // 
             this.lblCelular.AutoSize = true;
             this.lblCelular.BackColor = System.Drawing.Color.Transparent;
+            this.lblCelular.ForeColor = System.Drawing.Color.Black;
             this.lblCelular.Location = new System.Drawing.Point(39, 143);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(53, 16);
@@ -118,6 +124,7 @@
             // 
             this.lblTelefoneComercia.AutoSize = true;
             this.lblTelefoneComercia.BackColor = System.Drawing.Color.Transparent;
+            this.lblTelefoneComercia.ForeColor = System.Drawing.Color.Black;
             this.lblTelefoneComercia.Location = new System.Drawing.Point(455, 143);
             this.lblTelefoneComercia.Name = "lblTelefoneComercia";
             this.lblTelefoneComercia.Size = new System.Drawing.Size(92, 16);
@@ -128,6 +135,7 @@
             // 
             this.lblTelefoneResidencial.AutoSize = true;
             this.lblTelefoneResidencial.BackColor = System.Drawing.Color.Transparent;
+            this.lblTelefoneResidencial.ForeColor = System.Drawing.Color.Black;
             this.lblTelefoneResidencial.Location = new System.Drawing.Point(241, 143);
             this.lblTelefoneResidencial.Name = "lblTelefoneResidencial";
             this.lblTelefoneResidencial.Size = new System.Drawing.Size(99, 16);
@@ -138,6 +146,7 @@
             // 
             this.lblDataNascimento.AutoSize = true;
             this.lblDataNascimento.BackColor = System.Drawing.Color.Transparent;
+            this.lblDataNascimento.ForeColor = System.Drawing.Color.Black;
             this.lblDataNascimento.Location = new System.Drawing.Point(241, 196);
             this.lblDataNascimento.Name = "lblDataNascimento";
             this.lblDataNascimento.Size = new System.Drawing.Size(95, 16);
@@ -146,6 +155,7 @@
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.ForeColor = System.Drawing.Color.Black;
             this.btnCadastrar.Location = new System.Drawing.Point(522, 280);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(100, 31);
@@ -156,6 +166,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.ForeColor = System.Drawing.Color.Black;
             this.txtNome.Location = new System.Drawing.Point(42, 71);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(374, 23);
@@ -163,6 +174,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(42, 117);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(374, 23);
@@ -170,6 +182,7 @@
             // 
             // txtCPF
             // 
+            this.txtCPF.ForeColor = System.Drawing.Color.Black;
             this.txtCPF.Location = new System.Drawing.Point(450, 71);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(172, 23);
@@ -178,6 +191,7 @@
             // 
             // txtCelular
             // 
+            this.txtCelular.ForeColor = System.Drawing.Color.Black;
             this.txtCelular.Location = new System.Drawing.Point(42, 162);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(172, 23);
@@ -186,6 +200,7 @@
             // 
             // txtTelefoneComercial
             // 
+            this.txtTelefoneComercial.ForeColor = System.Drawing.Color.Black;
             this.txtTelefoneComercial.Location = new System.Drawing.Point(450, 162);
             this.txtTelefoneComercial.Name = "txtTelefoneComercial";
             this.txtTelefoneComercial.Size = new System.Drawing.Size(172, 23);
@@ -193,6 +208,7 @@
             // 
             // txtTelefoneResidencial
             // 
+            this.txtTelefoneResidencial.ForeColor = System.Drawing.Color.Black;
             this.txtTelefoneResidencial.Location = new System.Drawing.Point(244, 162);
             this.txtTelefoneResidencial.Name = "txtTelefoneResidencial";
             this.txtTelefoneResidencial.Size = new System.Drawing.Size(172, 23);
@@ -228,6 +244,7 @@
             // 
             this.lblChkBoxNL.AutoSize = true;
             this.lblChkBoxNL.BackColor = System.Drawing.Color.Transparent;
+            this.lblChkBoxNL.ForeColor = System.Drawing.Color.Black;
             this.lblChkBoxNL.Location = new System.Drawing.Point(43, 252);
             this.lblChkBoxNL.Name = "lblChkBoxNL";
             this.lblChkBoxNL.Size = new System.Drawing.Size(120, 16);
@@ -236,6 +253,7 @@
             // 
             // btnVoltar
             // 
+            this.btnVoltar.ForeColor = System.Drawing.Color.Black;
             this.btnVoltar.Location = new System.Drawing.Point(42, 287);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(100, 31);
@@ -246,6 +264,7 @@
             // 
             // btnListarClientes
             // 
+            this.btnListarClientes.ForeColor = System.Drawing.Color.Black;
             this.btnListarClientes.Location = new System.Drawing.Point(522, 23);
             this.btnListarClientes.Name = "btnListarClientes";
             this.btnListarClientes.Size = new System.Drawing.Size(100, 31);

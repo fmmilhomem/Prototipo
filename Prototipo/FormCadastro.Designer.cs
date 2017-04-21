@@ -48,6 +48,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
+            this.lblNome.ForeColor = System.Drawing.Color.Black;
             this.lblNome.Location = new System.Drawing.Point(46, 58);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(46, 16);
@@ -56,6 +57,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.ForeColor = System.Drawing.Color.Black;
             this.txtNome.Location = new System.Drawing.Point(49, 77);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(173, 23);
@@ -65,6 +67,7 @@
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogin.ForeColor = System.Drawing.Color.Black;
             this.lblLogin.Location = new System.Drawing.Point(46, 108);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(43, 16);
@@ -75,6 +78,7 @@
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
+            this.lblSenha.ForeColor = System.Drawing.Color.Black;
             this.lblSenha.Location = new System.Drawing.Point(46, 159);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(49, 16);
@@ -85,6 +89,7 @@
             // 
             this.lblTipoPerfil.AutoSize = true;
             this.lblTipoPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.lblTipoPerfil.ForeColor = System.Drawing.Color.Black;
             this.lblTipoPerfil.Location = new System.Drawing.Point(46, 213);
             this.lblTipoPerfil.Name = "lblTipoPerfil";
             this.lblTipoPerfil.Size = new System.Drawing.Size(71, 16);
@@ -93,6 +98,7 @@
             // 
             // txtLogin
             // 
+            this.txtLogin.ForeColor = System.Drawing.Color.Black;
             this.txtLogin.Location = new System.Drawing.Point(49, 127);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(173, 23);
@@ -100,6 +106,7 @@
             // 
             // txtSenha
             // 
+            this.txtSenha.ForeColor = System.Drawing.Color.Black;
             this.txtSenha.Location = new System.Drawing.Point(49, 178);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -108,6 +115,7 @@
             // 
             // txtTipoPerfil
             // 
+            this.txtTipoPerfil.ForeColor = System.Drawing.Color.Black;
             this.txtTipoPerfil.Location = new System.Drawing.Point(49, 232);
             this.txtTipoPerfil.Name = "txtTipoPerfil";
             this.txtTipoPerfil.Size = new System.Drawing.Size(173, 23);
@@ -117,6 +125,7 @@
             // 
             this.lblCadastro.AutoSize = true;
             this.lblCadastro.BackColor = System.Drawing.Color.Transparent;
+            this.lblCadastro.ForeColor = System.Drawing.Color.Black;
             this.lblCadastro.Location = new System.Drawing.Point(46, 30);
             this.lblCadastro.Name = "lblCadastro";
             this.lblCadastro.Size = new System.Drawing.Size(409, 16);
@@ -125,6 +134,7 @@
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.ForeColor = System.Drawing.Color.Black;
             this.btnCadastrar.Location = new System.Drawing.Point(368, 272);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(87, 35);
@@ -134,6 +144,7 @@
             // 
             // btnSair
             // 
+            this.btnSair.ForeColor = System.Drawing.Color.Black;
             this.btnSair.Location = new System.Drawing.Point(49, 272);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(87, 35);
@@ -144,6 +155,7 @@
             // 
             // btnTelaLogin
             // 
+            this.btnTelaLogin.ForeColor = System.Drawing.Color.Black;
             this.btnTelaLogin.Location = new System.Drawing.Point(301, 140);
             this.btnTelaLogin.Name = "btnTelaLogin";
             this.btnTelaLogin.Size = new System.Drawing.Size(87, 35);
@@ -156,6 +168,7 @@
             // 
             this.lblCadastroInfo.AutoSize = true;
             this.lblCadastroInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblCadastroInfo.ForeColor = System.Drawing.Color.Black;
             this.lblCadastroInfo.Location = new System.Drawing.Point(256, 108);
             this.lblCadastroInfo.Name = "lblCadastroInfo";
             this.lblCadastroInfo.Size = new System.Drawing.Size(180, 16);
@@ -184,7 +197,7 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);

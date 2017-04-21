@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroCategoria));
             this.lblNome = new System.Windows.Forms.Label();
             this.lblIdProduto = new System.Windows.Forms.Label();
             this.txtBoxNome = new System.Windows.Forms.TextBox();
@@ -41,6 +40,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
+            this.lblNome.ForeColor = System.Drawing.Color.Black;
             this.lblNome.Location = new System.Drawing.Point(118, 21);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
@@ -51,6 +51,7 @@
             // 
             this.lblIdProduto.AutoSize = true;
             this.lblIdProduto.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdProduto.ForeColor = System.Drawing.Color.Black;
             this.lblIdProduto.Location = new System.Drawing.Point(20, 21);
             this.lblIdProduto.Name = "lblIdProduto";
             this.lblIdProduto.Size = new System.Drawing.Size(29, 13);
@@ -59,6 +60,7 @@
             // 
             // txtBoxNome
             // 
+            this.txtBoxNome.ForeColor = System.Drawing.Color.Black;
             this.txtBoxNome.Location = new System.Drawing.Point(121, 37);
             this.txtBoxNome.Name = "txtBoxNome";
             this.txtBoxNome.Size = new System.Drawing.Size(258, 20);
@@ -66,6 +68,7 @@
             // 
             // txtBoxId
             // 
+            this.txtBoxId.ForeColor = System.Drawing.Color.Black;
             this.txtBoxId.Location = new System.Drawing.Point(23, 37);
             this.txtBoxId.Name = "txtBoxId";
             this.txtBoxId.Size = new System.Drawing.Size(92, 20);
@@ -73,6 +76,7 @@
             // 
             // btnSalvar
             // 
+            this.btnSalvar.ForeColor = System.Drawing.Color.Black;
             this.btnSalvar.Location = new System.Drawing.Point(279, 75);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 31);
@@ -82,6 +86,7 @@
             // 
             // btnVoltar
             // 
+            this.btnVoltar.ForeColor = System.Drawing.Color.Black;
             this.btnVoltar.Location = new System.Drawing.Point(23, 75);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(92, 31);

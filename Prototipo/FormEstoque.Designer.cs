@@ -47,6 +47,7 @@
             // 
             // txtBoxId
             // 
+            this.txtBoxId.ForeColor = System.Drawing.Color.Black;
             this.txtBoxId.Location = new System.Drawing.Point(44, 49);
             this.txtBoxId.Name = "txtBoxId";
             this.txtBoxId.Size = new System.Drawing.Size(42, 20);
@@ -54,6 +55,7 @@
             // 
             // txtBoxNome
             // 
+            this.txtBoxNome.ForeColor = System.Drawing.Color.Black;
             this.txtBoxNome.Location = new System.Drawing.Point(44, 111);
             this.txtBoxNome.Name = "txtBoxNome";
             this.txtBoxNome.Size = new System.Drawing.Size(271, 20);
@@ -71,6 +73,7 @@
             // 
             // txtBoxQtd
             // 
+            this.txtBoxQtd.ForeColor = System.Drawing.Color.Black;
             this.txtBoxQtd.Location = new System.Drawing.Point(47, 170);
             this.txtBoxQtd.Name = "txtBoxQtd";
             this.txtBoxQtd.Size = new System.Drawing.Size(42, 20);
@@ -80,6 +83,7 @@
             // 
             this.lblIdProduto.AutoSize = true;
             this.lblIdProduto.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdProduto.ForeColor = System.Drawing.Color.Black;
             this.lblIdProduto.Location = new System.Drawing.Point(44, 33);
             this.lblIdProduto.Name = "lblIdProduto";
             this.lblIdProduto.Size = new System.Drawing.Size(29, 13);
@@ -90,6 +94,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
+            this.lblNome.ForeColor = System.Drawing.Color.Black;
             this.lblNome.Location = new System.Drawing.Point(44, 95);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
@@ -100,6 +105,7 @@
             // 
             this.lblQuantidade.AutoSize = true;
             this.lblQuantidade.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuantidade.ForeColor = System.Drawing.Color.Black;
             this.lblQuantidade.Location = new System.Drawing.Point(47, 154);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(65, 13);
@@ -108,6 +114,7 @@
             // 
             // btnVoltar
             // 
+            this.btnVoltar.ForeColor = System.Drawing.Color.Black;
             this.btnVoltar.Location = new System.Drawing.Point(44, 261);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(100, 31);
@@ -118,6 +125,7 @@
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.ForeColor = System.Drawing.Color.Black;
             this.btnCadastrar.Location = new System.Drawing.Point(513, 261);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(100, 31);
@@ -135,6 +143,7 @@
             // 
             // btnProximo
             // 
+            this.btnProximo.ForeColor = System.Drawing.Color.Black;
             this.btnProximo.Location = new System.Drawing.Point(118, 49);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(27, 23);
@@ -144,6 +153,7 @@
             // 
             // btnAnterior
             // 
+            this.btnAnterior.ForeColor = System.Drawing.Color.Black;
             this.btnAnterior.Location = new System.Drawing.Point(92, 49);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(27, 23);
@@ -153,6 +163,7 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.Location = new System.Drawing.Point(256, 49);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(59, 23);

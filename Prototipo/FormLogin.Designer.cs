@@ -47,6 +47,7 @@
             this.lblLogin.AutoSize = true;
             this.lblLogin.BackColor = System.Drawing.Color.Transparent;
             this.lblLogin.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.ForeColor = System.Drawing.Color.Black;
             this.lblLogin.Location = new System.Drawing.Point(501, 89);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(53, 19);
@@ -55,6 +56,7 @@
             // 
             // txtLogin
             // 
+            this.txtLogin.ForeColor = System.Drawing.Color.Black;
             this.txtLogin.Location = new System.Drawing.Point(434, 119);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLogin.Name = "txtLogin";
@@ -66,6 +68,7 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.ForeColor = System.Drawing.Color.Black;
             this.lblSenha.Location = new System.Drawing.Point(501, 156);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(59, 19);
@@ -74,6 +77,7 @@
             // 
             // txtSenha
             // 
+            this.txtSenha.ForeColor = System.Drawing.Color.Black;
             this.txtSenha.Location = new System.Drawing.Point(434, 179);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSenha.Name = "txtSenha";
@@ -83,6 +87,7 @@
             // 
             // btnEntrar
             // 
+            this.btnEntrar.ForeColor = System.Drawing.Color.Black;
             this.btnEntrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEntrar.Location = new System.Drawing.Point(527, 220);
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -95,6 +100,7 @@
             // 
             // btnSair
             // 
+            this.btnSair.ForeColor = System.Drawing.Color.Black;
             this.btnSair.Location = new System.Drawing.Point(434, 220);
             this.btnSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSair.Name = "btnSair";
@@ -109,6 +115,7 @@
             this.lblQueroCadastrar.AutoSize = true;
             this.lblQueroCadastrar.BackColor = System.Drawing.Color.Transparent;
             this.lblQueroCadastrar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQueroCadastrar.ForeColor = System.Drawing.Color.Black;
             this.lblQueroCadastrar.Location = new System.Drawing.Point(433, 281);
             this.lblQueroCadastrar.Name = "lblQueroCadastrar";
             this.lblQueroCadastrar.Size = new System.Drawing.Size(175, 19);
@@ -117,6 +124,7 @@
             // 
             // btnQueroCadastrar
             // 
+            this.btnQueroCadastrar.ForeColor = System.Drawing.Color.Black;
             this.btnQueroCadastrar.Location = new System.Drawing.Point(457, 304);
             this.btnQueroCadastrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnQueroCadastrar.Name = "btnQueroCadastrar";
@@ -142,6 +150,7 @@
             this.lblBemVindo.AutoSize = true;
             this.lblBemVindo.BackColor = System.Drawing.Color.Transparent;
             this.lblBemVindo.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBemVindo.ForeColor = System.Drawing.Color.Black;
             this.lblBemVindo.Location = new System.Drawing.Point(119, 34);
             this.lblBemVindo.Name = "lblBemVindo";
             this.lblBemVindo.Size = new System.Drawing.Size(479, 23);

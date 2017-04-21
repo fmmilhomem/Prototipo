@@ -56,6 +56,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(49, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 19);
@@ -65,6 +66,7 @@
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnSair.ForeColor = System.Drawing.Color.Black;
             this.btnSair.Image = global::Prototipo.Properties.Resources.iconSair;
             this.btnSair.Location = new System.Drawing.Point(447, 183);
             this.btnSair.Name = "btnSair";
@@ -78,6 +80,7 @@
             // btnCadastroProduto
             // 
             this.btnCadastroProduto.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnCadastroProduto.ForeColor = System.Drawing.Color.Black;
             this.btnCadastroProduto.Image = global::Prototipo.Properties.Resources.iconProduto;
             this.btnCadastroProduto.Location = new System.Drawing.Point(251, 183);
             this.btnCadastroProduto.Name = "btnCadastroProduto";
@@ -91,6 +94,7 @@
             // btnCadastroCliente
             // 
             this.btnCadastroCliente.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastroCliente.ForeColor = System.Drawing.Color.Black;
             this.btnCadastroCliente.Image = global::Prototipo.Properties.Resources.iconCliente;
             this.btnCadastroCliente.Location = new System.Drawing.Point(447, 27);
             this.btnCadastroCliente.Name = "btnCadastroCliente";
@@ -105,6 +109,7 @@
             // 
             this.btnPedido.Enabled = false;
             this.btnPedido.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPedido.ForeColor = System.Drawing.Color.Black;
             this.btnPedido.Image = global::Prototipo.Properties.Resources.iconPedido;
             this.btnPedido.Location = new System.Drawing.Point(251, 27);
             this.btnPedido.Name = "btnPedido";
@@ -126,18 +131,18 @@
             this.usersToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(103, 48);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(102, 48);
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.usersToolStripMenuItem.Text = "Users";
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
             // menuToolStripMenuItem
@@ -173,28 +178,28 @@
             this.mnSubConPedido,
             this.mnSubSair});
             this.mnSubPrincipal.Name = "mnSubPrincipal";
-            this.mnSubPrincipal.Size = new System.Drawing.Size(61, 20);
+            this.mnSubPrincipal.Size = new System.Drawing.Size(56, 20);
             this.mnSubPrincipal.Text = "Arquivo";
             this.mnSubPrincipal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // mnSubUser
             // 
             this.mnSubUser.Name = "mnSubUser";
-            this.mnSubUser.Size = new System.Drawing.Size(170, 22);
+            this.mnSubUser.Size = new System.Drawing.Size(160, 22);
             this.mnSubUser.Text = "Users";
             this.mnSubUser.Click += new System.EventHandler(this.mnSubUser_Click);
             // 
             // mnSubConPedido
             // 
             this.mnSubConPedido.Name = "mnSubConPedido";
-            this.mnSubConPedido.Size = new System.Drawing.Size(170, 22);
+            this.mnSubConPedido.Size = new System.Drawing.Size(160, 22);
             this.mnSubConPedido.Text = "Consultar Pedidos";
             this.mnSubConPedido.Click += new System.EventHandler(this.mnSubConPedido_Click);
             // 
             // mnSubSair
             // 
             this.mnSubSair.Name = "mnSubSair";
-            this.mnSubSair.Size = new System.Drawing.Size(170, 22);
+            this.mnSubSair.Size = new System.Drawing.Size(160, 22);
             this.mnSubSair.Text = "Sair";
             this.mnSubSair.Click += new System.EventHandler(this.mnSubSair_Click);
             // 

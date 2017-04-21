@@ -45,6 +45,7 @@
             // 
             // btListarClientes
             // 
+            this.btListarClientes.ForeColor = System.Drawing.Color.Black;
             this.btListarClientes.Location = new System.Drawing.Point(24, 31);
             this.btListarClientes.Name = "btListarClientes";
             this.btListarClientes.Size = new System.Drawing.Size(112, 53);
@@ -55,6 +56,7 @@
             // 
             // btnFechar
             // 
+            this.btnFechar.ForeColor = System.Drawing.Color.Black;
             this.btnFechar.Location = new System.Drawing.Point(24, 278);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(112, 38);

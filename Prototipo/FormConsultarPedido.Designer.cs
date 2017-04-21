@@ -48,6 +48,7 @@
             // 
             // txtPedido
             // 
+            this.txtPedido.ForeColor = System.Drawing.Color.Black;
             this.txtPedido.Location = new System.Drawing.Point(12, 32);
             this.txtPedido.Name = "txtPedido";
             this.txtPedido.Size = new System.Drawing.Size(95, 20);
@@ -57,6 +58,7 @@
             // 
             this.lblIdPedido.AutoSize = true;
             this.lblIdPedido.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdPedido.ForeColor = System.Drawing.Color.Black;
             this.lblIdPedido.Location = new System.Drawing.Point(12, 16);
             this.lblIdPedido.Name = "lblIdPedido";
             this.lblIdPedido.Size = new System.Drawing.Size(29, 13);
@@ -65,6 +67,7 @@
             // 
             // btnProximo
             // 
+            this.btnProximo.ForeColor = System.Drawing.Color.Black;
             this.btnProximo.Location = new System.Drawing.Point(139, 32);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(27, 23);
@@ -74,6 +77,7 @@
             // 
             // btnAnterior
             // 
+            this.btnAnterior.ForeColor = System.Drawing.Color.Black;
             this.btnAnterior.Location = new System.Drawing.Point(113, 32);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(27, 23);
@@ -93,6 +97,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.ForeColor = System.Drawing.Color.Black;
             this.lblStatus.Location = new System.Drawing.Point(12, 69);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(40, 13);
@@ -110,6 +115,7 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.BackColor = System.Drawing.Color.Transparent;
+            this.lblData.ForeColor = System.Drawing.Color.Black;
             this.lblData.Location = new System.Drawing.Point(12, 119);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(33, 13);
@@ -128,6 +134,7 @@
             // 
             this.lblPagamento.AutoSize = true;
             this.lblPagamento.BackColor = System.Drawing.Color.Transparent;
+            this.lblPagamento.ForeColor = System.Drawing.Color.Black;
             this.lblPagamento.Location = new System.Drawing.Point(12, 170);
             this.lblPagamento.Name = "lblPagamento";
             this.lblPagamento.Size = new System.Drawing.Size(103, 13);
@@ -136,6 +143,7 @@
             // 
             // txtEndereco
             // 
+            this.txtEndereco.ForeColor = System.Drawing.Color.Black;
             this.txtEndereco.Location = new System.Drawing.Point(12, 236);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(220, 20);
@@ -145,6 +153,7 @@
             // 
             this.lblEndereço.AutoSize = true;
             this.lblEndereço.BackColor = System.Drawing.Color.Transparent;
+            this.lblEndereço.ForeColor = System.Drawing.Color.Black;
             this.lblEndereço.Location = new System.Drawing.Point(12, 220);
             this.lblEndereço.Name = "lblEndereço";
             this.lblEndereço.Size = new System.Drawing.Size(42, 13);
@@ -153,6 +162,7 @@
             // 
             // btnVoltar
             // 
+            this.btnVoltar.ForeColor = System.Drawing.Color.Black;
             this.btnVoltar.Location = new System.Drawing.Point(528, 284);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(100, 31);
