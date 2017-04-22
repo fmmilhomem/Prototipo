@@ -43,11 +43,13 @@
             this.lblEndereço = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.DataGridPedido = new System.Windows.Forms.DataGridView();
+            this.btnBusca = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPedido
             // 
+            this.txtPedido.ForeColor = System.Drawing.Color.Black;
             this.txtPedido.Location = new System.Drawing.Point(12, 32);
             this.txtPedido.Name = "txtPedido";
             this.txtPedido.Size = new System.Drawing.Size(95, 20);
@@ -57,6 +59,7 @@
             // 
             this.lblIdPedido.AutoSize = true;
             this.lblIdPedido.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdPedido.ForeColor = System.Drawing.Color.Black;
             this.lblIdPedido.Location = new System.Drawing.Point(12, 16);
             this.lblIdPedido.Name = "lblIdPedido";
             this.lblIdPedido.Size = new System.Drawing.Size(29, 13);
@@ -65,6 +68,7 @@
             // 
             // btnProximo
             // 
+            this.btnProximo.ForeColor = System.Drawing.Color.Black;
             this.btnProximo.Location = new System.Drawing.Point(139, 32);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(27, 23);
@@ -74,6 +78,7 @@
             // 
             // btnAnterior
             // 
+            this.btnAnterior.ForeColor = System.Drawing.Color.Black;
             this.btnAnterior.Location = new System.Drawing.Point(113, 32);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(27, 23);
@@ -93,6 +98,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.ForeColor = System.Drawing.Color.Black;
             this.lblStatus.Location = new System.Drawing.Point(12, 69);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(40, 13);
@@ -110,6 +116,7 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.BackColor = System.Drawing.Color.Transparent;
+            this.lblData.ForeColor = System.Drawing.Color.Black;
             this.lblData.Location = new System.Drawing.Point(12, 119);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(33, 13);
@@ -128,6 +135,7 @@
             // 
             this.lblPagamento.AutoSize = true;
             this.lblPagamento.BackColor = System.Drawing.Color.Transparent;
+            this.lblPagamento.ForeColor = System.Drawing.Color.Black;
             this.lblPagamento.Location = new System.Drawing.Point(12, 170);
             this.lblPagamento.Name = "lblPagamento";
             this.lblPagamento.Size = new System.Drawing.Size(103, 13);
@@ -136,6 +144,7 @@
             // 
             // txtEndereco
             // 
+            this.txtEndereco.ForeColor = System.Drawing.Color.Black;
             this.txtEndereco.Location = new System.Drawing.Point(12, 236);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(220, 20);
@@ -145,6 +154,7 @@
             // 
             this.lblEndereço.AutoSize = true;
             this.lblEndereço.BackColor = System.Drawing.Color.Transparent;
+            this.lblEndereço.ForeColor = System.Drawing.Color.Black;
             this.lblEndereço.Location = new System.Drawing.Point(12, 220);
             this.lblEndereço.Name = "lblEndereço";
             this.lblEndereço.Size = new System.Drawing.Size(42, 13);
@@ -153,6 +163,7 @@
             // 
             // btnVoltar
             // 
+            this.btnVoltar.ForeColor = System.Drawing.Color.Black;
             this.btnVoltar.Location = new System.Drawing.Point(528, 284);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(100, 31);
@@ -169,6 +180,16 @@
             this.DataGridPedido.Size = new System.Drawing.Size(347, 224);
             this.DataGridPedido.TabIndex = 57;
             // 
+            // btnBusca
+            // 
+            this.btnBusca.ForeColor = System.Drawing.Color.Black;
+            this.btnBusca.Location = new System.Drawing.Point(193, 284);
+            this.btnBusca.Name = "btnBusca";
+            this.btnBusca.Size = new System.Drawing.Size(39, 31);
+            this.btnBusca.TabIndex = 58;
+            this.btnBusca.Text = "Buscar";
+            this.btnBusca.UseVisualStyleBackColor = true;
+            // 
             // FormConsultarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +197,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = global::Prototipo.Properties.Resources.imgFundo;
             this.ClientSize = new System.Drawing.Size(661, 335);
+            this.Controls.Add(this.btnBusca);
             this.Controls.Add(this.DataGridPedido);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.txtEndereco);
@@ -216,5 +238,6 @@
         private System.Windows.Forms.Label lblEndereço;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.DataGridView DataGridPedido;
+        private System.Windows.Forms.Button btnBusca;
     }
 }

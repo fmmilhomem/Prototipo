@@ -52,6 +52,7 @@
             // 
             // txtPreco
             // 
+            this.txtPreco.ForeColor = System.Drawing.Color.Black;
             this.txtPreco.Location = new System.Drawing.Point(12, 239);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(101, 20);
@@ -60,6 +61,7 @@
             // 
             // txtIdCod
             // 
+            this.txtIdCod.ForeColor = System.Drawing.Color.Black;
             this.txtIdCod.Location = new System.Drawing.Point(12, 41);
             this.txtIdCod.Name = "txtIdCod";
             this.txtIdCod.Size = new System.Drawing.Size(101, 20);
@@ -67,6 +69,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.ForeColor = System.Drawing.Color.Black;
             this.txtNome.Location = new System.Drawing.Point(12, 86);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(297, 20);
@@ -76,6 +79,7 @@
             // 
             this.lblPreco.AutoSize = true;
             this.lblPreco.BackColor = System.Drawing.Color.Transparent;
+            this.lblPreco.ForeColor = System.Drawing.Color.Black;
             this.lblPreco.Location = new System.Drawing.Point(9, 223);
             this.lblPreco.Name = "lblPreco";
             this.lblPreco.Size = new System.Drawing.Size(38, 13);
@@ -86,6 +90,7 @@
             // 
             this.lblIdProduto.AutoSize = true;
             this.lblIdProduto.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdProduto.ForeColor = System.Drawing.Color.Black;
             this.lblIdProduto.Location = new System.Drawing.Point(9, 25);
             this.lblIdProduto.Name = "lblIdProduto";
             this.lblIdProduto.Size = new System.Drawing.Size(29, 13);
@@ -96,6 +101,7 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.lblCategoria.ForeColor = System.Drawing.Color.Black;
             this.lblCategoria.Location = new System.Drawing.Point(9, 171);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(55, 13);
@@ -106,6 +112,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
+            this.lblNome.ForeColor = System.Drawing.Color.Black;
             this.lblNome.Location = new System.Drawing.Point(9, 70);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
@@ -114,6 +121,7 @@
             // 
             // cbCategoria
             // 
+            this.cbCategoria.ForeColor = System.Drawing.Color.Black;
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(12, 187);
             this.cbCategoria.Name = "cbCategoria";
@@ -122,6 +130,7 @@
             // 
             // btnVoltar
             // 
+            this.btnVoltar.ForeColor = System.Drawing.Color.Black;
             this.btnVoltar.Location = new System.Drawing.Point(12, 275);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(100, 31);
@@ -132,6 +141,7 @@
             // 
             // btnSalvar
             // 
+            this.btnSalvar.ForeColor = System.Drawing.Color.Black;
             this.btnSalvar.Location = new System.Drawing.Point(525, 275);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 31);
@@ -143,6 +153,7 @@
             // 
             this.lblImgProduto.AutoSize = true;
             this.lblImgProduto.BackColor = System.Drawing.Color.Transparent;
+            this.lblImgProduto.ForeColor = System.Drawing.Color.Black;
             this.lblImgProduto.Location = new System.Drawing.Point(378, 25);
             this.lblImgProduto.Name = "lblImgProduto";
             this.lblImgProduto.Size = new System.Drawing.Size(206, 13);
@@ -153,6 +164,7 @@
             // 
             this.chkBoxAtivo.AutoSize = true;
             this.chkBoxAtivo.BackColor = System.Drawing.Color.Transparent;
+            this.chkBoxAtivo.ForeColor = System.Drawing.Color.Black;
             this.chkBoxAtivo.Location = new System.Drawing.Point(131, 43);
             this.chkBoxAtivo.Name = "chkBoxAtivo";
             this.chkBoxAtivo.Size = new System.Drawing.Size(58, 17);
@@ -162,6 +174,7 @@
             // 
             // txtDescricao
             // 
+            this.txtDescricao.ForeColor = System.Drawing.Color.Black;
             this.txtDescricao.Location = new System.Drawing.Point(12, 135);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(297, 20);
@@ -171,6 +184,7 @@
             // 
             this.lblDescricao.AutoSize = true;
             this.lblDescricao.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescricao.ForeColor = System.Drawing.Color.Black;
             this.lblDescricao.Location = new System.Drawing.Point(9, 119);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(58, 13);
@@ -179,6 +193,7 @@
             // 
             // btnEstoque
             // 
+            this.btnEstoque.ForeColor = System.Drawing.Color.Black;
             this.btnEstoque.Location = new System.Drawing.Point(209, 43);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(100, 31);
@@ -201,13 +216,14 @@
             this.imgBox.Location = new System.Drawing.Point(381, 41);
             this.imgBox.Name = "imgBox";
             this.imgBox.Size = new System.Drawing.Size(244, 218);
-            this.imgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgBox.TabIndex = 37;
             this.imgBox.TabStop = false;
             this.imgBox.DoubleClick += new System.EventHandler(this.imgBox_DoubleClick);
             // 
             // bntCategoria
             // 
+            this.bntCategoria.ForeColor = System.Drawing.Color.Black;
             this.bntCategoria.Location = new System.Drawing.Point(274, 187);
             this.bntCategoria.Name = "bntCategoria";
             this.bntCategoria.RightToLeft = System.Windows.Forms.RightToLeft.No;

@@ -17,15 +17,36 @@ namespace Prototipo
             InitializeComponent();
         }
 
+        //Atalho do teclado para sub menus F8,F9 e F10
+        private void FormTelasUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F8:
+                    mnSubUser_Click(sender, e);
+                    break;
+
+                case Keys.F9:
+                    mnSubLogout_Click(sender, e);
+                    break;
+
+                case Keys.F10:
+                    mnSubSair_Click(sender, e);
+                    break;
+            }
+        }
+    
+
         private void mnSubUser_Click(object sender, EventArgs e)
         {
             FormCadastro frm = new FormCadastro();
             frm.ShowDialog();
         }
 
-        private void mnSubConPedido_Click(object sender, EventArgs e)
+        private void mnSubLogout_Click(object sender, EventArgs e)
         {
-            FormConsultarPedido frm = new FormConsultarPedido();
+            this.Close();
+            FormLogin frm = new FormLogin();
             frm.ShowDialog();
         }
 
@@ -46,9 +67,11 @@ namespace Prototipo
         private void btnPedido_Click(object sender, EventArgs e)
         {
             //this.Close();
-            FormNovoPedido frm = new FormNovoPedido();
+            //FormNovoPedido frm = new FormNovoPedido();
+            //frm.ShowDialog();
+            FormConsultarPedido frm = new FormConsultarPedido();
             frm.ShowDialog();
-            
+
         }
 
         private void btnCadastroProduto_Click(object sender, EventArgs e)
@@ -59,11 +82,11 @@ namespace Prototipo
             
         }
 
+
+
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-     
     }
 }
