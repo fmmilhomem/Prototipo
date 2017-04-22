@@ -215,7 +215,7 @@
             this.bntCategoria.TabIndex = 38;
             this.bntCategoria.Text = "+";
             this.bntCategoria.UseVisualStyleBackColor = true;
-            this.bntCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
+            
             // 
             // FormCadastroProduto
             // 

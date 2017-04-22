@@ -29,13 +29,7 @@ namespace Prototipo
             FormEstoque frm = new FormEstoque();
             frm.ShowDialog();
         }
-
-        private void btnCategoria_Click(object sender, EventArgs e)
-        {
-            FormCadastroCategoria frm = new FormCadastroCategoria();
-            frm.ShowDialog();
-        }
-
+        
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();

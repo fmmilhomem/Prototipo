@@ -33,18 +33,5 @@ namespace Prototipo
             //Fecha tela de consulta
             this.Close();
         }
-        /*private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-{
-   if (DataGridCliente.SelectedRows.Count > 0)
-   {
-       txtNo.Text = DataGridCliente.SelectedRows[0].Cells[1].Value.ToString();
-       txtEmailCliente.Text = DataGridCliente.SelectedRows[0].Cells[2].Value.ToString();
-       txtCPFCliente.Text = DataGridCliente.SelectedRows[0].Cells[4].Value.ToString();
-       txtCelularCliente.Text = DataGridCliente.SelectedRows[0].Cells[5].Value.ToString();
-       //txtTelComercialCliente.Text = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
-       //txtTelResidencialCliente.Text = dataGridView1.SelectedRows[0].Cells[7].Value.ToString();
-       txtDataNascimentoCliente.Text = DataGridCliente.SelectedRows[0].Cells[8].Value.ToString();
-   }
-}*/
     }
 }

@@ -19,7 +19,8 @@ namespace Prototipo
 
         private void btnTelaLogin_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FormLogin f = new FormLogin();
+            f.Show();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

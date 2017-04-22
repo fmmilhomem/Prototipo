@@ -14,6 +14,8 @@ namespace Prototipo
 {
     public partial class FormCadastroCliente : Form
     {
+        public object DataGridCliente { get; private set; }
+
         public FormCadastroCliente()
         {
             InitializeComponent();
@@ -58,8 +60,8 @@ namespace Prototipo
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             clsCliente c = new clsCliente();
-           //TODO: CRIAR METODO PRA VALIDAR SE ESTÁ CERTO O PREENCHIENTO
-           
+
+            
             c.nomeCompletoCliente = txtNome.Text;
             c.cpfCliente = txtCPF.Text;
             c.emailCliente = txtEmail.Text;
@@ -69,17 +71,15 @@ namespace Prototipo
             c.senhaCliente = txtSenha.Text;
             c.dtNascCliente = dateTimePicker1.Value;
             c.recebeNewsLetter = chkBoxNew.Checked;
+
+
             c.Salvar();
-            
-            MessageBox.Show("SUCESSO! CADASTROU!");
-        }
+            MessageBox.Show("Cadastrado com sucesso!");
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ListarClientes l = new ListarClientes();
-            l.Show();
         }
-
+       
     }
 }
+
+
 

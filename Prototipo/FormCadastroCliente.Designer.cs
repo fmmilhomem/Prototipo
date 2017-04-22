@@ -252,7 +252,6 @@
             this.btnListarClientes.TabIndex = 22;
             this.btnListarClientes.Text = "Listar Clientes";
             this.btnListarClientes.UseVisualStyleBackColor = true;
-            this.btnListarClientes.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormCadastroCliente
             // 

@@ -63,7 +63,7 @@ namespace ConexaoDataBase
             }
 
             cmd.Parameters.Add("@nomeCompletoCliente", SqlDbType.VarChar, 50).Value = this.nomeCompletoCliente;
-            cmd.Parameters.Add("@emailCliente", SqlDbType.VarChar, 50).Value = this.emailCliente;
+            cmd.Parameters.Add("@emailCliente", SqlDbType.NVarChar, 50).Value = this.emailCliente;
             cmd.Parameters.Add("@senhaCliente", SqlDbType.VarChar, 50).Value = this.senhaCliente;
             cmd.Parameters.Add("@CPFCliente", SqlDbType.VarChar, 50).Value = this.cpfCliente;
             cmd.Parameters.Add("@celularCliente", SqlDbType.VarChar, 50).Value = this.celularCliente;

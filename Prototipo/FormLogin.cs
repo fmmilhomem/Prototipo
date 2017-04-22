@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using ConexaoDataBase;
+
 
 namespace Prototipo
 {
@@ -25,19 +27,18 @@ namespace Prototipo
             //TODO : RETIRAR APOS CONECTADO COM DB
             string login = "admin";
             string senha = "admin";
-
             if ((txtLogin.Text == login) && (txtSenha.Text == senha))
             {
-                MessageBox.Show("Logado com sucesso!");                
-                FormTelasUsuario telas = new FormTelasUsuario();
-                telas.Show();
-                this.Hide();
+                MessageBox.Show("Logado com sucesso!");
+
+                FormTelasUsuario u = new FormTelasUsuario();
+                u.Show();
+
             }
             else
             {
-                MessageBox.Show("Login ou senha errado");
+                MessageBox.Show("Login ou senha inválido!");
             }
-
 
         }
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -51,5 +52,7 @@ namespace Prototipo
             FormCadastro formcadastro = new FormCadastro();
             formcadastro.ShowDialog();
         }
+
+
     }
 }

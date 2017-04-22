@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarClientes));
             this.DataGridCliente = new System.Windows.Forms.DataGridView();
-            this.btListarClientes = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.btListarClientes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,16 +42,7 @@
             this.DataGridCliente.Name = "DataGridCliente";
             this.DataGridCliente.Size = new System.Drawing.Size(481, 285);
             this.DataGridCliente.TabIndex = 0;
-            // 
-            // btListarClientes
-            // 
-            this.btListarClientes.Location = new System.Drawing.Point(24, 31);
-            this.btListarClientes.Name = "btListarClientes";
-            this.btListarClientes.Size = new System.Drawing.Size(112, 53);
-            this.btListarClientes.TabIndex = 1;
-            this.btListarClientes.Text = "Listar Clientes";
-            this.btListarClientes.UseVisualStyleBackColor = true;
-            this.btListarClientes.Click += new System.EventHandler(this.btListarClientes_Click);
+            
             // 
             // btnFechar
             // 
@@ -62,6 +53,16 @@
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // btListarClientes
+            // 
+            this.btListarClientes.Location = new System.Drawing.Point(24, 31);
+            this.btListarClientes.Name = "btListarClientes";
+            this.btListarClientes.Size = new System.Drawing.Size(112, 53);
+            this.btListarClientes.TabIndex = 1;
+            this.btListarClientes.Text = "Listar Clientes";
+            this.btListarClientes.UseVisualStyleBackColor = true;
+            this.btListarClientes.Click += new System.EventHandler(this.btListarClientes_Click);
             // 
             // ListarClientes
             // 
@@ -84,7 +85,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DataGridCliente;
-        private System.Windows.Forms.Button btListarClientes;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Button btListarClientes;
     }
 }
