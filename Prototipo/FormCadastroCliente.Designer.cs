@@ -230,7 +230,7 @@
             this.dtDataNasc.Size = new System.Drawing.Size(172, 23);
             this.dtDataNasc.TabIndex = 17;
             this.dtDataNasc.Value = new System.DateTime(2017, 4, 22, 0, 0, 0, 0);
-            this.dtDataNasc.ValueChanged += new System.EventHandler(this.dtDataNasc_ValueChanged);
+            //this.dtDataNasc.ValueChanged += new System.EventHandler(this.dtDataNasc_ValueChanged);
             // 
             // chkBoxNew
             // 

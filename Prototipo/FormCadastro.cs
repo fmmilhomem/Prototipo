@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConexaoDataBase;
 
 namespace Prototipo
 {
@@ -41,6 +42,19 @@ namespace Prototipo
                 lblCadastroInfo.Visible = true;
                 btnTelaLogin.Visible = true;
                 btnSair.Text = "Sair";
+            }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            //TODO: VERIFICAR COMO INSTANCIAR A CLASSE USUARIOS DO BANCO E VALIDAR AQUI PARA SE CADASTRAR
+            if((String.IsNullOrEmpty(txtNome.Text)) && (String.IsNullOrEmpty(txtLogin.Text)) && (String.IsNullOrEmpty(txtSenha.Text)))
+            {
+                MessageBox.Show("INFORME OS CAMPOS PARA CADASTRAR!");
+            }
+            else
+            {
+                clsCliente c = new clsCliente();
             }
         }
     }
