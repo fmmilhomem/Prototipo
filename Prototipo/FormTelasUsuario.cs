@@ -25,8 +25,7 @@ namespace Prototipo
 
         private void mnSubConPedido_Click(object sender, EventArgs e)
         {
-            FormConsultarPedido frm = new FormConsultarPedido();
-            frm.ShowDialog();
+
         }
 
         private void mnSubSair_Click(object sender, EventArgs e)
@@ -46,9 +45,11 @@ namespace Prototipo
         private void btnPedido_Click(object sender, EventArgs e)
         {
             //this.Close();
-            FormNovoPedido frm = new FormNovoPedido();
+            //FormNovoPedido frm = new FormNovoPedido();
+            //frm.ShowDialog();
+            FormConsultarPedido frm = new FormConsultarPedido();
             frm.ShowDialog();
-            
+
         }
 
         private void btnCadastroProduto_Click(object sender, EventArgs e)
@@ -59,11 +60,18 @@ namespace Prototipo
             
         }
 
+        private void mnSubLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormLogin frm = new FormLogin();
+            frm.ShowDialog();
+        }
+
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-     
+
     }
 }

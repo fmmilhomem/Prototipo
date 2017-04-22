@@ -43,6 +43,7 @@
             this.lblEndereço = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.DataGridPedido = new System.Windows.Forms.DataGridView();
+            this.btnBusca = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,6 +180,16 @@
             this.DataGridPedido.Size = new System.Drawing.Size(347, 224);
             this.DataGridPedido.TabIndex = 57;
             // 
+            // btnBusca
+            // 
+            this.btnBusca.ForeColor = System.Drawing.Color.Black;
+            this.btnBusca.Location = new System.Drawing.Point(193, 284);
+            this.btnBusca.Name = "btnBusca";
+            this.btnBusca.Size = new System.Drawing.Size(39, 31);
+            this.btnBusca.TabIndex = 58;
+            this.btnBusca.Text = "Buscar";
+            this.btnBusca.UseVisualStyleBackColor = true;
+            // 
             // FormConsultarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +197,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = global::Prototipo.Properties.Resources.imgFundo;
             this.ClientSize = new System.Drawing.Size(661, 335);
+            this.Controls.Add(this.btnBusca);
             this.Controls.Add(this.DataGridPedido);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.txtEndereco);
@@ -226,5 +238,6 @@
         private System.Windows.Forms.Label lblEndereço;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.DataGridView DataGridPedido;
+        private System.Windows.Forms.Button btnBusca;
     }
 }

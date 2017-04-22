@@ -216,7 +216,7 @@
             this.imgBox.Location = new System.Drawing.Point(381, 41);
             this.imgBox.Name = "imgBox";
             this.imgBox.Size = new System.Drawing.Size(244, 218);
-            this.imgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgBox.TabIndex = 37;
             this.imgBox.TabStop = false;
             this.imgBox.DoubleClick += new System.EventHandler(this.imgBox_DoubleClick);

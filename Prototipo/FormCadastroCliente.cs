@@ -27,7 +27,7 @@ namespace Prototipo
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "yyyy/MM/dd";
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
         }
 
         private void txtCPF_TextChanged(object sender, KeyPressEventArgs e)

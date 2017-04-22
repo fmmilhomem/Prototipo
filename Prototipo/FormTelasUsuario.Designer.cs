@@ -44,7 +44,7 @@
             this.mnPrincipal = new System.Windows.Forms.MenuStrip();
             this.mnSubPrincipal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnSubUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnSubConPedido = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnSubLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnSubSair = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip2.SuspendLayout();
             this.mnPrincipal.SuspendLayout();
@@ -115,7 +115,7 @@
             this.btnPedido.Name = "btnPedido";
             this.btnPedido.Size = new System.Drawing.Size(180, 149);
             this.btnPedido.TabIndex = 3;
-            this.btnPedido.Text = "Novo Pedido";
+            this.btnPedido.Text = "Consultar Pedido";
             this.btnPedido.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnPedido.UseVisualStyleBackColor = true;
             this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
@@ -175,7 +175,7 @@
             // 
             this.mnSubPrincipal.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnSubUser,
-            this.mnSubConPedido,
+            this.mnSubLogout,
             this.mnSubSair});
             this.mnSubPrincipal.Name = "mnSubPrincipal";
             this.mnSubPrincipal.Size = new System.Drawing.Size(56, 20);
@@ -185,22 +185,22 @@
             // mnSubUser
             // 
             this.mnSubUser.Name = "mnSubUser";
-            this.mnSubUser.Size = new System.Drawing.Size(160, 22);
-            this.mnSubUser.Text = "Users";
+            this.mnSubUser.Size = new System.Drawing.Size(161, 22);
+            this.mnSubUser.Text = "Users              F8";
             this.mnSubUser.Click += new System.EventHandler(this.mnSubUser_Click);
             // 
-            // mnSubConPedido
+            // mnSubLogout
             // 
-            this.mnSubConPedido.Name = "mnSubConPedido";
-            this.mnSubConPedido.Size = new System.Drawing.Size(160, 22);
-            this.mnSubConPedido.Text = "Consultar Pedidos";
-            this.mnSubConPedido.Click += new System.EventHandler(this.mnSubConPedido_Click);
+            this.mnSubLogout.Name = "mnSubLogout";
+            this.mnSubLogout.Size = new System.Drawing.Size(161, 22);
+            this.mnSubLogout.Text = "Logout            F9";
+            this.mnSubLogout.Click += new System.EventHandler(this.mnSubLogout_Click);
             // 
             // mnSubSair
             // 
             this.mnSubSair.Name = "mnSubSair";
-            this.mnSubSair.Size = new System.Drawing.Size(160, 22);
-            this.mnSubSair.Text = "Sair";
+            this.mnSubSair.Size = new System.Drawing.Size(161, 22);
+            this.mnSubSair.Text = "Sair                 F10";
             this.mnSubSair.Click += new System.EventHandler(this.mnSubSair_Click);
             // 
             // FormTelasUsuario
@@ -249,6 +249,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnSubPrincipal;
         private System.Windows.Forms.ToolStripMenuItem mnSubUser;
         private System.Windows.Forms.ToolStripMenuItem mnSubSair;
-        private System.Windows.Forms.ToolStripMenuItem mnSubConPedido;
+        private System.Windows.Forms.ToolStripMenuItem mnSubLogout;
     }
 }
