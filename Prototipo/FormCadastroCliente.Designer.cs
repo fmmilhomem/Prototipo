@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroCliente));
             this.lblFormCadastroCliente = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSenha = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblCPF = new System.Windows.Forms.Label();
             this.lblCelular = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.txtTelefoneComercial = new System.Windows.Forms.TextBox();
             this.txtTelefoneResidencial = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtDataNasc = new System.Windows.Forms.DateTimePicker();
             this.chkBoxNew = new System.Windows.Forms.CheckBox();
             this.lblChkBoxNL = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -75,17 +75,16 @@
             this.lblNome.TabIndex = 1;
             this.lblNome.Text = "Nome:";
             // 
-            // label1
+            // lblSenha
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(43, 196);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Senha:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.BackColor = System.Drawing.Color.Transparent;
+            this.lblSenha.ForeColor = System.Drawing.Color.Black;
+            this.lblSenha.Location = new System.Drawing.Point(43, 196);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(49, 16);
+            this.lblSenha.TabIndex = 7;
+            this.lblSenha.Text = "Senha:";
             // 
             // lblEmail
             // 
@@ -106,7 +105,7 @@
             this.lblCPF.Location = new System.Drawing.Point(447, 52);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(35, 16);
-            this.lblCPF.TabIndex = 4;
+            this.lblCPF.TabIndex = 2;
             this.lblCPF.Text = "CPF:";
             // 
             // lblCelular
@@ -117,7 +116,7 @@
             this.lblCelular.Location = new System.Drawing.Point(39, 143);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(53, 16);
-            this.lblCelular.TabIndex = 5;
+            this.lblCelular.TabIndex = 4;
             this.lblCelular.Text = "Celular:";
             // 
             // lblTelefoneComercia
@@ -139,7 +138,7 @@
             this.lblTelefoneResidencial.Location = new System.Drawing.Point(241, 143);
             this.lblTelefoneResidencial.Name = "lblTelefoneResidencial";
             this.lblTelefoneResidencial.Size = new System.Drawing.Size(99, 16);
-            this.lblTelefoneResidencial.TabIndex = 7;
+            this.lblTelefoneResidencial.TabIndex = 5;
             this.lblTelefoneResidencial.Text = "Tel Residencial:";
             // 
             // lblDataNascimento
@@ -159,7 +158,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(522, 280);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(100, 31);
-            this.btnCadastrar.TabIndex = 9;
+            this.btnCadastrar.TabIndex = 19;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -178,7 +177,7 @@
             this.txtEmail.Location = new System.Drawing.Point(42, 117);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(374, 23);
-            this.txtEmail.TabIndex = 11;
+            this.txtEmail.TabIndex = 12;
             // 
             // txtCPF
             // 
@@ -186,7 +185,7 @@
             this.txtCPF.Location = new System.Drawing.Point(450, 71);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(172, 23);
-            this.txtCPF.TabIndex = 12;
+            this.txtCPF.TabIndex = 11;
             this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_TextChanged);
             // 
             // txtCelular
@@ -204,7 +203,7 @@
             this.txtTelefoneComercial.Location = new System.Drawing.Point(450, 162);
             this.txtTelefoneComercial.Name = "txtTelefoneComercial";
             this.txtTelefoneComercial.Size = new System.Drawing.Size(172, 23);
-            this.txtTelefoneComercial.TabIndex = 14;
+            this.txtTelefoneComercial.TabIndex = 15;
             // 
             // txtTelefoneResidencial
             // 
@@ -212,7 +211,7 @@
             this.txtTelefoneResidencial.Location = new System.Drawing.Point(244, 162);
             this.txtTelefoneResidencial.Name = "txtTelefoneResidencial";
             this.txtTelefoneResidencial.Size = new System.Drawing.Size(172, 23);
-            this.txtTelefoneResidencial.TabIndex = 15;
+            this.txtTelefoneResidencial.TabIndex = 14;
             // 
             // txtSenha
             // 
@@ -222,14 +221,16 @@
             this.txtSenha.Size = new System.Drawing.Size(146, 23);
             this.txtSenha.TabIndex = 16;
             // 
-            // dateTimePicker1
+            // dtDataNasc
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(244, 215);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(172, 23);
-            this.dateTimePicker1.TabIndex = 17;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dtDataNasc.CustomFormat = "yyyy/MM/dd";
+            this.dtDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDataNasc.Location = new System.Drawing.Point(244, 215);
+            this.dtDataNasc.Name = "dtDataNasc";
+            this.dtDataNasc.Size = new System.Drawing.Size(172, 23);
+            this.dtDataNasc.TabIndex = 17;
+            this.dtDataNasc.Value = new System.DateTime(2017, 4, 22, 0, 0, 0, 0);
+            this.dtDataNasc.ValueChanged += new System.EventHandler(this.dtDataNasc_ValueChanged);
             // 
             // chkBoxNew
             // 
@@ -249,7 +250,7 @@
             this.lblChkBoxNL.Location = new System.Drawing.Point(43, 252);
             this.lblChkBoxNL.Name = "lblChkBoxNL";
             this.lblChkBoxNL.Size = new System.Drawing.Size(120, 16);
-            this.lblChkBoxNL.TabIndex = 19;
+            this.lblChkBoxNL.TabIndex = 9;
             this.lblChkBoxNL.Text = "Receber Newsletter";
             // 
             // btnVoltar
@@ -269,7 +270,7 @@
             this.btnListarClientes.Location = new System.Drawing.Point(522, 23);
             this.btnListarClientes.Name = "btnListarClientes";
             this.btnListarClientes.Size = new System.Drawing.Size(100, 31);
-            this.btnListarClientes.TabIndex = 22;
+            this.btnListarClientes.TabIndex = 21;
             this.btnListarClientes.Text = "Listar Clientes";
             this.btnListarClientes.UseVisualStyleBackColor = true;
             this.btnListarClientes.Click += new System.EventHandler(this.button2_Click);
@@ -285,7 +286,7 @@
             this.Controls.Add(this.btnListarClientes);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblChkBoxNL);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtDataNasc);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtTelefoneResidencial);
             this.Controls.Add(this.txtTelefoneComercial);
@@ -300,7 +301,7 @@
             this.Controls.Add(this.lblCelular);
             this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblFormCadastroCliente);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -320,7 +321,7 @@
 
         private System.Windows.Forms.Label lblFormCadastroCliente;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.Label lblCelular;
@@ -335,7 +336,7 @@
         private System.Windows.Forms.TextBox txtTelefoneComercial;
         private System.Windows.Forms.TextBox txtTelefoneResidencial;
         private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtDataNasc;
         private System.Windows.Forms.CheckBox chkBoxNew;
         private System.Windows.Forms.Label lblChkBoxNL;
         private System.Windows.Forms.Button btnVoltar;

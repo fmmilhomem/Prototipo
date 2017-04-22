@@ -61,7 +61,7 @@
             this.txtLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(175, 23);
-            this.txtLogin.TabIndex = 3;
+            this.txtLogin.TabIndex = 5;
             // 
             // lblSenha
             // 
@@ -72,7 +72,7 @@
             this.lblSenha.Location = new System.Drawing.Point(492, 156);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(59, 19);
-            this.lblSenha.TabIndex = 4;
+            this.lblSenha.TabIndex = 3;
             this.lblSenha.Text = "Senha";
             // 
             // txtSenha
@@ -83,7 +83,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(175, 23);
-            this.txtSenha.TabIndex = 5;
+            this.txtSenha.TabIndex = 6;
             // 
             // btnEntrar
             // 
@@ -93,7 +93,7 @@
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(82, 28);
-            this.btnEntrar.TabIndex = 6;
+            this.btnEntrar.TabIndex = 7;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -105,7 +105,7 @@
             this.btnSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(82, 28);
-            this.btnSair.TabIndex = 7;
+            this.btnSair.TabIndex = 8;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -119,7 +119,7 @@
             this.lblQueroCadastrar.Location = new System.Drawing.Point(433, 281);
             this.lblQueroCadastrar.Name = "lblQueroCadastrar";
             this.lblQueroCadastrar.Size = new System.Drawing.Size(175, 19);
-            this.lblQueroCadastrar.TabIndex = 8;
+            this.lblQueroCadastrar.TabIndex = 4;
             this.lblQueroCadastrar.Text = "Quero me cadastrar!";
             // 
             // btnQueroCadastrar
@@ -179,11 +179,13 @@
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

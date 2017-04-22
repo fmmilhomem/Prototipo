@@ -62,13 +62,13 @@ namespace ConexaoDataBase
                 cmd.Parameters.Add("idCliente", SqlDbType.Int).Value = idCliente;
             }
 
-            cmd.Parameters.Add("@nomeCompletoCliente", SqlDbType.VarChar, 50).Value = this.nomeCompletoCliente;
-            cmd.Parameters.Add("@emailCliente", SqlDbType.VarChar, 50).Value = this.emailCliente;
-            cmd.Parameters.Add("@senhaCliente", SqlDbType.VarChar, 50).Value = this.senhaCliente;
-            cmd.Parameters.Add("@CPFCliente", SqlDbType.VarChar, 50).Value = this.cpfCliente;
-            cmd.Parameters.Add("@celularCliente", SqlDbType.VarChar, 50).Value = this.celularCliente;
-            cmd.Parameters.Add("@telComercialCliente", SqlDbType.VarChar, 50).Value = this.telComercialCliente;
-            cmd.Parameters.Add("@telResidencialCliente", SqlDbType.VarChar, 50).Value = this.telResidencialCliente;
+            cmd.Parameters.Add("@nomeCompletoCliente", SqlDbType.VarChar, 100).Value = this.nomeCompletoCliente;
+            cmd.Parameters.Add("@emailCliente", SqlDbType.VarChar, 100).Value = this.emailCliente;
+            cmd.Parameters.Add("@senhaCliente", SqlDbType.VarChar, 100).Value = this.senhaCliente;
+            cmd.Parameters.Add("@CPFCliente", SqlDbType.VarChar, 15).Value = this.cpfCliente;
+            cmd.Parameters.Add("@celularCliente", SqlDbType.VarChar, 11).Value = this.celularCliente;
+            cmd.Parameters.Add("@telComercialCliente", SqlDbType.VarChar, 8).Value = this.telComercialCliente;
+            cmd.Parameters.Add("@telResidencialCliente", SqlDbType.VarChar, 8).Value = this.telResidencialCliente;
             cmd.Parameters.Add("@dtNascCliente", SqlDbType.Date).Value = this.dtNascCliente;
             cmd.Parameters.Add("@recebeNewsLetter", SqlDbType.Bit).Value = recebeNewsLetter;
             cmd.ExecuteNonQuery();

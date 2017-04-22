@@ -19,16 +19,12 @@ namespace Prototipo
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void dtDataNasc_ValueChanged(object sender, EventArgs e)
         {
-
+           // dtDataNasc.Format = DateTimePickerFormat.Custom;
+           // dtDataNasc.CustomFormat = "yyyy/MM/dd";
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-        }
 
         private void txtCPF_TextChanged(object sender, KeyPressEventArgs e)
         {
@@ -67,7 +63,7 @@ namespace Prototipo
             c.telComercialCliente = txtTelefoneComercial.Text;
             c.telResidencialCliente = txtTelefoneResidencial.Text;
             c.senhaCliente = txtSenha.Text;
-            c.dtNascCliente = dateTimePicker1.Value;
+            c.dtNascCliente = dtDataNasc.Value;
             c.recebeNewsLetter = chkBoxNew.Checked;
             c.Salvar();
             
@@ -79,7 +75,6 @@ namespace Prototipo
             ListarClientes l = new ListarClientes();
             l.Show();
         }
-
     }
 }
 
