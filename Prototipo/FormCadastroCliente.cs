@@ -77,7 +77,12 @@ namespace Prototipo
             MessageBox.Show("Cadastrado com sucesso!");
 
         }
-       
+
+        private void btnListarClientes_Click(object sender, EventArgs e)
+        {
+            ListarClientes l = new ListarClientes();
+            l.ShowDialog();
+        }
     }
 }
 

@@ -24,22 +24,19 @@ namespace Prototipo
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            //TODO : RETIRAR APOS CONECTADO COM DB
-            string login = "admin";
-            string senha = "admin";
-            if ((txtLogin.Text == login) && (txtSenha.Text == senha))
+            clsUsuario u = new clsUsuario();
+            u = u.LogarDB(txtLogin.Text, txtSenha.Text);
+            if(u != null)
             {
-                MessageBox.Show("Logado com sucesso!");
-
-                FormTelasUsuario u = new FormTelasUsuario();
-                u.Show();
-
+                MessageBox.Show("SUCESSO! LOGOU!");
+                FormTelasUsuario F = new FormTelasUsuario();
+                F.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Login ou senha inválido!");
-            }
+                MessageBox.Show(" LOGIN OU SENHA INVALIDO!");
 
+            }
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
