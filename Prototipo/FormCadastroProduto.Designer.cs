@@ -148,6 +148,7 @@
             this.btnSalvar.TabIndex = 29;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // lblImgProduto
             // 
@@ -231,7 +232,6 @@
             this.bntCategoria.TabIndex = 38;
             this.bntCategoria.Text = "+";
             this.bntCategoria.UseVisualStyleBackColor = true;
-            
             // 
             // FormCadastroProduto
             // 

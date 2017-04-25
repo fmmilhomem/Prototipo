@@ -10,7 +10,7 @@ namespace ConexaoDataBase
     class clsConn
     {
         //CONEXÃO LOCAL
-        public static SqlConnection Conectar()
+        /*public static SqlConnection Conectar()
         {
             SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder();
             sb.UserID = "sa";
@@ -21,10 +21,10 @@ namespace ConexaoDataBase
             SqlConnection cn = new SqlConnection(sb.ConnectionString);
             cn.Open();
             return cn;
-        }
+        }*/
 
         //CONEXÃO AZURE
-        /*public static SqlConnection Conectar()
+        public static SqlConnection Conectar()
         {
             SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder();
             sb.UserID = "TSI";
@@ -35,7 +35,7 @@ namespace ConexaoDataBase
             SqlConnection cn = new SqlConnection(sb.ConnectionString);
             cn.Open();
             return cn;
-        }*/
+        }
          
     }
 }

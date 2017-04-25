@@ -51,5 +51,10 @@ namespace Prototipo
                     MessageBox.Show("Arquivo Maior que 1 MB!");
             }
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

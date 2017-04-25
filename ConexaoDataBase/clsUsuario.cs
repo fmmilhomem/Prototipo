@@ -14,6 +14,9 @@ namespace ConexaoDataBase
         public int idUsuario { get; set; }
         public string loginUsuario { get; set; }
         public string senhaUsuario { get; set; }
+        public string nomeUsuario { get; set; }
+        public string tipoPerfil { get; set; }
+        public bool usuarioAtivo { get; set; }
 
 
         public clsUsuario LogarDB(string login, string senha)
