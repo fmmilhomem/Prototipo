@@ -195,7 +195,7 @@
             // btnEstoque
             // 
             this.btnEstoque.ForeColor = System.Drawing.Color.Black;
-            this.btnEstoque.Location = new System.Drawing.Point(209, 43);
+            this.btnEstoque.Location = new System.Drawing.Point(209, 30);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(100, 31);
             this.btnEstoque.TabIndex = 36;

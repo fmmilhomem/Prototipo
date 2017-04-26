@@ -25,15 +25,26 @@ namespace Prototipo
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            clsEstoque est = new clsEstoque();
-            est = est.Buscar(txtBoxId.Text);
-            if (e != null)
+
+            if (txtBoxId.Text == string.Empty)
             {
-                //AQUI CARREGA UM DATAGRID
+                List<clsEstoque> est = clsEstoque.SelecionarProduto();
+                DataGridEstoque.DataSource = est;
+                DataGridEstoque.Columns[0].Visible = false;
             }
             else
             {
-                MessageBox.Show("Produto não encontrado");
+                List<clsEstoque> est = clsEstoque.SelecionarProduto(int.Parse(txtBoxId.Text));
+
+                if (est != null)
+                {
+                    DataGridEstoque.DataSource = est;
+                    DataGridEstoque.Columns[0].Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Produto não encontrado");
+                }
             }
         }
     }

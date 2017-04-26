@@ -39,7 +39,6 @@ namespace ConexaoDataBase
                 dr.Read();
 
                 u.loginUsuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
-
                 u.senhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
             }
             catch (InvalidOperationException e)

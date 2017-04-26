@@ -30,7 +30,8 @@ namespace Prototipo
             {
                 MessageBox.Show("SUCESSO! LOGOU!");
                 FormTelasUsuario F = new FormTelasUsuario();
-                F.ShowDialog();
+                this.Hide();
+                F.ShowDialog();                
             }
             else
             {
