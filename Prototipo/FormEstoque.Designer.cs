@@ -50,6 +50,7 @@
             this.txtBoxId.Name = "txtBoxId";
             this.txtBoxId.Size = new System.Drawing.Size(42, 20);
             this.txtBoxId.TabIndex = 0;
+            this.txtBoxId.TextChanged += new System.EventHandler(this.txtBoxId_TextChanged);
             // 
             // txtBoxNome
             // 
@@ -58,6 +59,7 @@
             this.txtBoxNome.Name = "txtBoxNome";
             this.txtBoxNome.Size = new System.Drawing.Size(200, 20);
             this.txtBoxNome.TabIndex = 1;
+            this.txtBoxNome.TextChanged += new System.EventHandler(this.txtBoxNome_TextChanged);
             // 
             // lblImgProduto
             // 
@@ -124,11 +126,11 @@
             // btnBuscar
             // 
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscar.Image = global::Prototipo.Properties.Resources.iconsearch;
             this.btnBuscar.Location = new System.Drawing.Point(298, 47);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(59, 23);
             this.btnBuscar.TabIndex = 48;
-            this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -153,7 +155,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BackgroundImage = global::Prototipo.Properties.Resources.imgFundo;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(661, 335);
             this.Controls.Add(this.DataGridEstoque);
             this.Controls.Add(this.btnBuscar);

@@ -19,11 +19,6 @@ namespace Prototipo
             InitializeComponent();
         }
 
-        private void txtCelular_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnEstoque_Click(object sender, EventArgs e)
         {
             FormEstoque frm = new FormEstoque();
@@ -53,6 +48,11 @@ namespace Prototipo
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bntCategoria_Click(object sender, EventArgs e)
         {
 
         }

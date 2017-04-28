@@ -23,28 +23,43 @@ namespace Prototipo
             this.Close();
         }
 
+        private void txtBoxId_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxId.Text != string.Empty)
+                txtBoxNome.Enabled = false;
+            else
+                txtBoxNome.Enabled = true;
+        }
+
+        private void txtBoxNome_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxNome.Text != string.Empty)
+                txtBoxId.Enabled = false;
+            else
+                txtBoxId.Enabled = true;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            string idProduto = "";
+            string nomeProduto = "";
 
-            if (txtBoxId.Text == string.Empty)
+            if ((txtBoxId.Text != string.Empty) || (txtBoxNome.Text != string.Empty))
+                idProduto = txtBoxId.Text;
+                nomeProduto = txtBoxNome.Text;
+
+            if (txtBoxId.Enabled == true)
             {
-                List<clsEstoque> est = clsEstoque.SelecionarProduto();
+                //METODO PARA BUSCAR PARA O 
+                List<clsEstoque> est = clsEstoque.SelecionarProdutoId(idProduto);
                 DataGridEstoque.DataSource = est;
-                DataGridEstoque.Columns[0].Visible = false;
-            }
-            else
+                //DataGridEstoque.Columns[0].Visible = false;
+            }else
             {
-                List<clsEstoque> est = clsEstoque.SelecionarProduto(int.Parse(txtBoxId.Text));
-
-                if (est != null)
-                {
-                    DataGridEstoque.DataSource = est;
-                    DataGridEstoque.Columns[0].Visible = false;
-                }
-                else
-                {
-                    MessageBox.Show("Produto não encontrado");
-                }
+                //METODO PARA BUSCAR PELO NOME DO PRODUTO
+                List<clsEstoque> est = clsEstoque.SelecionarProdutoNome(nomeProduto);
+                DataGridEstoque.DataSource = est;
+                //DataGridEstoque.Columns[0].Visible = false;
             }
         }
     }
