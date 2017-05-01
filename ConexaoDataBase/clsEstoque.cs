@@ -25,7 +25,7 @@ namespace ConexaoDataBase
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = sql;
 
-                cmd.Parameters.Add("@login", SqlDbType.Int).Value = codigo;
+                cmd.Parameters.Add("@idProduto", SqlDbType.Int).Value = codigo;
 
 
                 SqlDataReader dr = cmd.ExecuteReader();
