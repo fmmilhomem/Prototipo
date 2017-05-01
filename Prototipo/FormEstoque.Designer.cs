@@ -32,17 +32,15 @@
             this.txtBoxId = new System.Windows.Forms.TextBox();
             this.txtBoxNome = new System.Windows.Forms.TextBox();
             this.lblImgProduto = new System.Windows.Forms.Label();
-            this.txtBoxQtd = new System.Windows.Forms.TextBox();
             this.lblIdProduto = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.lblQuantidade = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.imgProduto = new System.Windows.Forms.PictureBox();
-            this.btnProximo = new System.Windows.Forms.Button();
-            this.btnAnterior = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.DataGridEstoque = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.imgProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridEstoque)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBoxId
@@ -52,33 +50,27 @@
             this.txtBoxId.Name = "txtBoxId";
             this.txtBoxId.Size = new System.Drawing.Size(42, 20);
             this.txtBoxId.TabIndex = 0;
+            this.txtBoxId.TextChanged += new System.EventHandler(this.txtBoxId_TextChanged);
             // 
             // txtBoxNome
             // 
             this.txtBoxNome.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxNome.Location = new System.Drawing.Point(44, 111);
+            this.txtBoxNome.Location = new System.Drawing.Point(92, 49);
             this.txtBoxNome.Name = "txtBoxNome";
-            this.txtBoxNome.Size = new System.Drawing.Size(271, 20);
+            this.txtBoxNome.Size = new System.Drawing.Size(200, 20);
             this.txtBoxNome.TabIndex = 1;
+            this.txtBoxNome.TextChanged += new System.EventHandler(this.txtBoxNome_TextChanged);
             // 
             // lblImgProduto
             // 
             this.lblImgProduto.AutoSize = true;
             this.lblImgProduto.BackColor = System.Drawing.Color.Transparent;
             this.lblImgProduto.ForeColor = System.Drawing.Color.Black;
-            this.lblImgProduto.Location = new System.Drawing.Point(360, 33);
+            this.lblImgProduto.Location = new System.Drawing.Point(383, 33);
             this.lblImgProduto.Name = "lblImgProduto";
             this.lblImgProduto.Size = new System.Drawing.Size(87, 13);
             this.lblImgProduto.TabIndex = 33;
             this.lblImgProduto.Text = "Imagem Produto:";
-            // 
-            // txtBoxQtd
-            // 
-            this.txtBoxQtd.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxQtd.Location = new System.Drawing.Point(44, 170);
-            this.txtBoxQtd.Name = "txtBoxQtd";
-            this.txtBoxQtd.Size = new System.Drawing.Size(42, 20);
-            this.txtBoxQtd.TabIndex = 34;
             // 
             // lblIdProduto
             // 
@@ -96,22 +88,11 @@
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.ForeColor = System.Drawing.Color.Black;
-            this.lblNome.Location = new System.Drawing.Point(41, 95);
+            this.lblNome.Location = new System.Drawing.Point(89, 33);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
             this.lblNome.TabIndex = 36;
             this.lblNome.Text = "Nome:";
-            // 
-            // lblQuantidade
-            // 
-            this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.BackColor = System.Drawing.Color.Transparent;
-            this.lblQuantidade.ForeColor = System.Drawing.Color.Black;
-            this.lblQuantidade.Location = new System.Drawing.Point(41, 154);
-            this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Size = new System.Drawing.Size(65, 13);
-            this.lblQuantidade.TabIndex = 37;
-            this.lblQuantidade.Text = "Quantidade:";
             // 
             // btnVoltar
             // 
@@ -127,7 +108,7 @@
             // btnCadastrar
             // 
             this.btnCadastrar.ForeColor = System.Drawing.Color.Black;
-            this.btnCadastrar.Location = new System.Drawing.Point(513, 261);
+            this.btnCadastrar.Location = new System.Drawing.Point(536, 261);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(100, 31);
             this.btnCadastrar.TabIndex = 38;
@@ -136,59 +117,52 @@
             // 
             // imgProduto
             // 
-            this.imgProduto.Location = new System.Drawing.Point(363, 49);
+            this.imgProduto.Location = new System.Drawing.Point(386, 49);
             this.imgProduto.Name = "imgProduto";
-            this.imgProduto.Size = new System.Drawing.Size(250, 195);
+            this.imgProduto.Size = new System.Drawing.Size(250, 206);
             this.imgProduto.TabIndex = 32;
             this.imgProduto.TabStop = false;
-            // 
-            // btnProximo
-            // 
-            this.btnProximo.ForeColor = System.Drawing.Color.Black;
-            this.btnProximo.Location = new System.Drawing.Point(118, 49);
-            this.btnProximo.Name = "btnProximo";
-            this.btnProximo.Size = new System.Drawing.Size(27, 23);
-            this.btnProximo.TabIndex = 47;
-            this.btnProximo.Text = ">";
-            this.btnProximo.UseVisualStyleBackColor = true;
-            // 
-            // btnAnterior
-            // 
-            this.btnAnterior.ForeColor = System.Drawing.Color.Black;
-            this.btnAnterior.Location = new System.Drawing.Point(92, 49);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(27, 23);
-            this.btnAnterior.TabIndex = 46;
-            this.btnAnterior.Text = "<";
-            this.btnAnterior.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscar.Location = new System.Drawing.Point(256, 49);
+            this.btnBuscar.Image = global::Prototipo.Properties.Resources.iconsearch;
+            this.btnBuscar.Location = new System.Drawing.Point(298, 47);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(59, 23);
             this.btnBuscar.TabIndex = 48;
-            this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // DataGridEstoque
+            // 
+            this.DataGridEstoque.AllowUserToAddRows = false;
+            this.DataGridEstoque.AllowUserToDeleteRows = false;
+            this.DataGridEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridEstoque.BackgroundColor = System.Drawing.Color.Silver;
+            this.DataGridEstoque.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DataGridEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridEstoque.Location = new System.Drawing.Point(44, 75);
+            this.DataGridEstoque.MultiSelect = false;
+            this.DataGridEstoque.Name = "DataGridEstoque";
+            this.DataGridEstoque.ReadOnly = true;
+            this.DataGridEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridEstoque.Size = new System.Drawing.Size(313, 180);
+            this.DataGridEstoque.TabIndex = 49;
             // 
             // FormEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BackgroundImage = global::Prototipo.Properties.Resources.imgFundo;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(661, 335);
+            this.Controls.Add(this.DataGridEstoque);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.btnProximo);
-            this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.lblQuantidade);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblIdProduto);
-            this.Controls.Add(this.txtBoxQtd);
             this.Controls.Add(this.lblImgProduto);
             this.Controls.Add(this.imgProduto);
             this.Controls.Add(this.txtBoxNome);
@@ -200,6 +174,7 @@
             this.Name = "FormEstoque";
             this.Text = "Estoque";
             ((System.ComponentModel.ISupportInitialize)(this.imgProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridEstoque)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,14 +186,11 @@
         private System.Windows.Forms.TextBox txtBoxNome;
         private System.Windows.Forms.PictureBox imgProduto;
         private System.Windows.Forms.Label lblImgProduto;
-        private System.Windows.Forms.TextBox txtBoxQtd;
         private System.Windows.Forms.Label lblIdProduto;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Label lblQuantidade;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Button btnProximo;
-        private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridView DataGridEstoque;
     }
 }

@@ -86,7 +86,7 @@ namespace ConexaoDataBase
 
         public static List<clsCliente> SelecionarClientes()
         {
-            string sql = "SELECT idCliente, nomeCompletoCliente, emailCliente, senhaCliente, CPFCliente, celularCliente, telComercialCliente, telResidencialCliente, dtNascCliente, recebeNewsLetter FROM dbo.Cliente";
+            string sql = "SELECT idCliente, nomeCompletoCliente, emailCliente, senhaCliente, CPFCliente, ISNULL(celularCliente, '') AS celularCliente, ISNULL(telComercialCliente, '') AS telComercialCliente, ISNULL(telResidencialCliente, '') AS telResidencialCliente, ISNULL(dtNascCliente, '') AS dtNascCliente, recebeNewsLetter FROM dbo.Cliente";
             SqlConnection cn = clsConn.Conectar();
             SqlCommand cmd = cn.CreateCommand();
             cmd.CommandText = sql;

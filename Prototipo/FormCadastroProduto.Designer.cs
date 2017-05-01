@@ -47,6 +47,7 @@
             this.abrirArqImg = new System.Windows.Forms.OpenFileDialog();
             this.imgBox = new System.Windows.Forms.PictureBox();
             this.bntCategoria = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,6 @@
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(101, 20);
             this.txtPreco.TabIndex = 25;
-            this.txtPreco.TextChanged += new System.EventHandler(this.txtCelular_TextChanged);
             // 
             // txtIdCod
             // 
@@ -195,7 +195,7 @@
             // btnEstoque
             // 
             this.btnEstoque.ForeColor = System.Drawing.Color.Black;
-            this.btnEstoque.Location = new System.Drawing.Point(209, 43);
+            this.btnEstoque.Location = new System.Drawing.Point(209, 30);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(100, 31);
             this.btnEstoque.TabIndex = 36;
@@ -232,15 +232,27 @@
             this.bntCategoria.TabIndex = 38;
             this.bntCategoria.Text = "+";
             this.bntCategoria.UseVisualStyleBackColor = true;
+            this.bntCategoria.Click += new System.EventHandler(this.bntCategoria_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscar.Location = new System.Drawing.Point(53, 12);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(59, 23);
+            this.btnBuscar.TabIndex = 49;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // FormCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BackgroundImage = global::Prototipo.Properties.Resources.imgFundo;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(661, 335);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.bntCategoria);
             this.Controls.Add(this.btnEstoque);
             this.Controls.Add(this.txtDescricao);
@@ -263,6 +275,7 @@
             this.MaximizeBox = false;
             this.Name = "FormCadastroProduto";
             this.Text = "Cadastro de Produto";
+            this.Load += new System.EventHandler(this.FormCadastroProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -288,5 +301,6 @@
         private System.Windows.Forms.PictureBox imgBox;
         private System.Windows.Forms.OpenFileDialog abrirArqImg;
         private System.Windows.Forms.Button bntCategoria;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

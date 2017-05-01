@@ -10,37 +10,74 @@ namespace ConexaoDataBase
 {
     public class clsEstoque
     {
-        public int idProduto { get; set; }
+       // public int idProduto { get; set; }
+        public string nomeProduto { get; set; }
         public int qtdProdutoDisponivel { get; set; }
 
-        public clsEstoque Buscar(string codigo)
+        public static List<clsEstoque> SelecionarProdutoId(string idProduto)
         {
-            clsConn conn = new clsConn();
-            clsEstoque e = null;
-
+            List<clsEstoque> Estoque = null;
             try
             {
-                string sql = (@"SELECT idProduto FROM estoque where idProduto = @codigo");
+                string sql = (@"SELECT P.nomeProduto, ISNULL(E.qtdProdutoDisponivel, '') AS qtdProdutoDisponivel FROM estoque AS E INNER JOIN produto AS P ON E.idProduto = P.idProduto 
+                                WHERE E.idProduto = @idProduto OR @idProduto = ''");
+
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = sql;
 
-                cmd.Parameters.Add("@idProduto", SqlDbType.Int).Value = codigo;
-
+                cmd.Parameters.Add("@idProduto", SqlDbType.VarChar).Value = idProduto;
 
                 SqlDataReader dr = cmd.ExecuteReader();
-                e = new clsEstoque();
-                dr.Read();
-
-                e.idProduto = dr.GetInt16(dr.GetOrdinal("idProduto"));
-
-
+                Estoque = new List<clsEstoque>();
+                
+                while (dr.Read())
+                {
+                    clsEstoque e = new clsEstoque();
+                    e.nomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
+                    e.qtdProdutoDisponivel = dr.GetInt32(dr.GetOrdinal("qtdProdutoDisponivel"));
+                    Estoque.Add(e);
+                }
+                
             }
-            catch (InvalidOperationException ee)
+            catch (Exception e)
             {
-                e = null;
+               
             }
-            return e;
+            return Estoque;
+        }
+
+        public static List<clsEstoque> SelecionarProdutoNome(string nomeProduto)
+        {
+            List<clsEstoque> Estoque = null;
+            try
+            {
+                string sql = (@"SELECT P.nomeProduto, ISNULL(E.qtdProdutoDisponivel, '') AS qtdProdutoDisponivel FROM produto AS P 
+                                INNER JOIN estoque AS E ON P.idProduto = E.idProduto 
+                                WHERE P.nomeProduto LIKE '%' + @nomeProduto + '%'");
+
+                SqlConnection cn = clsConn.Conectar();
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = sql;
+
+                cmd.Parameters.Add("@nomeProduto", SqlDbType.VarChar).Value = nomeProduto;
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                Estoque = new List<clsEstoque>();
+
+                while (dr.Read())
+                {
+                    clsEstoque e = new clsEstoque();
+                    e.nomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
+                    e.qtdProdutoDisponivel = dr.GetInt32(dr.GetOrdinal("qtdProdutoDisponivel"));
+                    Estoque.Add(e);
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            return Estoque;
         }
     }
 }
