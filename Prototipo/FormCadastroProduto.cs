@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConexaoDataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,20 @@ namespace Prototipo
         public FormCadastroProduto()
         {
             InitializeComponent();
+        }
+
+        private void FormCadastroProduto_Load(object sender, EventArgs e)
+        {
+            CarregarCategoria();
+        }
+
+        private void CarregarCategoria()
+        {
+            DataTable dtResultado = clsCategoria.SelecionarCategoriaNome();
+            cbCategoria.DataSource = null;
+            cbCategoria.DataSource = dtResultado;
+            cbCategoria.DisplayMember = "nomeCategoria"; 
+            cbCategoria.Refresh(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
@@ -47,12 +62,13 @@ namespace Prototipo
             }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void bntCategoria_Click(object sender, EventArgs e)
         {
-
+            FormCategoria f = new FormCategoria();
+            f.ShowDialog();
         }
 
-        private void bntCategoria_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
 
         }

@@ -49,6 +49,6 @@ namespace Prototipo
                 txtSenha.Text = DataGridCliente.SelectedRows[0].Cells[3].Value.ToString();
                 chkBoxNew.Checked = Boolean.Parse(DataGridCliente.SelectedRows[0].Cells[9].Value.ToString());
             }
-        }        
+        }
     }
 }

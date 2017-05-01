@@ -275,6 +275,7 @@
             this.MaximizeBox = false;
             this.Name = "FormCadastroProduto";
             this.Text = "Cadastro de Produto";
+            this.Load += new System.EventHandler(this.FormCadastroProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
