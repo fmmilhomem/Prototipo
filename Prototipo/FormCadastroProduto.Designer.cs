@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroProduto));
             this.txtPreco = new System.Windows.Forms.TextBox();
-            this.txtIdCod = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblPreco = new System.Windows.Forms.Label();
-            this.lblIdProduto = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
@@ -47,7 +45,10 @@
             this.abrirArqImg = new System.Windows.Forms.OpenFileDialog();
             this.imgBox = new System.Windows.Forms.PictureBox();
             this.bntCategoria = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtQtdProduto = new System.Windows.Forms.TextBox();
+            this.lblQtdMin = new System.Windows.Forms.Label();
+            this.txtDesconto = new System.Windows.Forms.TextBox();
+            this.lblDesconto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,14 +59,6 @@
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(101, 20);
             this.txtPreco.TabIndex = 25;
-            // 
-            // txtIdCod
-            // 
-            this.txtIdCod.ForeColor = System.Drawing.Color.Black;
-            this.txtIdCod.Location = new System.Drawing.Point(12, 41);
-            this.txtIdCod.Name = "txtIdCod";
-            this.txtIdCod.Size = new System.Drawing.Size(101, 20);
-            this.txtIdCod.TabIndex = 24;
             // 
             // txtNome
             // 
@@ -85,17 +78,6 @@
             this.lblPreco.Size = new System.Drawing.Size(38, 13);
             this.lblPreco.TabIndex = 19;
             this.lblPreco.Text = "Preco:";
-            // 
-            // lblIdProduto
-            // 
-            this.lblIdProduto.AutoSize = true;
-            this.lblIdProduto.BackColor = System.Drawing.Color.Transparent;
-            this.lblIdProduto.ForeColor = System.Drawing.Color.Black;
-            this.lblIdProduto.Location = new System.Drawing.Point(9, 25);
-            this.lblIdProduto.Name = "lblIdProduto";
-            this.lblIdProduto.Size = new System.Drawing.Size(29, 13);
-            this.lblIdProduto.TabIndex = 18;
-            this.lblIdProduto.Text = "Cod:";
             // 
             // lblCategoria
             // 
@@ -131,7 +113,7 @@
             // btnVoltar
             // 
             this.btnVoltar.ForeColor = System.Drawing.Color.Black;
-            this.btnVoltar.Location = new System.Drawing.Point(12, 275);
+            this.btnVoltar.Location = new System.Drawing.Point(12, 307);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(100, 31);
             this.btnVoltar.TabIndex = 30;
@@ -166,11 +148,11 @@
             this.chkBoxAtivo.AutoSize = true;
             this.chkBoxAtivo.BackColor = System.Drawing.Color.Transparent;
             this.chkBoxAtivo.ForeColor = System.Drawing.Color.Black;
-            this.chkBoxAtivo.Location = new System.Drawing.Point(131, 43);
+            this.chkBoxAtivo.Location = new System.Drawing.Point(144, 239);
             this.chkBoxAtivo.Name = "chkBoxAtivo";
-            this.chkBoxAtivo.Size = new System.Drawing.Size(58, 17);
+            this.chkBoxAtivo.Size = new System.Drawing.Size(50, 17);
             this.chkBoxAtivo.TabIndex = 33;
-            this.chkBoxAtivo.Text = "Inativo";
+            this.chkBoxAtivo.Text = "Ativo";
             this.chkBoxAtivo.UseVisualStyleBackColor = false;
             // 
             // txtDescricao
@@ -234,15 +216,37 @@
             this.bntCategoria.UseVisualStyleBackColor = true;
             this.bntCategoria.Click += new System.EventHandler(this.bntCategoria_Click);
             // 
-            // btnBuscar
+            // txtQtdProduto
             // 
-            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscar.Location = new System.Drawing.Point(53, 12);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(59, 23);
-            this.btnBuscar.TabIndex = 49;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.txtQtdProduto.Location = new System.Drawing.Point(192, 259);
+            this.txtQtdProduto.Name = "txtQtdProduto";
+            this.txtQtdProduto.Size = new System.Drawing.Size(100, 20);
+            this.txtQtdProduto.TabIndex = 50;
+            // 
+            // lblQtdMin
+            // 
+            this.lblQtdMin.AutoSize = true;
+            this.lblQtdMin.Location = new System.Drawing.Point(208, 242);
+            this.lblQtdMin.Name = "lblQtdMin";
+            this.lblQtdMin.Size = new System.Drawing.Size(60, 13);
+            this.lblQtdMin.TabIndex = 51;
+            this.lblQtdMin.Text = "Qtd Minima";
+            // 
+            // txtDesconto
+            // 
+            this.txtDesconto.Location = new System.Drawing.Point(192, 307);
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.Size = new System.Drawing.Size(100, 20);
+            this.txtDesconto.TabIndex = 52;
+            // 
+            // lblDesconto
+            // 
+            this.lblDesconto.AutoSize = true;
+            this.lblDesconto.Location = new System.Drawing.Point(189, 291);
+            this.lblDesconto.Name = "lblDesconto";
+            this.lblDesconto.Size = new System.Drawing.Size(104, 13);
+            this.lblDesconto.TabIndex = 53;
+            this.lblDesconto.Text = "Desconto Promocao";
             // 
             // FormCadastroProduto
             // 
@@ -252,7 +256,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(661, 335);
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.lblDesconto);
+            this.Controls.Add(this.txtDesconto);
+            this.Controls.Add(this.lblQtdMin);
+            this.Controls.Add(this.txtQtdProduto);
             this.Controls.Add(this.bntCategoria);
             this.Controls.Add(this.btnEstoque);
             this.Controls.Add(this.txtDescricao);
@@ -262,10 +269,8 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.txtPreco);
-            this.Controls.Add(this.txtIdCod);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblPreco);
-            this.Controls.Add(this.lblIdProduto);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblImgProduto);
@@ -284,10 +289,8 @@
 
         #endregion
         private System.Windows.Forms.TextBox txtPreco;
-        private System.Windows.Forms.TextBox txtIdCod;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblPreco;
-        private System.Windows.Forms.Label lblIdProduto;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.ComboBox cbCategoria;
@@ -301,6 +304,9 @@
         private System.Windows.Forms.PictureBox imgBox;
         private System.Windows.Forms.OpenFileDialog abrirArqImg;
         private System.Windows.Forms.Button bntCategoria;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtQtdProduto;
+        private System.Windows.Forms.Label lblQtdMin;
+        private System.Windows.Forms.TextBox txtDesconto;
+        private System.Windows.Forms.Label lblDesconto;
     }
 }

@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConexaoDataBase;
 
 namespace Prototipo
 {
     public partial class FormTelasUsuario : Form
     {
-        public FormTelasUsuario()
+        private clsUsuario u;
+        public FormTelasUsuario(clsUsuario u)
         {
             InitializeComponent();
+            this.u = u;
+            
         }
 
         //Atalho do teclado para sub menus F8,F9 e F10
@@ -77,7 +81,7 @@ namespace Prototipo
         private void btnCadastroProduto_Click(object sender, EventArgs e)
         {
            // this.Close();
-            FormCadastroProduto frm = new FormCadastroProduto();
+            FormCadastroProduto frm = new FormCadastroProduto(u);
             frm.ShowDialog();
             
         }
@@ -87,6 +91,11 @@ namespace Prototipo
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void FormTelasUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

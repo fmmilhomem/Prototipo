@@ -29,7 +29,7 @@ namespace Prototipo
             if(u != null)
             {
                 MessageBox.Show("SUCESSO! LOGOU!");
-                FormTelasUsuario F = new FormTelasUsuario();
+                FormTelasUsuario F = new FormTelasUsuario(u);
                 this.Hide();
                 F.ShowDialog();                
             }

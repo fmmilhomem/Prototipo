@@ -225,6 +225,7 @@
             this.MaximizeBox = false;
             this.Name = "FormTelasUsuario";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.FormTelasUsuario_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormTelasUsuario_KeyDown);
             this.contextMenuStrip2.ResumeLayout(false);
             this.mnPrincipal.ResumeLayout(false);

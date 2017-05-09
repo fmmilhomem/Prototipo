@@ -26,7 +26,7 @@ namespace ConexaoDataBase
 
             try
             {
-                string sql = (@"SELECT loginusuario,senhausuario,tipoperfil from usuario where usuarioativo=1 and loginusuario = @login and senhausuario = @senha");
+                string sql = (@"SELECT idUsuario ,loginusuario,senhausuario,tipoperfil from usuario where usuarioativo=1 and loginusuario = @login and senhausuario = @senha");
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = sql;
@@ -40,6 +40,7 @@ namespace ConexaoDataBase
 
                 u.loginUsuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
                 u.senhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
+                u.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
             }
             catch (InvalidOperationException e)
             {

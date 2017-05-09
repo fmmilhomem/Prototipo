@@ -15,9 +15,11 @@ namespace Prototipo
 {
     public partial class FormCadastroProduto : Form
     {
-        public FormCadastroProduto()
+        private clsUsuario u;
+        public FormCadastroProduto(clsUsuario u)
         {
             InitializeComponent();
+            this.u = u;
         }
 
         private void FormCadastroProduto_Load(object sender, EventArgs e)
@@ -30,7 +32,8 @@ namespace Prototipo
             DataTable dtResultado = clsCategoria.SelecionarCategoriaNome();
             cbCategoria.DataSource = null;
             cbCategoria.DataSource = dtResultado;
-            cbCategoria.DisplayMember = "nomeCategoria"; 
+            cbCategoria.DisplayMember = "nomeCategoria";
+            cbCategoria.ValueMember = "idCategoria";
             cbCategoria.Refresh(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
         }
 
@@ -39,7 +42,7 @@ namespace Prototipo
             FormEstoque frm = new FormEstoque();
             frm.ShowDialog();
         }
-        
+
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -70,7 +73,24 @@ namespace Prototipo
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            clsProduto p = new clsProduto();
+
+            p.nomeProduto = txtNome.Text;
+            p.descProduto = txtDescricao.Text;
+            p.precProduto = Convert.ToDecimal(txtPreco.Text);
+            p.idCategoria = Convert.ToInt16(cbCategoria.SelectedValue);
+            p.ativoProduto = chkBoxAtivo.Checked;
+            p.qtdMinEstoque = Convert.ToInt16(txtQtdProduto.Text);
+            //p.Imagem = imgBox;
+            p.descontoPromocao = Convert.ToDecimal(txtDesconto.Text);
+            p.idUsuario = u.idUsuario;
+
+            p.SalvarProduto(p.nomeProduto, p.descProduto, p.precProduto, p.descontoPromocao, p.idCategoria, p.ativoProduto, p.idUsuario, p.qtdMinEstoque);
+
+            MessageBox.Show("Produto cadastrado com sucesso!");
 
         }
+
+
     }
 }
