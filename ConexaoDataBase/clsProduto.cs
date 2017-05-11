@@ -20,7 +20,7 @@ namespace ConexaoDataBase
         public bool ativoProduto { get; set; }
         public int idUsuario { get; set; }
         public int qtdMinEstoque { get; set; }
-        //public  Imagem { get; set; }
+        public byte[] imgProduto { get; set; }
 
         public clsProduto SalvarProduto(string nomeProduto,string descProduto,decimal precProduto, decimal descontoPromocao,int idCategoria,bool ativo,int usuarioId,int qtdMinima)
         {
@@ -32,8 +32,7 @@ namespace ConexaoDataBase
                 //TODO: INSERT SEM IMAGEM
                 string sql = (@"INSERT INTO PRODUTO
                              (nomeProduto,descProduto,precProduto,descontoPromocao,idCategoria,ativoProduto,idUsuario,qtdMinEstoque,imagem)
-                             VALUES (@nomeProduto,@descProduto,@precProduto,@descontoPromocao,@idCategoria,@ativo,@idUsuario,@qtdMinima,null)
-                        "); 
+                             VALUES (@nomeProduto,@descProduto,@precProduto,@descontoPromocao,@idCategoria,@ativo,@idUsuario,@qtdMinima,null)"); 
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = sql;
@@ -46,8 +45,9 @@ namespace ConexaoDataBase
                 cmd.Parameters.Add("@ativo", SqlDbType.Bit).Value = ativo;
                 cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
                 cmd.Parameters.Add("@qtdMinima", SqlDbType.Int).Value = qtdMinima;
-                
                 //cmd.Parameters.Add("@D")
+
+                cmd.ExecuteReader();
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 p = new clsProduto();
@@ -67,11 +67,6 @@ namespace ConexaoDataBase
                 p = null;
             }
             return p;
-        }
-
-        public void SalvarProduto(object nomeProduto, object descProduto, object precProduto, object descontoPromocao, object idCategoria, object ativo, object usuarioId, object qtdMinima)
-        {
-            throw new NotImplementedException();
         }
     }
 }

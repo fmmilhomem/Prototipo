@@ -81,7 +81,7 @@ namespace Prototipo
             p.idCategoria = Convert.ToInt16(cbCategoria.SelectedValue);
             p.ativoProduto = chkBoxAtivo.Checked;
             p.qtdMinEstoque = Convert.ToInt16(txtQtdProduto.Text);
-            //p.Imagem = imgBox;
+            //p.imgProduto = imgBox; 
             p.descontoPromocao = Convert.ToDecimal(txtDesconto.Text);
             p.idUsuario = u.idUsuario;
 
@@ -89,8 +89,11 @@ namespace Prototipo
 
             MessageBox.Show("Produto cadastrado com sucesso!");
 
-        }
+        }        
 
-
+        private void txtPreco_Leave(object sender, EventArgs e)
+        {
+            txtPreco.Text = Convert.ToDouble(txtPreco.Text).ToString("F");
+        }        
     }
 }

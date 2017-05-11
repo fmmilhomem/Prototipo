@@ -59,6 +59,7 @@
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(101, 20);
             this.txtPreco.TabIndex = 25;
+            this.txtPreco.Leave += new System.EventHandler(this.txtPreco_Leave);
             // 
             // txtNome
             // 
