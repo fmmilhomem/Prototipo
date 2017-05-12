@@ -31,12 +31,13 @@
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cbCategoria
@@ -47,6 +48,7 @@
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(205, 21);
             this.cbCategoria.TabIndex = 0;
+            this.cbCategoria.DropDown += new System.EventHandler(this.cbCategoria_DropDown);
             this.cbCategoria.SelectedIndexChanged += new System.EventHandler(this.cbCategoria_SelectedIndexChanged);
             // 
             // btnCancelar
@@ -62,6 +64,7 @@
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Enabled = false;
             this.btnSalvar.ForeColor = System.Drawing.Color.Black;
             this.btnSalvar.Location = new System.Drawing.Point(311, 100);
             this.btnSalvar.Name = "btnSalvar";
@@ -71,19 +74,9 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // btnEditar
-            // 
-            this.btnEditar.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Image = global::Prototipo.Properties.Resources.iconEditar;
-            this.btnEditar.Location = new System.Drawing.Point(380, 9);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(31, 22);
-            this.btnEditar.TabIndex = 49;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
             // txtDescricao
             // 
+            this.txtDescricao.Enabled = false;
             this.txtDescricao.ForeColor = System.Drawing.Color.Black;
             this.txtDescricao.Location = new System.Drawing.Point(19, 75);
             this.txtDescricao.Name = "txtDescricao";
@@ -103,11 +96,13 @@
             // 
             // txtNome
             // 
+            this.txtNome.Enabled = false;
             this.txtNome.ForeColor = System.Drawing.Color.Black;
             this.txtNome.Location = new System.Drawing.Point(19, 33);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(181, 20);
             this.txtNome.TabIndex = 51;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblNome
             // 
@@ -122,8 +117,9 @@
             // 
             // btnDeletar
             // 
+            this.btnDeletar.Enabled = false;
             this.btnDeletar.ForeColor = System.Drawing.Color.Black;
-            this.btnDeletar.Location = new System.Drawing.Point(311, 9);
+            this.btnDeletar.Location = new System.Drawing.Point(274, 9);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(63, 22);
             this.btnDeletar.TabIndex = 54;
@@ -131,11 +127,34 @@
             this.btnDeletar.UseVisualStyleBackColor = true;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
+            // btnNovo
+            // 
+            this.btnNovo.ForeColor = System.Drawing.Color.Black;
+            this.btnNovo.Image = global::Prototipo.Properties.Resources.icoNovo;
+            this.btnNovo.Location = new System.Drawing.Point(343, 9);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(31, 22);
+            this.btnNovo.TabIndex = 55;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.ForeColor = System.Drawing.Color.Black;
+            this.btnEditar.Image = global::Prototipo.Properties.Resources.iconEditar;
+            this.btnEditar.Location = new System.Drawing.Point(380, 9);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(31, 22);
+            this.btnEditar.TabIndex = 49;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // FormCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 151);
+            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lblDescricao);
@@ -165,5 +184,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button btnDeletar;
+        private System.Windows.Forms.Button btnNovo;
     }
 }

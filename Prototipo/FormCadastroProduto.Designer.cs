@@ -49,22 +49,23 @@
             this.lblQtdMin = new System.Windows.Forms.Label();
             this.txtDesconto = new System.Windows.Forms.TextBox();
             this.lblDesconto = new System.Windows.Forms.Label();
+            this.txtCodImagem = new System.Windows.Forms.TextBox();
+            this.btnConsulta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPreco
             // 
             this.txtPreco.ForeColor = System.Drawing.Color.Black;
-            this.txtPreco.Location = new System.Drawing.Point(12, 239);
+            this.txtPreco.Location = new System.Drawing.Point(12, 230);
             this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(101, 20);
+            this.txtPreco.Size = new System.Drawing.Size(112, 20);
             this.txtPreco.TabIndex = 25;
-            this.txtPreco.Leave += new System.EventHandler(this.txtPreco_Leave);
             // 
             // txtNome
             // 
             this.txtNome.ForeColor = System.Drawing.Color.Black;
-            this.txtNome.Location = new System.Drawing.Point(12, 86);
+            this.txtNome.Location = new System.Drawing.Point(12, 77);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(297, 20);
             this.txtNome.TabIndex = 22;
@@ -74,18 +75,18 @@
             this.lblPreco.AutoSize = true;
             this.lblPreco.BackColor = System.Drawing.Color.Transparent;
             this.lblPreco.ForeColor = System.Drawing.Color.Black;
-            this.lblPreco.Location = new System.Drawing.Point(9, 223);
+            this.lblPreco.Location = new System.Drawing.Point(9, 214);
             this.lblPreco.Name = "lblPreco";
             this.lblPreco.Size = new System.Drawing.Size(38, 13);
             this.lblPreco.TabIndex = 19;
-            this.lblPreco.Text = "Preco:";
+            this.lblPreco.Text = "Preço:";
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
             this.lblCategoria.ForeColor = System.Drawing.Color.Black;
-            this.lblCategoria.Location = new System.Drawing.Point(9, 171);
+            this.lblCategoria.Location = new System.Drawing.Point(9, 162);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(55, 13);
             this.lblCategoria.TabIndex = 17;
@@ -96,7 +97,7 @@
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.ForeColor = System.Drawing.Color.Black;
-            this.lblNome.Location = new System.Drawing.Point(9, 70);
+            this.lblNome.Location = new System.Drawing.Point(9, 61);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
             this.lblNome.TabIndex = 16;
@@ -106,15 +107,17 @@
             // 
             this.cbCategoria.ForeColor = System.Drawing.Color.Black;
             this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(12, 187);
+            this.cbCategoria.Location = new System.Drawing.Point(12, 178);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(256, 21);
             this.cbCategoria.TabIndex = 28;
+            this.cbCategoria.Text = "<LISTAR>";
+            this.cbCategoria.DropDown += new System.EventHandler(this.cbCategoria_DropDown);
             // 
             // btnVoltar
             // 
             this.btnVoltar.ForeColor = System.Drawing.Color.Black;
-            this.btnVoltar.Location = new System.Drawing.Point(12, 307);
+            this.btnVoltar.Location = new System.Drawing.Point(12, 282);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(100, 31);
             this.btnVoltar.TabIndex = 30;
@@ -125,7 +128,7 @@
             // btnSalvar
             // 
             this.btnSalvar.ForeColor = System.Drawing.Color.Black;
-            this.btnSalvar.Location = new System.Drawing.Point(525, 275);
+            this.btnSalvar.Location = new System.Drawing.Point(525, 282);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 31);
             this.btnSalvar.TabIndex = 29;
@@ -149,7 +152,7 @@
             this.chkBoxAtivo.AutoSize = true;
             this.chkBoxAtivo.BackColor = System.Drawing.Color.Transparent;
             this.chkBoxAtivo.ForeColor = System.Drawing.Color.Black;
-            this.chkBoxAtivo.Location = new System.Drawing.Point(144, 239);
+            this.chkBoxAtivo.Location = new System.Drawing.Point(12, 30);
             this.chkBoxAtivo.Name = "chkBoxAtivo";
             this.chkBoxAtivo.Size = new System.Drawing.Size(50, 17);
             this.chkBoxAtivo.TabIndex = 33;
@@ -159,7 +162,7 @@
             // txtDescricao
             // 
             this.txtDescricao.ForeColor = System.Drawing.Color.Black;
-            this.txtDescricao.Location = new System.Drawing.Point(12, 135);
+            this.txtDescricao.Location = new System.Drawing.Point(12, 126);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(297, 20);
             this.txtDescricao.TabIndex = 35;
@@ -169,7 +172,7 @@
             this.lblDescricao.AutoSize = true;
             this.lblDescricao.BackColor = System.Drawing.Color.Transparent;
             this.lblDescricao.ForeColor = System.Drawing.Color.Black;
-            this.lblDescricao.Location = new System.Drawing.Point(9, 119);
+            this.lblDescricao.Location = new System.Drawing.Point(9, 110);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(58, 13);
             this.lblDescricao.TabIndex = 34;
@@ -208,7 +211,7 @@
             // bntCategoria
             // 
             this.bntCategoria.ForeColor = System.Drawing.Color.Black;
-            this.bntCategoria.Location = new System.Drawing.Point(274, 187);
+            this.bntCategoria.Location = new System.Drawing.Point(274, 178);
             this.bntCategoria.Name = "bntCategoria";
             this.bntCategoria.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bntCategoria.Size = new System.Drawing.Size(35, 21);
@@ -219,35 +222,58 @@
             // 
             // txtQtdProduto
             // 
-            this.txtQtdProduto.Location = new System.Drawing.Point(192, 259);
+            this.txtQtdProduto.Location = new System.Drawing.Point(253, 230);
             this.txtQtdProduto.Name = "txtQtdProduto";
-            this.txtQtdProduto.Size = new System.Drawing.Size(100, 20);
+            this.txtQtdProduto.Size = new System.Drawing.Size(56, 20);
             this.txtQtdProduto.TabIndex = 50;
             // 
             // lblQtdMin
             // 
             this.lblQtdMin.AutoSize = true;
-            this.lblQtdMin.Location = new System.Drawing.Point(208, 242);
+            this.lblQtdMin.BackColor = System.Drawing.Color.Transparent;
+            this.lblQtdMin.Location = new System.Drawing.Point(250, 214);
             this.lblQtdMin.Name = "lblQtdMin";
-            this.lblQtdMin.Size = new System.Drawing.Size(60, 13);
+            this.lblQtdMin.Size = new System.Drawing.Size(62, 13);
             this.lblQtdMin.TabIndex = 51;
-            this.lblQtdMin.Text = "Qtd Minima";
+            this.lblQtdMin.Text = "Quantidade";
             // 
             // txtDesconto
             // 
-            this.txtDesconto.Location = new System.Drawing.Point(192, 307);
+            this.txtDesconto.Location = new System.Drawing.Point(130, 230);
             this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.Size = new System.Drawing.Size(100, 20);
+            this.txtDesconto.Size = new System.Drawing.Size(112, 20);
             this.txtDesconto.TabIndex = 52;
             // 
             // lblDesconto
             // 
             this.lblDesconto.AutoSize = true;
-            this.lblDesconto.Location = new System.Drawing.Point(189, 291);
+            this.lblDesconto.BackColor = System.Drawing.Color.Transparent;
+            this.lblDesconto.Location = new System.Drawing.Point(127, 214);
             this.lblDesconto.Name = "lblDesconto";
             this.lblDesconto.Size = new System.Drawing.Size(104, 13);
             this.lblDesconto.TabIndex = 53;
-            this.lblDesconto.Text = "Desconto Promocao";
+            this.lblDesconto.Text = "Desconto Promoção";
+            // 
+            // txtCodImagem
+            // 
+            this.txtCodImagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodImagem.ForeColor = System.Drawing.Color.Black;
+            this.txtCodImagem.Location = new System.Drawing.Point(334, 282);
+            this.txtCodImagem.Name = "txtCodImagem";
+            this.txtCodImagem.Size = new System.Drawing.Size(62, 20);
+            this.txtCodImagem.TabIndex = 54;
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.ForeColor = System.Drawing.Color.Black;
+            this.btnConsulta.Location = new System.Drawing.Point(402, 267);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnConsulta.Size = new System.Drawing.Size(80, 46);
+            this.btnConsulta.TabIndex = 55;
+            this.btnConsulta.Text = "Consulta teste ID";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // FormCadastroProduto
             // 
@@ -257,6 +283,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(661, 335);
+            this.Controls.Add(this.btnConsulta);
+            this.Controls.Add(this.txtCodImagem);
             this.Controls.Add(this.lblDesconto);
             this.Controls.Add(this.txtDesconto);
             this.Controls.Add(this.lblQtdMin);
@@ -281,7 +309,6 @@
             this.MaximizeBox = false;
             this.Name = "FormCadastroProduto";
             this.Text = "Cadastro de Produto";
-            this.Load += new System.EventHandler(this.FormCadastroProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -309,5 +336,7 @@
         private System.Windows.Forms.Label lblQtdMin;
         private System.Windows.Forms.TextBox txtDesconto;
         private System.Windows.Forms.Label lblDesconto;
+        private System.Windows.Forms.TextBox txtCodImagem;
+        private System.Windows.Forms.Button btnConsulta;
     }
 }

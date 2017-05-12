@@ -19,27 +19,87 @@ namespace Prototipo
             InitializeComponent();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            DataTable dtResultado = clsCategoria.SelecionarCategoriaNome();
-            cbCategoria.DataSource = null;
 
-            if (!cbCategoria.Enabled)
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            if (btnEditar.Enabled)
             {
-                cbCategoria.Enabled = true;
-                cbCategoria.DataSource = dtResultado;
-                cbCategoria.DisplayMember = "nomeCategoria";
+                btnEditar.Enabled = false;
+                txtNome.Enabled = true;
+                txtDescricao.Enabled = true;
             }
             else
             {
-                cbCategoria.Enabled = false;
+                btnEditar.Enabled = true;
+                txtNome.Enabled = false;
+                txtDescricao.Enabled = false;
+                txtNome.Clear();
+                txtDescricao.Clear();
             }
-            cbCategoria.Refresh(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (btnNovo.Enabled)
+            {
+                btnNovo.Enabled = false;
+                btnDeletar.Enabled = true;
+                cbCategoria.Enabled = true;
+                cbCategoria.Text = "<LISTAR>";
+            }
+            else
+            {
+                btnNovo.Enabled = true;
+                btnDeletar.Enabled = false;
+                cbCategoria.Enabled = false;
+                txtNome.Enabled = false;
+                txtDescricao.Enabled = false;
+                cbCategoria.DataSource = null;
+                txtNome.Clear();
+                txtDescricao.Clear();
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            clsCategoria c = new clsCategoria();
+            c.nomeCategoria = txtNome.Text;
+            c.descCategoria = txtDescricao.Text;
+
+            if (Convert.ToInt16(cbCategoria.SelectedValue) < 7)
+            {
+                MessageBox.Show("Acesso Negado a esta categoria!");
+            }
+            else if (btnEditar.Enabled)
+            {
+                c.Salvar(Convert.ToInt16(cbCategoria.SelectedValue));
+                MessageBox.Show("Salvo com sucesso!"); //Acertar
+            }
+            else
+            {
+                c.Cadastrar();
+                MessageBox.Show("Salvo com sucesso!"); //Acertar
+            }
+
+            refresh_cbCategoria(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.            
+            btnSalvar.Enabled = false;
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            int idCategoria = Convert.ToInt16(cbCategoria.SelectedValue);
+
+            if ((cbCategoria.Enabled) && (idCategoria > 6))
+            {
+                clsCategoria.Deletar(idCategoria);
+                MessageBox.Show("Salvo com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Acesso Negado a esta categoria!");
+            }
+
+            refresh_cbCategoria(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.           
         }
 
         private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,37 +108,38 @@ namespace Prototipo
             txtDescricao.Text = clsCategoria.SelecionarCategoriaDesc((string)txtNome.Text);
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void refresh_cbCategoria()
         {
-            clsCategoria c = new clsCategoria();
-            c.nomeCategoria = txtNome.Text;
-            c.descCategoria = txtDescricao.Text;
-            if (cbCategoria.Enabled)
+            DataTable dtResultado = clsCategoria.SelecionarCategoriaNome();
+            cbCategoria.DataSource = null;
+            cbCategoria.DataSource = dtResultado;
+            cbCategoria.DisplayMember = "nomeCategoria";
+            cbCategoria.ValueMember = "idCategoria";
+            cbCategoria.Refresh(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
+        }
+
+        private void cbCategoria_DropDown(object sender, EventArgs e)
+        {
+            txtNome.Enabled = true;
+            txtDescricao.Enabled = true;
+            refresh_cbCategoria();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            if(txtNome.Text != string.Empty)
             {
-                c.Salvar(clsCategoria.SelecionarCategoriaId(cbCategoria.Text));
-                
+                btnSalvar.Enabled = true;
             }
             else
             {
-                c.Cadastrar();
+                btnSalvar.Enabled = false;
             }
-
-            cbCategoria.Refresh(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
-            MessageBox.Show("Salvo com sucesso!");
-        }
-
-        private void btnDeletar_Click(object sender, EventArgs e)
-        {
-            int idCategoria = clsCategoria.SelecionarCategoriaId(cbCategoria.Text);
-           
-            if (cbCategoria.Enabled)
-            {
-                clsCategoria.Deletar(idCategoria);
-
-            }
-
-            cbCategoria.Refresh(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
-            MessageBox.Show("Salvo com sucesso!");
         }
     }
 }

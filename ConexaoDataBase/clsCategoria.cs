@@ -31,7 +31,7 @@ namespace ConexaoDataBase
 
             try
             {
-                string sql = "SELECT idCategoria, nomeCategoria FROM categoria";
+                string sql = (@"SELECT idCategoria, nomeCategoria FROM categoria");
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = sql;

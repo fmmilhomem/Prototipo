@@ -127,31 +127,34 @@
   <data name="imgFundoDuplo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgFundoDuplo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconProduto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconProduto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconEditar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconEdit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconPedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconPedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgCubo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgCubo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconsearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconsearch1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgFundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgFundo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconSair" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconSair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconProduto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconProduto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgCubo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgCubo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icoAnexarImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icoAnexarImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgFundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgFundo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconsearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconsearch1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconEditar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icoNovo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icoNovo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

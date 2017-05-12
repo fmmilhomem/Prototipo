@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ConexaoDataBase;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 namespace ConexaoDataBase
 {
@@ -20,9 +21,9 @@ namespace ConexaoDataBase
         public bool ativoProduto { get; set; }
         public int idUsuario { get; set; }
         public int qtdMinEstoque { get; set; }
-        public byte[] imgProduto { get; set; }
+        public byte[] imagem { get; set; }
 
-        public clsProduto SalvarProduto(string nomeProduto,string descProduto,decimal precProduto, decimal descontoPromocao,int idCategoria,bool ativo,int usuarioId,int qtdMinima)
+        public clsProduto SalvarProduto(string nomeProduto,string descProduto,decimal precProduto, decimal descontoPromocao,int idCategoria,bool ativo,int usuarioId,int qtdMinima,byte[] imagem)
         {
             clsConn conn = new clsConn();
             clsProduto p = null;
@@ -32,7 +33,8 @@ namespace ConexaoDataBase
                 //TODO: INSERT SEM IMAGEM
                 string sql = (@"INSERT INTO PRODUTO
                              (nomeProduto,descProduto,precProduto,descontoPromocao,idCategoria,ativoProduto,idUsuario,qtdMinEstoque,imagem)
-                             VALUES (@nomeProduto,@descProduto,@precProduto,@descontoPromocao,@idCategoria,@ativo,@idUsuario,@qtdMinima,null)"); 
+                             VALUES (@nomeProduto,@descProduto,@precProduto,@descontoPromocao,@idCategoria,@ativo,@idUsuario,@qtdMinima,@imagem)"); 
+
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = sql;
@@ -45,10 +47,14 @@ namespace ConexaoDataBase
                 cmd.Parameters.Add("@ativo", SqlDbType.Bit).Value = ativo;
                 cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
                 cmd.Parameters.Add("@qtdMinima", SqlDbType.Int).Value = qtdMinima;
-                //cmd.Parameters.Add("@D")
+                cmd.Parameters.Add("@imagem", SqlDbType.Image).Value = imagem;
 
-                cmd.ExecuteReader();
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                cn.Dispose();
 
+                //cmd.Parameters.Add("@D");
+                /*
                 SqlDataReader dr = cmd.ExecuteReader();
                 p = new clsProduto();
                 dr.Read();
@@ -61,6 +67,8 @@ namespace ConexaoDataBase
                 p.ativoProduto = dr.GetBoolean(dr.GetOrdinal("ativo"));
                 p.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
                 p.qtdMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinima"));
+                p.qtdMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinima"));
+                */
             }
             catch (InvalidOperationException e)
             {
@@ -68,5 +76,25 @@ namespace ConexaoDataBase
             }
             return p;
         }
+
+        public static string RetornaIMG(int idProduto)
+        {
+            SqlConnection cn = clsConn.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+
+            cmd.CommandText = (@"select imagem from Produto where idProduto=@idProduto");
+            cmd.Parameters.Add("@idProduto", SqlDbType.Int, 4);
+
+            cmd.Parameters["@idProduto"].Value = idProduto;           
+
+            byte[] vetorImagem = (byte[])cmd.ExecuteScalar();
+            string strNomeArquivo = Convert.ToString(DateTime.Now.ToFileTime());
+            FileStream fs = new FileStream(strNomeArquivo, FileMode.CreateNew, FileAccess.Write);
+            fs.Write(vetorImagem, 0, vetorImagem.Length);
+            fs.Flush();
+            fs.Close();
+
+            return strNomeArquivo;
+        }        
     }
 }
