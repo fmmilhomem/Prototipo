@@ -111,7 +111,10 @@ namespace ConexaoDataBase
                     C.telResidencialCliente = dr.GetString(dr.GetOrdinal("telResidencialCliente"));
                 }
                 C.dtNascCliente = dr.GetDateTime(dr.GetOrdinal("dtNascCliente"));
-                C.recebeNewsLetter = dr.GetBoolean(dr.GetOrdinal("recebeNewsLetter"));
+                if (!dr.IsDBNull(dr.GetOrdinal("recebeNewsLetter")))
+                {
+                    C.recebeNewsLetter = dr.GetBoolean(dr.GetOrdinal("recebeNewsLetter"));
+                }
                 Clientes.Add(C);
             }
 
