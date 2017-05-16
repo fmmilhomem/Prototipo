@@ -103,6 +103,7 @@ namespace Prototipo
         {
             //Cria objeto para conversão
             ImageConverter c = new ImageConverter();
+
             //Envia o objeto convertido para variavel ByteArray
             byte[] imgByte = (byte[])c.ConvertTo(imgBox.Image, typeof(byte[]));
             
@@ -126,5 +127,6 @@ namespace Prototipo
         {
             CarregarCategoria();
         }
+
     }
 }

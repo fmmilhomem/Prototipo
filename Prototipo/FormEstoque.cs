@@ -63,7 +63,12 @@ namespace Prototipo
             }
         }
 
-        /*private void DataGridEstoque_SelectionChanged(object sender, EventArgs e)
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridEstoque_SelectionChanged(object sender, EventArgs e)
         {
             string strNomeArquivo = null;
 
@@ -74,9 +79,9 @@ namespace Prototipo
                 //if(DataGridEstoque.SelectedRows[0].Cells[0].Value.ToString())
                 strNomeArquivo = clsProduto.RetornaIMG(id);
                                 
-                if (Image.FromFile(strNomeArquivo))
+               // if (Image.FromFile(strNomeArquivo))
                     imgProduto.Image = Image.FromFile(strNomeArquivo);
             }
-        }*/
+        }
     }
 }
