@@ -62,5 +62,21 @@ namespace Prototipo
                 //DataGridEstoque.Columns[0].Visible = false;
             }
         }
+
+        /*private void DataGridEstoque_SelectionChanged(object sender, EventArgs e)
+        {
+            string strNomeArquivo = null;
+
+            if (DataGridEstoque.SelectedRows.Count > 0)
+            {
+                int id = int.Parse(DataGridEstoque.SelectedRows[0].Cells[0].Value.ToString());
+               
+                //if(DataGridEstoque.SelectedRows[0].Cells[0].Value.ToString())
+                strNomeArquivo = clsProduto.RetornaIMG(id);
+                                
+                if (Image.FromFile(strNomeArquivo))
+                    imgProduto.Image = Image.FromFile(strNomeArquivo);
+            }
+        }*/
     }
 }

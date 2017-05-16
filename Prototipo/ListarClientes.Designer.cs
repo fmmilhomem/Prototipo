@@ -69,6 +69,7 @@
             this.DataGridCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridCliente.Size = new System.Drawing.Size(874, 285);
             this.DataGridCliente.TabIndex = 2;
+            this.DataGridCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridCliente_CellContentClick);
             this.DataGridCliente.SelectionChanged += new System.EventHandler(this.DataGridCliente_SelectionChanged);
             // 
             // btnFechar

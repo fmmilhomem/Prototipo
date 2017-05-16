@@ -50,5 +50,10 @@ namespace Prototipo
                 chkBoxNew.Checked = Boolean.Parse(DataGridCliente.SelectedRows[0].Cells[9].Value.ToString());
             }
         }
+
+        private void DataGridCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

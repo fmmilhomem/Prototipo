@@ -120,6 +120,7 @@
             this.imgProduto.Location = new System.Drawing.Point(386, 49);
             this.imgProduto.Name = "imgProduto";
             this.imgProduto.Size = new System.Drawing.Size(250, 206);
+            this.imgProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgProduto.TabIndex = 32;
             this.imgProduto.TabStop = false;
             // 
@@ -149,6 +150,7 @@
             this.DataGridEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridEstoque.Size = new System.Drawing.Size(313, 180);
             this.DataGridEstoque.TabIndex = 49;
+       
             // 
             // FormEstoque
             // 
