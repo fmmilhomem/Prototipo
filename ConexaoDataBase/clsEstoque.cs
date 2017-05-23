@@ -21,23 +21,30 @@ namespace ConexaoDataBase
             string sql = null;
             try
             {
+                SqlConnection cn = clsConn.Conectar();
+                SqlCommand cmd = cn.CreateCommand();
+
                 if (idProduto == 0)
                 {
-                    sql = (@"SELECT P.idProduto AS idProduto,P.nomeProduto  AS nomeProduto, E.qtdProdutoDisponivel AS qtd, P.imagem AS Imagem FROM estoque AS E 
-                                    INNER JOIN produto AS P ON E.idProduto = P.idProduto");
+                    sql = (@"SELECT P.idProduto AS idProduto,
+                                    P.nomeProduto  AS nomeProduto, 
+                                    E.qtdProdutoDisponivel AS qtd, 
+                                    P.imagem AS Imagem FROM estoque AS E 
+                                    LEFT JOIN produto AS P ON E.idProduto = P.idProduto");
                 }
                 else
                 {
-                    sql = (@"SELECT P.idProduto,P.nomeProduto, E.qtdProdutoDisponivel FROM estoque AS E 
-                                INNER JOIN produto AS P ON E.idProduto = P.idProduto 
-                                WHERE E.idProduto = @idProduto");
+                    sql = (@"SELECT P.idProduto AS idProduto,
+                                    P.nomeProduto  AS nomeProduto, 
+                                    E.qtdProdutoDisponivel AS qtd, 
+                                    P.imagem AS Imagem FROM estoque AS E 
+                                    LEFT JOIN produto AS P ON E.idProduto = P.idProduto 
+                                    WHERE E.idProduto = @idProduto");
+
+                    cmd.Parameters.Add("@idProduto", SqlDbType.VarChar).Value = idProduto;
                 }
-
-                SqlConnection cn = clsConn.Conectar();
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = sql;
-
-                //cmd.Parameters.Add("@idProduto", SqlDbType.VarChar).Value = idProduto;
+                
+                cmd.CommandText = sql;                
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 Estoque = new List<clsEstoque>();
