@@ -53,6 +53,7 @@
             this.txtBoxId.Size = new System.Drawing.Size(42, 20);
             this.txtBoxId.TabIndex = 0;
             this.txtBoxId.TextChanged += new System.EventHandler(this.txtBoxId_TextChanged);
+            this.txtBoxId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxId_TextChanged);
             // 
             // txtBoxNome
             // 
@@ -149,7 +150,7 @@
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -163,6 +164,7 @@
             this.DataGridEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridEstoque.Size = new System.Drawing.Size(313, 180);
             this.DataGridEstoque.TabIndex = 49;
+            this.DataGridEstoque.SelectionChanged += new System.EventHandler(this.DataGridEstoque_SelectionChanged);
             // 
             // FormEstoque
             // 

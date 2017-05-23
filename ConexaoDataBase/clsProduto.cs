@@ -77,6 +77,36 @@ namespace ConexaoDataBase
             return p;
         }
 
+        public static List<clsProduto> SelecionarProdutos()
+        {
+            string sql = "SELECT idProduto, nomeProduto, Imagem FROM Produto";
+            SqlConnection cn = clsConn.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = sql;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            List<clsProduto> Produtos = new List<clsProduto>();
+            while (dr.Read())
+            {
+                clsProduto P = new clsProduto();
+
+                P.idProduto = dr.GetInt32(dr.GetOrdinal("idProduto"));
+                P.nomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
+                if (dr["Imagem"] != DBNull.Value)
+                    P.imagem = (byte[])dr["Imagem"];
+                else
+                    P.imagem = new byte[0];
+
+                Produtos.Add(P);
+            }
+
+            cn.Close();
+            cn.Dispose();
+
+            return Produtos;
+        }
+
         public static string RetornaIMG(int idProduto)
         {
             SqlConnection cn = clsConn.Conectar();

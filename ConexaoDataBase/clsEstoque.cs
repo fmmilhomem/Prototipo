@@ -13,20 +13,31 @@ namespace ConexaoDataBase
         public int idProduto { get; set; }
         public string nomeProduto { get; set; }
         public int qtdProdutoDisponivel { get; set; }
+        public byte[] imagem { get; set; }
 
-        public static List<clsEstoque> SelecionarProdutoId(string idProduto)
+        public static List<clsEstoque> SelecionarProdutoId(int idProduto)
         {
             List<clsEstoque> Estoque = null;
+            string sql = null;
             try
             {
-                string sql = (@"SELECT p.idProduto,P.nomeProduto, ISNULL(E.qtdProdutoDisponivel, '') AS qtdProdutoDisponivel FROM estoque AS E INNER JOIN produto AS P ON E.idProduto = P.idProduto 
-                                WHERE E.idProduto = @idProduto OR @idProduto = ''");
+                if (idProduto == 0)
+                {
+                    sql = (@"SELECT P.idProduto AS idProduto,P.nomeProduto  AS nomeProduto, E.qtdProdutoDisponivel AS qtd, P.imagem AS Imagem FROM estoque AS E 
+                                    INNER JOIN produto AS P ON E.idProduto = P.idProduto");
+                }
+                else
+                {
+                    sql = (@"SELECT P.idProduto,P.nomeProduto, E.qtdProdutoDisponivel FROM estoque AS E 
+                                INNER JOIN produto AS P ON E.idProduto = P.idProduto 
+                                WHERE E.idProduto = @idProduto");
+                }
 
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = sql;
 
-                cmd.Parameters.Add("@idProduto", SqlDbType.VarChar).Value = idProduto;
+                //cmd.Parameters.Add("@idProduto", SqlDbType.VarChar).Value = idProduto;
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 Estoque = new List<clsEstoque>();
@@ -36,7 +47,11 @@ namespace ConexaoDataBase
                     clsEstoque e = new clsEstoque();
                     e.idProduto = dr.GetInt32(dr.GetOrdinal("idProduto"));
                     e.nomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
-                    e.qtdProdutoDisponivel = dr.GetInt32(dr.GetOrdinal("qtdProdutoDisponivel"));
+                    e.qtdProdutoDisponivel = dr.GetInt32(dr.GetOrdinal("qtd"));
+                    if (dr["Imagem"] != DBNull.Value)
+                        e.imagem = (byte[])dr["Imagem"];
+                    else
+                        e.imagem = new byte[0];
                     Estoque.Add(e);
                 }
                 
