@@ -10,9 +10,9 @@ namespace ConexaoDataBase
 {
     public class clsEstoque
     {
-        public int idProduto { get; set; }
-        public string nomeProduto { get; set; }
-        public int qtdProdutoDisponivel { get; set; }
+        public int ID { get; set; }
+        public string Produto { get; set; }
+        public int QTD { get; set; }
         public byte[] imagem { get; set; }
 
         public static List<clsEstoque> SelecionarProdutoId(int idProduto)
@@ -53,9 +53,9 @@ namespace ConexaoDataBase
                 while (dr.Read())
                 {
                     clsEstoque e = new clsEstoque();
-                    e.idProduto = dr.GetInt32(dr.GetOrdinal("idProduto"));
-                    e.nomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
-                    e.qtdProdutoDisponivel = dr.GetInt32(dr.GetOrdinal("qtd"));
+                    e.ID = dr.GetInt32(dr.GetOrdinal("idProduto"));
+                    e.Produto = dr.GetString(dr.GetOrdinal("nomeProduto"));
+                    e.QTD = dr.GetInt32(dr.GetOrdinal("qtd"));
                     if (dr["Imagem"] != DBNull.Value)
                         e.imagem = (byte[])dr["Imagem"];
                     else
@@ -76,13 +76,13 @@ namespace ConexaoDataBase
             List<clsEstoque> Estoque = null;
             try
             {
-                string sql = (@"P.idProduto AS idProduto,
-                                    P.nomeProduto  AS nomeProduto, 
-                                    E.qtdProdutoDisponivel AS qtd, 
-                                    P.imagem AS Imagem 
-                                    FROM Produto AS P
-                                    INNER JOIN estoque AS E ON P.idProduto = E.idProduto 
-                                    WHERE P.nomeProduto LIKE '%' + @nomeProduto + '%'");
+                string sql = (@"SELECT P.idProduto AS ID,
+                                       P.nomeProduto  AS Produto, 
+                                       E.qtdProdutoDisponivel AS QTD, 
+                                       P.imagem AS Imagem 
+                                       FROM Produto AS P
+                                       INNER JOIN estoque AS E ON ID = E.idProduto 
+                                       WHERE P.nomeProduto LIKE '%' + @nomeProduto + '%'");
 
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
@@ -96,9 +96,9 @@ namespace ConexaoDataBase
                 while (dr.Read())
                 {
                     clsEstoque e = new clsEstoque();
-                    e.idProduto = dr.GetInt32(dr.GetOrdinal("idProduto"));
-                    e.nomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
-                    e.qtdProdutoDisponivel = dr.GetInt32(dr.GetOrdinal("qtd"));
+                    e.ID = dr.GetInt32(dr.GetOrdinal("ID"));
+                    e.Produto = dr.GetString(dr.GetOrdinal("Produto"));
+                    e.QTD = dr.GetInt32(dr.GetOrdinal("QTD"));
                     if (dr["Imagem"] != DBNull.Value)
                         e.imagem = (byte[])dr["Imagem"];
                     else
@@ -115,16 +115,18 @@ namespace ConexaoDataBase
 
         public static void Salvar(int idProduto, int qtdProdutoDisponivel)
         {
+            string returnMsg = null;
+
             string sql = (@"UPDATE estoque SET
                             qtdProdutoDisponivel = @qtdProdutoDisponivel
                             WHERE idProduto = @idProduto");
 
             SqlConnection cn = clsConn.Conectar();
-            SqlCommand cmd = cn.CreateCommand();
-            cmd.CommandText = sql;
+            SqlCommand cmd = cn.CreateCommand();           
 
             cmd.Parameters.Add("@qtdProdutoDisponivel", SqlDbType.Int).Value = qtdProdutoDisponivel;
             cmd.Parameters.Add("@idProduto", SqlDbType.Int).Value = idProduto;
+            cmd.CommandText = sql;
 
             cmd.ExecuteNonQuery();
             cn.Dispose();

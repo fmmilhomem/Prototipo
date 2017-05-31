@@ -54,7 +54,6 @@ namespace Prototipo
 
             if (nomeProduto != string.Empty)
             {
-                //FALTA AJUSTAR
                 Estoque = clsEstoque.SelecionarProdutoNome(nomeProduto);
             }
             else if (idTxt != string.Empty)
@@ -68,8 +67,10 @@ namespace Prototipo
             }
 
             DataGridEstoque.DataSource = Estoque;
+            DataGridEstoque.Columns["ID"].Width = 15;
+            DataGridEstoque.Columns["Produto"].Width = 100;
             DataGridEstoque.Columns["Imagem"].Visible = false;
-            DataGridEstoque.Columns["nomeProduto"].Width = 100;
+            DataGridEstoque.Columns["QTD"].Width = 40;
         }
 
         private void DataGridEstoque_SelectionChanged(object sender, EventArgs e)
@@ -77,6 +78,7 @@ namespace Prototipo
             //Zera o campo de qtd
             txtQtd.Text = string.Empty;
             txtQtd.ReadOnly = true;
+            btnSalvar.Enabled = false;
 
             if (DataGridEstoque.SelectedRows.Count > 0)
             {
@@ -91,6 +93,7 @@ namespace Prototipo
             else
             {
                 btnEditarQtd.Enabled = false;
+                imgProduto.Image = null;
             }
         }
 
@@ -118,18 +121,19 @@ namespace Prototipo
 
                         if (DataGridEstoque.SelectedRows[0].Cells[1].Value != null)
                         {
-                            txtQtd.Text = Convert.ToString(DataGridEstoque.SelectedRows[0].Cells["qtdProdutoDisponivel"].Value);
+                            txtQtd.Text = Convert.ToString(DataGridEstoque.SelectedRows[0].Cells["QTD"].Value);
                             txtQtd.ReadOnly = false;
+                            btnSalvar.Enabled = true;
                         }
                         else
                         {
                             MessageBox.Show("Selecione o produto!");
                         }
                         break;
-                    case DialogResult.No:
-                        //Rollback();
-                        break;
                     default:
+                        txtQtd.Text = string.Empty;
+                        txtQtd.ReadOnly = true;
+                        btnSalvar.Enabled = false;
                         break;
                 }
             }
@@ -171,6 +175,7 @@ namespace Prototipo
             if (DataGridEstoque.SelectedRows[0].Cells[1].Value != null)
             {
                 clsEstoque.Salvar(Convert.ToInt32(DataGridEstoque.SelectedRows[0].Cells[0].Value), Convert.ToInt32(txtQtd.Text));
+                btnBuscar_Click(sender, e); //REFRESH
             }
         }
 
