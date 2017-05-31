@@ -47,6 +47,14 @@ namespace Prototipo
                 txtBoxId.Enabled = true;
         }
 
+        private void txtBoxId_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxId.Text != string.Empty)
+                txtBoxNome.Enabled = false;
+            else
+                txtBoxNome.Enabled = true;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             int id = 0;
@@ -67,22 +75,6 @@ namespace Prototipo
         {
 
         }
-
-        /*private void DataGridEstoque_SelectionChanged(object sender, EventArgs e)
-        {
-            string strNomeArquivo = null;
-
-            if (DataGridEstoque.SelectedRows.Count > 0)
-            {
-                int id = int.Parse(DataGridEstoque.SelectedRows[0].Cells[0].Value.ToString());
-               
-                //if(DataGridEstoque.SelectedRows[0].Cells[0].Value.ToString())
-                strNomeArquivo = clsProduto.RetornaIMG(id);
-                                
-               // if (Image.FromFile(strNomeArquivo))
-                    imgProduto.Image = Image.FromFile(strNomeArquivo);
-            }
-        }*/
 
         private void DataGridEstoque_SelectionChanged(object sender, EventArgs e)
         {
@@ -108,11 +100,6 @@ namespace Prototipo
             {
                 imgProduto.Image = null;
             }
-        }
-
-        private void txtBoxId_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

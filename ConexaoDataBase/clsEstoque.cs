@@ -29,17 +29,17 @@ namespace ConexaoDataBase
                     sql = (@"SELECT P.idProduto AS idProduto,
                                     P.nomeProduto  AS nomeProduto, 
                                     E.qtdProdutoDisponivel AS qtd, 
-                                    P.imagem AS Imagem FROM estoque AS E 
-                                    LEFT JOIN produto AS P ON E.idProduto = P.idProduto");
+                                    P.imagem AS Imagem FROM Produto AS P
+                                    INNER JOIN estoque AS E ON P.idProduto = E.idProduto");
                 }
                 else
                 {
                     sql = (@"SELECT P.idProduto AS idProduto,
                                     P.nomeProduto  AS nomeProduto, 
                                     E.qtdProdutoDisponivel AS qtd, 
-                                    P.imagem AS Imagem FROM estoque AS E 
-                                    LEFT JOIN produto AS P ON E.idProduto = P.idProduto 
-                                    WHERE E.idProduto = @idProduto");
+                                    P.imagem AS Imagem FROM Produto AS P
+                                    INNER JOIN estoque AS E ON P.idProduto = E.idProduto 
+                                    WHERE P.idProduto = @idProduto");
 
                     cmd.Parameters.Add("@idProduto", SqlDbType.VarChar).Value = idProduto;
                 }
@@ -75,8 +75,10 @@ namespace ConexaoDataBase
             List<clsEstoque> Estoque = null;
             try
             {
-                string sql = (@"SELECT p.idProduto,P.nomeProduto, ISNULL(E.qtdProdutoDisponivel, '') AS qtdProdutoDisponivel FROM produto AS P 
-                                INNER JOIN estoque AS E ON P.idProduto = E.idProduto 
+                string sql = (@"P.idProduto AS idProduto,
+                                P.nomeProduto  AS nomeProduto, 
+                                E.qtdProdutoDisponivel AS qtd, 
+                                P.imagem AS Imagem FROM Produto AS P
                                 WHERE P.nomeProduto LIKE '%' + @nomeProduto + '%'");
 
                 SqlConnection cn = clsConn.Conectar();
