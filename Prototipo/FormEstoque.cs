@@ -21,21 +21,11 @@ namespace Prototipo
             InitializeComponent();
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void txtBoxId_TextChanged(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
             {
                 e.Handled = true;
-
-                /*if (txtBoxNome.Text != string.Empty)
-                    txtBoxId.Enabled = false;
-                else
-                    txtBoxId.Enabled = true;*/
             }
         }
 
@@ -71,13 +61,17 @@ namespace Prototipo
             DataGridEstoque.Columns["nomeProduto"].Width = 100;
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
 
         }
 
         private void DataGridEstoque_SelectionChanged(object sender, EventArgs e)
         {
+            //Zera o campo de qtd
+            txtQtd.Text = string.Empty;
+            txtQtd.ReadOnly = true;
+
             if (DataGridEstoque.SelectedRows.Count > 0)
             {
                 if (DataGridEstoque.SelectedRows[0].Cells[1].Value != null)
@@ -100,6 +94,47 @@ namespace Prototipo
             {
                 imgProduto.Image = null;
             }
+        }
+
+        private void btnEditarQtd_Click(object sender, EventArgs e)
+        {
+            if (DataGridEstoque.SelectedRows.Count > 0)
+            {
+                var result = MessageBox.Show(@"Deseja alterar quantidade do produto selecionado?", "Confirmação", MessageBoxButtons.YesNo);
+                switch (result)
+                {
+                    case DialogResult.Yes:
+
+                        if (DataGridEstoque.SelectedRows[0].Cells[1].Value != null)
+                        {
+                            txtQtd.Text = Convert.ToString(DataGridEstoque.SelectedRows[0].Cells["qtdProdutoDisponivel"].Value);
+                            txtQtd.ReadOnly = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Selecione o produto!");
+                        }
+                        break;
+                    case DialogResult.No:
+                        //Rollback();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void txtQtd_TextChanged(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
