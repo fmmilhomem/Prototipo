@@ -37,7 +37,8 @@ namespace ConexaoDataBase
                     sql = (@"SELECT P.idProduto AS idProduto,
                                     P.nomeProduto  AS nomeProduto, 
                                     E.qtdProdutoDisponivel AS qtd, 
-                                    P.imagem AS Imagem FROM Produto AS P
+                                    P.imagem AS Imagem 
+                                    FROM Produto AS P
                                     INNER JOIN estoque AS E ON P.idProduto = E.idProduto 
                                     WHERE P.idProduto = @idProduto");
 
@@ -76,10 +77,12 @@ namespace ConexaoDataBase
             try
             {
                 string sql = (@"P.idProduto AS idProduto,
-                                P.nomeProduto  AS nomeProduto, 
-                                E.qtdProdutoDisponivel AS qtd, 
-                                P.imagem AS Imagem FROM Produto AS P
-                                WHERE P.nomeProduto LIKE '%' + @nomeProduto + '%'");
+                                    P.nomeProduto  AS nomeProduto, 
+                                    E.qtdProdutoDisponivel AS qtd, 
+                                    P.imagem AS Imagem 
+                                    FROM Produto AS P
+                                    INNER JOIN estoque AS E ON P.idProduto = E.idProduto 
+                                    WHERE P.nomeProduto LIKE '%' + @nomeProduto + '%'");
 
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
@@ -95,7 +98,11 @@ namespace ConexaoDataBase
                     clsEstoque e = new clsEstoque();
                     e.idProduto = dr.GetInt32(dr.GetOrdinal("idProduto"));
                     e.nomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
-                    e.qtdProdutoDisponivel = dr.GetInt32(dr.GetOrdinal("qtdProdutoDisponivel"));
+                    e.qtdProdutoDisponivel = dr.GetInt32(dr.GetOrdinal("qtd"));
+                    if (dr["Imagem"] != DBNull.Value)
+                        e.imagem = (byte[])dr["Imagem"];
+                    else
+                        e.imagem = new byte[0];
                     Estoque.Add(e);
                 }
             }
@@ -104,6 +111,24 @@ namespace ConexaoDataBase
 
             }
             return Estoque;
+        }
+
+        public static void Salvar(int idProduto, int qtdProdutoDisponivel)
+        {
+            string sql = (@"UPDATE estoque SET
+                            qtdProdutoDisponivel = @qtdProdutoDisponivel
+                            WHERE idProduto = @idProduto");
+
+            SqlConnection cn = clsConn.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = sql;
+
+            cmd.Parameters.Add("@qtdProdutoDisponivel", SqlDbType.Int).Value = qtdProdutoDisponivel;
+            cmd.Parameters.Add("@idProduto", SqlDbType.Int).Value = idProduto;
+
+            cmd.ExecuteNonQuery();
+            cn.Dispose();
+            cn.Close();
         }
     }
 }

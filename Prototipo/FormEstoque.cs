@@ -49,21 +49,27 @@ namespace Prototipo
         {
             int id = 0;
             string idTxt = txtBoxId.Text;
+            string nomeProduto = txtBoxNome.Text;
+            List<clsEstoque> Estoque = null;
 
-            if (idTxt != string.Empty)
+            if (nomeProduto != string.Empty)
+            {
+                //FALTA AJUSTAR
+                Estoque = clsEstoque.SelecionarProdutoNome(nomeProduto);
+            }
+            else if (idTxt != string.Empty)
             {                
                 id = Convert.ToInt32(idTxt);
+                Estoque = clsEstoque.SelecionarProdutoId(id);
             }           
+            else 
+            {
+                Estoque = clsEstoque.SelecionarProdutoId(id);
+            }
 
-            List<clsEstoque> Estoque = clsEstoque.SelecionarProdutoId(id);
             DataGridEstoque.DataSource = Estoque;
             DataGridEstoque.Columns["Imagem"].Visible = false;
             DataGridEstoque.Columns["nomeProduto"].Width = 100;
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void DataGridEstoque_SelectionChanged(object sender, EventArgs e)
@@ -74,12 +80,17 @@ namespace Prototipo
 
             if (DataGridEstoque.SelectedRows.Count > 0)
             {
+                btnEditarQtd.Enabled = true;
                 if (DataGridEstoque.SelectedRows[0].Cells[1].Value != null)
                 {
                     imagem = new byte[0];
                     imagem = (byte[])(DataGridEstoque.SelectedRows[0].Cells["Imagem"].Value);
                     mostraFoto(imagem);
                 }
+            }
+            else
+            {
+                btnEditarQtd.Enabled = false;
             }
         }
 
@@ -129,6 +140,37 @@ namespace Prototipo
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void tpPopUp_Popup(object sender, PopupEventArgs e)
+        {
+            // Set up the delays for the ToolTip.
+            tpPopUp.AutoPopDelay = 5000;
+            tpPopUp.InitialDelay = 1000;
+            tpPopUp.ReshowDelay = 500;
+
+            // Force the ToolTip text to be displayed whether or not the form is active.
+            tpPopUp.ShowAlways = true;
+        }
+
+        private void btnEditarQtd_MouseHover(object sender, EventArgs e)
+        {
+            //Comentario no botão editar
+            tpPopUp.SetToolTip(this.btnEditarQtd, "Clique para alterar a quantidade no estoque.");
+        }
+
+        private void btnBuscar_MouseHover(object sender, EventArgs e)
+        {
+            //Comentario no botão buscar
+            tpPopUp.SetToolTip(this.btnBuscar, "Clique para buscar os produtos no estoque, pode pesquisar por nome ou código.");
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (DataGridEstoque.SelectedRows[0].Cells[1].Value != null)
+            {
+                clsEstoque.Salvar(Convert.ToInt32(DataGridEstoque.SelectedRows[0].Cells[0].Value), Convert.ToInt32(txtQtd.Text));
             }
         }
 

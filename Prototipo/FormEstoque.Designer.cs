@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEstoque));
             this.txtBoxId = new System.Windows.Forms.TextBox();
             this.txtBoxNome = new System.Windows.Forms.TextBox();
@@ -44,6 +45,7 @@
             this.btnEditarQtd = new System.Windows.Forms.Button();
             this.lblQtd = new System.Windows.Forms.Label();
             this.txtQtd = new System.Windows.Forms.TextBox();
+            this.tpPopUp = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.imgProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridEstoque)).BeginInit();
             this.SuspendLayout();
@@ -141,6 +143,7 @@
             this.btnBuscar.TabIndex = 48;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnBuscar.MouseHover += new System.EventHandler(this.btnBuscar_MouseHover);
             // 
             // DataGridEstoque
             // 
@@ -150,20 +153,20 @@
             this.DataGridEstoque.BackgroundColor = System.Drawing.Color.Silver;
             this.DataGridEstoque.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DataGridEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridEstoque.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridEstoque.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridEstoque.Location = new System.Drawing.Point(30, 75);
             this.DataGridEstoque.MultiSelect = false;
             this.DataGridEstoque.Name = "DataGridEstoque";
             this.DataGridEstoque.ReadOnly = true;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.DataGridEstoque.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.DataGridEstoque.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridEstoque.Size = new System.Drawing.Size(350, 180);
             this.DataGridEstoque.TabIndex = 49;
@@ -171,6 +174,7 @@
             // 
             // btnEditarQtd
             // 
+            this.btnEditarQtd.Enabled = false;
             this.btnEditarQtd.ForeColor = System.Drawing.Color.Black;
             this.btnEditarQtd.Image = global::Prototipo.Properties.Resources.iconEditar;
             this.btnEditarQtd.Location = new System.Drawing.Point(335, 46);
@@ -179,6 +183,7 @@
             this.btnEditarQtd.TabIndex = 50;
             this.btnEditarQtd.UseVisualStyleBackColor = true;
             this.btnEditarQtd.Click += new System.EventHandler(this.btnEditarQtd_Click);
+            this.btnEditarQtd.MouseHover += new System.EventHandler(this.btnEditarQtd_MouseHover);
             // 
             // lblQtd
             // 
@@ -200,6 +205,10 @@
             this.txtQtd.Size = new System.Drawing.Size(81, 20);
             this.txtQtd.TabIndex = 51;
             this.txtQtd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtd_TextChanged);
+            // 
+            // tpPopUp
+            // 
+            this.tpPopUp.Popup += new System.Windows.Forms.PopupEventHandler(this.tpPopUp_Popup);
             // 
             // FormEstoque
             // 
@@ -249,5 +258,6 @@
         private System.Windows.Forms.Button btnEditarQtd;
         private System.Windows.Forms.Label lblQtd;
         private System.Windows.Forms.TextBox txtQtd;
+        private System.Windows.Forms.ToolTip tpPopUp;
     }
 }
