@@ -35,8 +35,6 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.lblQueroCadastrar = new System.Windows.Forms.Label();
-            this.btnQueroCadastrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblBemVindo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,7 +46,7 @@
             this.lblLogin.BackColor = System.Drawing.Color.Transparent;
             this.lblLogin.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = System.Drawing.Color.Black;
-            this.lblLogin.Location = new System.Drawing.Point(501, 89);
+            this.lblLogin.Location = new System.Drawing.Point(490, 114);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(53, 19);
             this.lblLogin.TabIndex = 2;
@@ -56,7 +54,7 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(434, 119);
+            this.txtLogin.Location = new System.Drawing.Point(423, 144);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(175, 23);
@@ -68,7 +66,7 @@
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.Black;
-            this.lblSenha.Location = new System.Drawing.Point(501, 156);
+            this.lblSenha.Location = new System.Drawing.Point(490, 181);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(59, 19);
             this.lblSenha.TabIndex = 4;
@@ -76,7 +74,7 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(434, 179);
+            this.txtSenha.Location = new System.Drawing.Point(423, 204);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -87,7 +85,7 @@
             // 
             this.btnEntrar.ForeColor = System.Drawing.Color.Black;
             this.btnEntrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEntrar.Location = new System.Drawing.Point(527, 220);
+            this.btnEntrar.Location = new System.Drawing.Point(516, 245);
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(82, 28);
@@ -99,7 +97,7 @@
             // btnSair
             // 
             this.btnSair.ForeColor = System.Drawing.Color.Black;
-            this.btnSair.Location = new System.Drawing.Point(434, 220);
+            this.btnSair.Location = new System.Drawing.Point(423, 245);
             this.btnSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(82, 28);
@@ -107,30 +105,6 @@
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // lblQueroCadastrar
-            // 
-            this.lblQueroCadastrar.AutoSize = true;
-            this.lblQueroCadastrar.BackColor = System.Drawing.Color.Transparent;
-            this.lblQueroCadastrar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQueroCadastrar.ForeColor = System.Drawing.Color.Black;
-            this.lblQueroCadastrar.Location = new System.Drawing.Point(433, 281);
-            this.lblQueroCadastrar.Name = "lblQueroCadastrar";
-            this.lblQueroCadastrar.Size = new System.Drawing.Size(175, 19);
-            this.lblQueroCadastrar.TabIndex = 8;
-            this.lblQueroCadastrar.Text = "Quero me cadastrar!";
-            // 
-            // btnQueroCadastrar
-            // 
-            this.btnQueroCadastrar.ForeColor = System.Drawing.Color.Black;
-            this.btnQueroCadastrar.Location = new System.Drawing.Point(457, 304);
-            this.btnQueroCadastrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnQueroCadastrar.Name = "btnQueroCadastrar";
-            this.btnQueroCadastrar.Size = new System.Drawing.Size(124, 28);
-            this.btnQueroCadastrar.TabIndex = 9;
-            this.btnQueroCadastrar.Text = "Clique Aqui";
-            this.btnQueroCadastrar.UseVisualStyleBackColor = true;
-            this.btnQueroCadastrar.Click += new System.EventHandler(this.btnQueroCadastrar_Click);
             // 
             // pictureBox1
             // 
@@ -164,8 +138,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(681, 377);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnQueroCadastrar);
-            this.Controls.Add(this.lblQueroCadastrar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtSenha);
@@ -195,8 +167,6 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Label lblQueroCadastrar;
-        private System.Windows.Forms.Button btnQueroCadastrar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblBemVindo;
     }

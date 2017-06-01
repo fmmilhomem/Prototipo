@@ -76,19 +76,19 @@ namespace ConexaoDataBase
             List<clsEstoque> Estoque = null;
             try
             {
-                string sql = (@"SELECT P.idProduto AS ID,
-                                       P.nomeProduto  AS Produto, 
-                                       E.qtdProdutoDisponivel AS QTD, 
-                                       P.imagem AS Imagem 
-                                       FROM Produto AS P
-                                       INNER JOIN estoque AS E ON ID = E.idProduto 
-                                       WHERE P.nomeProduto LIKE '%' + @nomeProduto + '%'");
-
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = sql;
+
+                string sql = (@"SELECT P.idProduto AS idProduto,
+                                    P.nomeProduto  AS nomeProduto, 
+                                    E.qtdProdutoDisponivel AS qtd, 
+                                    P.imagem AS Imagem 
+                                    FROM Produto AS P
+                                    INNER JOIN estoque AS E ON P.idProduto = E.idProduto                                     
+                                    WHERE nomeProduto LIKE '%' + @nomeProduto + '%'");              
 
                 cmd.Parameters.Add("@nomeProduto", SqlDbType.VarChar).Value = nomeProduto;
+                cmd.CommandText = sql;
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 Estoque = new List<clsEstoque>();
@@ -96,9 +96,9 @@ namespace ConexaoDataBase
                 while (dr.Read())
                 {
                     clsEstoque e = new clsEstoque();
-                    e.ID = dr.GetInt32(dr.GetOrdinal("ID"));
-                    e.Produto = dr.GetString(dr.GetOrdinal("Produto"));
-                    e.QTD = dr.GetInt32(dr.GetOrdinal("QTD"));
+                    e.ID = dr.GetInt32(dr.GetOrdinal("idProduto"));
+                    e.Produto = dr.GetString(dr.GetOrdinal("nomeProduto"));
+                    e.QTD = dr.GetInt32(dr.GetOrdinal("qtd"));
                     if (dr["Imagem"] != DBNull.Value)
                         e.imagem = (byte[])dr["Imagem"];
                     else
