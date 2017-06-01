@@ -103,6 +103,16 @@ namespace Prototipo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconLixeira {
+            get {
+                object obj = ResourceManager.GetObject("iconLixeira", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icoNovo {
             get {
                 object obj = ResourceManager.GetObject("icoNovo", resourceCulture);

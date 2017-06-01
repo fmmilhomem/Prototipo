@@ -19,7 +19,6 @@ namespace Prototipo
             InitializeComponent();
         }
 
-
         private void btnNovo_Click(object sender, EventArgs e)
         {
             if (btnEditar.Enabled)
@@ -27,6 +26,7 @@ namespace Prototipo
                 btnEditar.Enabled = false;
                 txtNome.Enabled = true;
                 txtDescricao.Enabled = true;
+                cbCategoria.DataSource = null;
             }
             else
             {
@@ -45,16 +45,17 @@ namespace Prototipo
                 btnNovo.Enabled = false;
                 btnDeletar.Enabled = true;
                 cbCategoria.Enabled = true;
-                cbCategoria.Text = "<LISTAR>";
+                cbCategoria.Text = "< LISTAR >"; 
             }
             else
             {
                 btnNovo.Enabled = true;
                 btnDeletar.Enabled = false;
+                cbCategoria.DataSource = null;
+                cbCategoria.Text = null;
                 cbCategoria.Enabled = false;
                 txtNome.Enabled = false;
                 txtDescricao.Enabled = false;
-                cbCategoria.DataSource = null;
                 txtNome.Clear();
                 txtDescricao.Clear();
             }
@@ -87,19 +88,25 @@ namespace Prototipo
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            int idCategoria = Convert.ToInt16(cbCategoria.SelectedValue);
-
-            if ((cbCategoria.Enabled) && (idCategoria > 6))
+            if (cbCategoria.Text != "< LISTAR >")
             {
-                clsCategoria.Deletar(idCategoria);
-                MessageBox.Show("Salvo com sucesso!");
+                int idCategoria = Convert.ToInt32(cbCategoria.SelectedValue);
+
+                if ((cbCategoria.Enabled) && (idCategoria > 6))
+                {
+                    clsCategoria.Deletar(idCategoria);
+                    MessageBox.Show("Salvo com sucesso!");
+                    refresh_cbCategoria(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.  
+                }
+                else
+                {
+                    MessageBox.Show("Acesso Negado a esta categoria!");
+                }
             }
             else
             {
-                MessageBox.Show("Acesso Negado a esta categoria!");
-            }
-
-            refresh_cbCategoria(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.           
+                MessageBox.Show("Liste para selecionar a categoria!");
+            }         
         }
 
         private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)

@@ -35,8 +35,8 @@
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
-            this.btnDeletar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
+            this.btnDeletar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -115,18 +115,6 @@
             this.lblNome.TabIndex = 50;
             this.lblNome.Text = "Nome:";
             // 
-            // btnDeletar
-            // 
-            this.btnDeletar.Enabled = false;
-            this.btnDeletar.ForeColor = System.Drawing.Color.Black;
-            this.btnDeletar.Location = new System.Drawing.Point(274, 9);
-            this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(63, 22);
-            this.btnDeletar.TabIndex = 54;
-            this.btnDeletar.Text = "DEL";
-            this.btnDeletar.UseVisualStyleBackColor = true;
-            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
-            // 
             // btnNovo
             // 
             this.btnNovo.ForeColor = System.Drawing.Color.Black;
@@ -137,6 +125,18 @@
             this.btnNovo.TabIndex = 55;
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.Enabled = false;
+            this.btnDeletar.ForeColor = System.Drawing.Color.Black;
+            this.btnDeletar.Image = global::Prototipo.Properties.Resources.iconLixeira;
+            this.btnDeletar.Location = new System.Drawing.Point(306, 9);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(31, 22);
+            this.btnDeletar.TabIndex = 54;
+            this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnEditar
             // 
