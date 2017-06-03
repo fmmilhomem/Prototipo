@@ -45,7 +45,6 @@ namespace Prototipo
                 btnNovo.Enabled = false;
                 btnDeletar.Enabled = true;
                 cbCategoria.Enabled = true;
-                cbCategoria.Text = "< LISTAR >"; 
             }
             else
             {
@@ -67,32 +66,33 @@ namespace Prototipo
             c.nomeCategoria = txtNome.Text;
             c.descCategoria = txtDescricao.Text;
 
-            if (Convert.ToInt16(cbCategoria.SelectedValue) < 7)
+            if(btnNovo.Enabled == true)
             {
-                MessageBox.Show("Acesso Negado a esta categoria!");
-            }
-            else if (btnEditar.Enabled)
-            {
-                c.Salvar(Convert.ToInt16(cbCategoria.SelectedValue));
+                c.Salvar(0);
                 MessageBox.Show("Salvo com sucesso!"); //Acertar
             }
-            else
+            else if(btnEditar.Enabled == true && cbCategoria.SelectedValue != null)
             {
-                c.Cadastrar();
-                MessageBox.Show("Salvo com sucesso!"); //Acertar
+                if (Convert.ToInt16(cbCategoria.SelectedValue) > 6)
+                {
+                    c.Salvar(Convert.ToInt16(cbCategoria.SelectedValue));
+                    MessageBox.Show("Salvo com sucesso!"); //Acertar
+                    refresh_cbCategoria(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
+                }
+                else
+                {
+                    MessageBox.Show("Acesso Negado a esta categoria!");
+                }
             }
-
-            refresh_cbCategoria(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.            
-            btnSalvar.Enabled = false;
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            if (cbCategoria.Text != "< LISTAR >")
+            if (cbCategoria.SelectedValue != null)
             {
                 int idCategoria = Convert.ToInt32(cbCategoria.SelectedValue);
 
-                if ((cbCategoria.Enabled) && (idCategoria > 6))
+                if (idCategoria > 6)
                 {
                     clsCategoria.Deletar(idCategoria);
                     MessageBox.Show("Salvo com sucesso!");

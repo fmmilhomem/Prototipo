@@ -33,7 +33,14 @@ namespace ConexaoDataBase
             sb.InitialCatalog = "hippo";
 
             SqlConnection cn = new SqlConnection(sb.ConnectionString);
-            cn.Open();
+            try
+            {
+                cn.Open();
+            }
+            catch (SqlException e)
+            {
+                //
+            }
             return cn;
         }
          

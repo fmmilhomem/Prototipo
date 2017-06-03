@@ -63,7 +63,7 @@ namespace Prototipo
         private void btnCadastroCliente_Click(object sender, EventArgs e)
         {
             //this.Close();
-            FormCadastroCliente frm = new FormCadastroCliente();
+            FormCadastro frm = new FormCadastro();
             frm.ShowDialog();
             
         }
@@ -82,8 +82,7 @@ namespace Prototipo
         {
            // this.Close();
             FormCadastroProduto frm = new FormCadastroProduto(u);
-            frm.ShowDialog();
-            
+            frm.ShowDialog();            
         }
 
 

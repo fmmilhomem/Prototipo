@@ -100,7 +100,7 @@
             this.btnCadastroCliente.Name = "btnCadastroCliente";
             this.btnCadastroCliente.Size = new System.Drawing.Size(180, 149);
             this.btnCadastroCliente.TabIndex = 4;
-            this.btnCadastroCliente.Text = "Cadastro Cliente";
+            this.btnCadastroCliente.Text = "Cadastro Usuários";
             this.btnCadastroCliente.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnCadastroCliente.UseVisualStyleBackColor = true;
             this.btnCadastroCliente.Click += new System.EventHandler(this.btnCadastroCliente_Click);
@@ -131,18 +131,18 @@
             this.usersToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(103, 48);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(102, 48);
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.usersToolStripMenuItem.Text = "Users";
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
             // menuToolStripMenuItem
@@ -178,28 +178,28 @@
             this.mnSubLogout,
             this.mnSubSair});
             this.mnSubPrincipal.Name = "mnSubPrincipal";
-            this.mnSubPrincipal.Size = new System.Drawing.Size(61, 20);
+            this.mnSubPrincipal.Size = new System.Drawing.Size(56, 20);
             this.mnSubPrincipal.Text = "Arquivo";
             this.mnSubPrincipal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // mnSubUser
             // 
             this.mnSubUser.Name = "mnSubUser";
-            this.mnSubUser.Size = new System.Drawing.Size(162, 22);
+            this.mnSubUser.Size = new System.Drawing.Size(161, 22);
             this.mnSubUser.Text = "Users              F8";
             this.mnSubUser.Click += new System.EventHandler(this.mnSubUser_Click);
             // 
             // mnSubLogout
             // 
             this.mnSubLogout.Name = "mnSubLogout";
-            this.mnSubLogout.Size = new System.Drawing.Size(162, 22);
+            this.mnSubLogout.Size = new System.Drawing.Size(161, 22);
             this.mnSubLogout.Text = "Logout           F9";
             this.mnSubLogout.Click += new System.EventHandler(this.mnSubLogout_Click);
             // 
             // mnSubSair
             // 
             this.mnSubSair.Name = "mnSubSair";
-            this.mnSubSair.Size = new System.Drawing.Size(162, 22);
+            this.mnSubSair.Size = new System.Drawing.Size(161, 22);
             this.mnSubSair.Text = "Sair                 F10";
             this.mnSubSair.Click += new System.EventHandler(this.mnSubSair_Click);
             // 

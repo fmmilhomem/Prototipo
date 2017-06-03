@@ -33,14 +33,12 @@ namespace Prototipo
         {
             if (Application.OpenForms.OfType<FormTelasUsuario>().Count() > 0)
             {
-                lblCadastroInfo.Visible = false;
-                btnTelaLogin.Visible = false;
+                lblAlterarCadastro.Visible = false;
                 btnSair.Text = "Voltar";
             }
             else
             {
-                lblCadastroInfo.Visible = true;
-                btnTelaLogin.Visible = true;
+                lblAlterarCadastro.Visible = true;
                 btnSair.Text = "Sair";
             }
         }
@@ -56,6 +54,11 @@ namespace Prototipo
             {
                 clsCliente c = new clsCliente();
             }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

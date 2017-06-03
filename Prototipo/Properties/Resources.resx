@@ -130,6 +130,9 @@
   <data name="icoNovo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icoNovo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconLixeira" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconLixeira.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconEditar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,7 +160,7 @@
   <data name="iconSair" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconSair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconLixeira" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconLixeira.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconEstoque" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconEstoque.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

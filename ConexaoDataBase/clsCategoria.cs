@@ -113,41 +113,40 @@ namespace ConexaoDataBase
             SqlConnection cn = clsConn.Conectar();
             SqlCommand cmd = cn.CreateCommand();
 
-            cmd.CommandText = "UPDATE categoria " +
-                              "SET nomeCategoria = @nomeCategoria, " +
-                              "descCategoria = @descCategoria " +
-                              "WHERE idCategoria = @idCategoria";
-            cmd.Parameters.Add("idCategoria", SqlDbType.Int).Value = idCategoria;
-
-            cmd.Parameters.Add("@nomeCategoria", SqlDbType.VarChar, 50).Value = this.nomeCategoria;
-            if(this.descCategoria != "")
-                cmd.Parameters.Add("@descCategoria", SqlDbType.NVarChar, 50).Value = this.descCategoria;
+            if (idCategoria == 0)
+            {
+                cmd.CommandText = "INSERT INTO categoria " +
+                                    "(nomeCategoria, descCategoria)" +
+                                    "VALUES " +
+                                    "(@nomeCategoria, @descCategoria)";
+                cmd.Parameters.Add("@nomeCategoria", SqlDbType.VarChar, 50).Value = this.nomeCategoria;
+            }
             else
-                cmd.Parameters.Add("@descCategoria", DBNull.Value); //Enviando valor null
+            { 
+                cmd.CommandText = "UPDATE categoria " +
+                                  "SET nomeCategoria = @nomeCategoria, " +
+                                  "descCategoria = @descCategoria " +
+                                  "WHERE idCategoria = @idCategoria";
+                cmd.Parameters.Add("idCategoria", SqlDbType.Int).Value = idCategoria;
+                cmd.Parameters.Add("@nomeCategoria", SqlDbType.VarChar).Value = this.nomeCategoria;
+            }
 
-            cmd.ExecuteNonQuery();
-
-            cn.Close();
-            cn.Dispose();
-        }
-
-        public void Cadastrar()
-        {
-            SqlConnection cn = clsConn.Conectar();
-            SqlCommand cmd = cn.CreateCommand();
-
-            cmd.CommandText = "INSERT INTO categoria " +
-                                "(nomeCategoria, descCategoria)" +
-                                "VALUES " +
-                                "(@nomeCategoria, @descCategoria)";         
-
-            cmd.Parameters.Add("@nomeCategoria", SqlDbType.VarChar, 50).Value = this.nomeCategoria;
-            if (this.descCategoria != "")
-                cmd.Parameters.Add("@descCategoria", SqlDbType.NVarChar, 50).Value = this.descCategoria;
+            if (this.descCategoria != string.Empty)
+            {
+                cmd.Parameters.Add("@descCategoria", SqlDbType.NVarChar).Value = this.descCategoria;
+            }
             else
+            {
                 cmd.Parameters.Add("@descCategoria", DBNull.Value); //Enviando valor null
-            cmd.ExecuteNonQuery();
-
+            }
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                //
+            }
             cn.Close();
             cn.Dispose();
         }

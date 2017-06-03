@@ -83,20 +83,30 @@ namespace Prototipo
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             clsProduto p = new clsProduto();
+            if (txtNome.Text != string.Empty &&
+                txtPreco.Text != string.Empty &&
+                cbCategoria.Text != string.Empty)
+            {
+                p.nomeProduto = txtNome.Text;
+                p.descProduto = txtDescricao.Text;
+                p.precProduto = Convert.ToDecimal(txtPreco.Text);
+                p.idCategoria = Convert.ToInt16(cbCategoria.SelectedValue);
+                p.ativoProduto = chkBoxAtivo.Checked;
+                if (txtQtdProduto.Text != string.Empty)
+                    p.qtdMinEstoque = Convert.ToInt16(txtQtdProduto.Text);
+                p.imagem = ConverterImgBytes();
+                if(txtDesconto.Text != string.Empty)
+                    p.descontoPromocao = Convert.ToDecimal(txtDesconto.Text);
+                p.idUsuario = u.idUsuario;
 
-            p.nomeProduto = txtNome.Text;
-            p.descProduto = txtDescricao.Text;
-            p.precProduto = Convert.ToDecimal(txtPreco.Text);
-            p.idCategoria = Convert.ToInt16(cbCategoria.SelectedValue);
-            p.ativoProduto = chkBoxAtivo.Checked;
-            p.qtdMinEstoque = Convert.ToInt16(txtQtdProduto.Text);
-            p.imagem = ConverterImgBytes();
-            p.descontoPromocao = Convert.ToDecimal(txtDesconto.Text);
-            p.idUsuario = u.idUsuario;
+                p.SalvarProduto(p.nomeProduto, p.descProduto, p.precProduto, p.descontoPromocao, p.idCategoria, p.ativoProduto, p.idUsuario, p.qtdMinEstoque, p.imagem);
 
-            p.SalvarProduto(p.nomeProduto, p.descProduto, p.precProduto, p.descontoPromocao, p.idCategoria, p.ativoProduto, p.idUsuario, p.qtdMinEstoque, p.imagem);
-
-            MessageBox.Show("Produto cadastrado com sucesso!");
+                MessageBox.Show("Produto cadastrado com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos necessários! (*)");
+            }
         }
 
         private byte[] ConverterImgBytes()
@@ -110,23 +120,64 @@ namespace Prototipo
             return imgByte;
         }
 
-        private void btnConsulta_Click(object sender, EventArgs e)
-        {
-            string strNomeArquivo = null;
-            if (txtCodImagem.Text == string.Empty)
-            {
-                MessageBox.Show("Informe o código da imagem no Banco de dados", "Código da Imagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            
-            strNomeArquivo = clsProduto.RetornaIMG(Convert.ToInt32(txtCodImagem.Text));
-            imgBox.Image = Image.FromFile(strNomeArquivo);
-        }
-
         private void cbCategoria_DropDown(object sender, EventArgs e)
         {
             CarregarCategoria();
         }
 
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNome.Text != string.Empty)
+            {
+                chkBoxAtivo.Enabled = true;
+                txtDescricao.Enabled = true;
+                cbCategoria.Enabled = true;
+                txtPreco.Enabled = true;
+                txtDesconto.Enabled = true;
+                txtQtdProduto.Enabled = true;
+                imgBox.Enabled = true;
+                btnSalvar.Enabled = true;                
+            }
+            else
+            {
+                chkBoxAtivo.Enabled = false;
+                txtDescricao.Enabled = false;
+                cbCategoria.Enabled = false;
+                txtPreco.Enabled = false;
+                txtDesconto.Enabled = false;
+                txtQtdProduto.Enabled = false;
+                imgBox.Enabled = false;
+                btnSalvar.Enabled = false;
+            }
+        }
+
+        private void txtQtdProduto_TextChanged(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDesconto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPreco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cbCategoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

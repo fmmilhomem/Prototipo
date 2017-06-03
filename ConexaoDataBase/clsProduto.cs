@@ -33,7 +33,7 @@ namespace ConexaoDataBase
                 //TODO: INSERT SEM IMAGEM
                 string sql = (@"INSERT INTO PRODUTO
                              (nomeProduto,descProduto,precProduto,descontoPromocao,idCategoria,ativoProduto,idUsuario,qtdMinEstoque,imagem)
-                             VALUES (@nomeProduto,@descProduto,@precProduto,@descontoPromocao,@idCategoria,@ativo,@idUsuario,@qtdMinima,@imagem)"); 
+                      VALUES (@nomeProduto,@descProduto,@precProduto,@descontoPromocao,@idCategoria,@ativo,@idUsuario,@qtdMinima,@imagem)"); 
 
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
@@ -52,9 +52,9 @@ namespace ConexaoDataBase
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 cn.Dispose();
-
-                //cmd.Parameters.Add("@D");
                 /*
+                cmd.Parameters.Add("@D");
+                
                 SqlDataReader dr = cmd.ExecuteReader();
                 p = new clsProduto();
                 dr.Read();
