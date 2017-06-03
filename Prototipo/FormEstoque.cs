@@ -122,7 +122,7 @@ namespace Prototipo
                         if (DataGridEstoque.SelectedRows[0].Cells[1].Value != null)
                         {
                             txtQtd.Text = Convert.ToString(DataGridEstoque.SelectedRows[0].Cells["QTD"].Value);
-                            txtQtd.ReadOnly = false;
+                            txtQtd.ReadOnly = false;                            
                             btnSalvar.Enabled = true;
                         }
                         else

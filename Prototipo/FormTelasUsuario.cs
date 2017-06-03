@@ -14,11 +14,12 @@ namespace Prototipo
     public partial class FormTelasUsuario : Form
     {
         private clsUsuario u;
+
         public FormTelasUsuario(clsUsuario u)
         {
             InitializeComponent();
             this.u = u;
-            
+            lblUsuarioLogado.Text = u.Usuario;     
         }
 
         //Atalho do teclado para sub menus F8,F9 e F10
@@ -27,74 +28,76 @@ namespace Prototipo
             switch (e.KeyCode)
             {
                 case Keys.F8:
-                    mnSubUser_Click(sender, e);
+                    subUsuarios_Click(sender, e);
                     break;
 
                 case Keys.F9:
-                    mnSubLogout_Click(sender, e);
+                    subLogout_Click(sender, e);
                     break;
 
                 case Keys.F10:
-                    mnSubSair_Click(sender, e);
+                    subSair_Click(sender, e);
                     break;
             }
         }
     
-
-        private void mnSubUser_Click(object sender, EventArgs e)
-        {
-            FormCadastro frm = new FormCadastro();
-            frm.ShowDialog();
-        }
-
-        private void mnSubLogout_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            FormLogin frm = new FormLogin();
-            frm.ShowDialog();
-        }
-
-        private void mnSubSair_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-
         private void btnCadastroCliente_Click(object sender, EventArgs e)
-        {
-            //this.Close();
-            FormCadastro frm = new FormCadastro();
+        {            
+            FormCadastroUsuario frm = new FormCadastroUsuario();
             frm.ShowDialog();
-            
-        }
-
-        private void btnPedido_Click(object sender, EventArgs e)
-        {
-            //this.Close();
-            //FormNovoPedido frm = new FormNovoPedido();
-            //frm.ShowDialog();
-            FormConsultarPedido frm = new FormConsultarPedido();
-            frm.ShowDialog();
-
-        }
+        }        
 
         private void btnCadastroProduto_Click(object sender, EventArgs e)
         {
-           // this.Close();
             FormCadastroProduto frm = new FormCadastroProduto(u);
             frm.ShowDialog();            
         }
 
+        private void subClientes_Click(object sender, EventArgs e)
+        {
+            FormCadastroCliente frm = new FormCadastroCliente();
+            frm.ShowDialog();
+        }
 
+        private void subCategorias_Click(object sender, EventArgs e)
+        {
+            FormCategoria frm = new FormCategoria();
+            frm.ShowDialog();
+        }
 
-        private void btnSair_Click(object sender, EventArgs e)
+        private void subEstoque_Click(object sender, EventArgs e)
+        {
+            FormEstoque frm = new FormEstoque();
+            frm.ShowDialog();
+        }
+
+        private void subProdutos_Click(object sender, EventArgs e)
+        {
+            FormCadastroProduto frm = new FormCadastroProduto(u);
+            frm.ShowDialog();
+        }
+
+        private void subUsuarios_Click(object sender, EventArgs e)
+        {
+            FormCadastroUsuario frm = new FormCadastroUsuario();
+            frm.ShowDialog();
+        }
+
+        private void subLogout_Click(object sender, EventArgs e)
+        {
+            FormLogin frm = new FormLogin();
+            frm.Show();
+            this.Close();            
+        }
+
+        private void subSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void FormTelasUsuario_Load(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }

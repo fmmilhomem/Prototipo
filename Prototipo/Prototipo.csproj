@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormCadastro.cs">
+    <Compile Include="FormCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastro.Designer.cs">
-      <DependentUpon>FormCadastro.cs</DependentUpon>
+    <Compile Include="FormCadastroUsuario.Designer.cs">
+      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCadastroCliente.cs">
       <SubType>Form</SubType>
@@ -108,8 +108,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormCadastro.resx">
-      <DependentUpon>FormCadastro.cs</DependentUpon>
+    <EmbeddedResource Include="FormCadastroUsuario.resx">
+      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroCliente.resx">
       <DependentUpon>FormCadastroCliente.cs</DependentUpon>
@@ -211,6 +211,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconEstoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconUsuarios.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

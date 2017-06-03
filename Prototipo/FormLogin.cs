@@ -36,7 +36,6 @@ namespace Prototipo
             else
             {
                 MessageBox.Show(" LOGIN OU SENHA INVALIDO!");
-
             }
         }
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -44,13 +43,5 @@ namespace Prototipo
             //Saindo
             Application.Exit();
         }
-
-        private void btnQueroCadastrar_Click(object sender, EventArgs e)
-        {
-            FormCadastro formcadastro = new FormCadastro();
-            formcadastro.ShowDialog();
-        }
-
-
     }
 }

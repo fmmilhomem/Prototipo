@@ -97,7 +97,7 @@ namespace Prototipo
                 p.imagem = ConverterImgBytes();
                 if(txtDesconto.Text != string.Empty)
                     p.descontoPromocao = Convert.ToDecimal(txtDesconto.Text);
-                p.idUsuario = u.idUsuario;
+                p.idUsuario = u.ID;
 
                 p.SalvarProduto(p.nomeProduto, p.descProduto, p.precProduto, p.descontoPromocao, p.idCategoria, p.ativoProduto, p.idUsuario, p.qtdMinEstoque, p.imagem);
 

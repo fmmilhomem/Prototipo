@@ -159,8 +159,14 @@ namespace ConexaoDataBase
             cmd.CommandText = "DELETE FROM categoria " +
                               "WHERE idCategoria = @idCategoria";
             cmd.Parameters.Add("idCategoria", SqlDbType.Int).Value = idCategoria;
-
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                //
+            }
             cn.Close();
             cn.Dispose();
         }

@@ -100,10 +100,6 @@ namespace ConexaoDataBase
 
                 Produtos.Add(P);
             }
-
-            cn.Close();
-            cn.Dispose();
-
             return Produtos;
         }
 

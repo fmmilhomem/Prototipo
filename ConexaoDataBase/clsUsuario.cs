@@ -11,12 +11,12 @@ namespace ConexaoDataBase
 {
     public class clsUsuario
     {
-        public int idUsuario { get; set; }
-        public string loginUsuario { get; set; }
-        public string senhaUsuario { get; set; }
-        public string nomeUsuario { get; set; }
-        public string tipoPerfil { get; set; }
-        public bool usuarioAtivo { get; set; }
+        public int ID { get; set; }
+        public string Usuario { get; set; }
+        public string Senha { get; set; }
+        public string Nome { get; set; }
+        public string Tipo { get; set; }
+        public bool Ativo { get; set; }
 
 
         public clsUsuario LogarDB(string login, string senha)
@@ -24,9 +24,12 @@ namespace ConexaoDataBase
             clsConn conn = new clsConn();
             clsUsuario u = null;
 
+
+            string sql = (@"SELECT idUsuario, loginusuario, senhausuario, tipoperfil 
+                            FROM usuario 
+                            WHERE usuarioativo=1 AND loginusuario = @login AND senhausuario = @senha");
             try
             {
-                string sql = (@"SELECT idUsuario ,loginusuario,senhausuario,tipoperfil from usuario where usuarioativo=1 and loginusuario = @login and senhausuario = @senha");
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = sql;
@@ -38,16 +41,57 @@ namespace ConexaoDataBase
                 u = new clsUsuario();
                 dr.Read();
 
-                u.loginUsuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
-                u.senhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
-                u.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
+                u.Usuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
+                u.Senha = dr.GetString(dr.GetOrdinal("senhaUsuario"));
+                u.ID = dr.GetInt32(dr.GetOrdinal("idUsuario"));
+      
+                cn.Close();
+                cn.Dispose();
             }
             catch (InvalidOperationException e)
             {
                 u = null;
             }
+
             return u;
         }
 
+        public static List<clsUsuario> ConsultarUsuario()
+        {
+            string sql = @"SELECT idusuario, nomeusuario ,loginusuario, senhausuario, tipoperfil, usuarioativo
+                           FROM usuario";
+            SqlConnection cn = clsConn.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = sql;
+            SqlDataReader dr = cmd.ExecuteReader();
+            List<clsUsuario> Usuarios = new List<clsUsuario>();
+
+            try
+            {                
+                dr.Read();
+
+                while (dr.Read())
+                {
+                    clsUsuario u = new clsUsuario(); //Criar uma nova Lista
+                    u.ID = dr.GetInt32(dr.GetOrdinal("idusuario"));
+                    u.Nome = dr.GetString(dr.GetOrdinal("nomeusuario"));
+                    u.Usuario = dr.GetString(dr.GetOrdinal("loginusuario"));
+                    u.Senha = dr.GetString(dr.GetOrdinal("senhausuario"));
+                    u.Tipo = dr.GetString(dr.GetOrdinal("tipoperfil"));
+                    if (!dr.IsDBNull(dr.GetOrdinal("usuarioativo")))
+                    {
+                        u.Ativo = dr.GetBoolean(dr.GetOrdinal("usuarioativo"));
+                    }
+                    Usuarios.Add(u);
+                }                         
+                cn.Close();
+                cn.Dispose();                
+            }
+            catch (InvalidOperationException e)
+            {
+                //
+            }
+            return Usuarios;            
+        }
     }
 }
