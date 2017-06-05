@@ -18,7 +18,7 @@ namespace ConexaoDataBase
         public decimal Preco { get; set; }
         public decimal Desconto { get; set; }
         public int IDCategoria { get; set; }
-        public bool Ativo { get; set; }
+        public string Ativo { get; set; }
         public int IDUsuario { get; set; }
         public int QTDMinEstoque { get; set; }
         public byte[] Imagem { get; set; }
@@ -121,7 +121,20 @@ namespace ConexaoDataBase
 
                     p.ID = dr.GetInt32(dr.GetOrdinal("idProduto"));
                     p.Nome = dr.GetString(dr.GetOrdinal("nomeProduto"));
-                    //p.Preco = (dr.GetDouble(dr.GetOrdinal("precProduto"));
+                    p.Preco = dr.GetDecimal(dr.GetOrdinal("precProduto"));
+                    if (!dr.IsDBNull(dr.GetOrdinal("descontoPromocao")))
+                        p.Desconto = dr.GetDecimal(dr.GetOrdinal("descontoPromocao"));
+                    else
+                        p.Desconto = 0;
+
+                    p.IDCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
+                    p.Ativo = dr.GetString(dr.GetOrdinal("ativoProduto"));
+                    if(!dr.IsDBNull(dr.GetOrdinal("idUsuario")))
+                        p.IDUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
+                    if (!dr.IsDBNull(dr.GetOrdinal("qtdMinEstoque")))
+                        p.QTDMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinEstoque"));
+                    else
+                        p.QTDMinEstoque = 0;
                     if (dr["Imagem"] != DBNull.Value)
                         p.Imagem = (byte[])dr["Imagem"];
                     else

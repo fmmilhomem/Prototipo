@@ -93,7 +93,7 @@ namespace Prototipo
                 p.Descricao = txtDescricao.Text;
                 p.Preco = Convert.ToDecimal(txtPreco.Text);
                 p.IDCategoria = Convert.ToInt16(cbCategoria.SelectedValue);
-                p.Ativo = chkBoxAtivo.Checked;
+                p.Ativo = Convert.ToString(chkBoxAtivo.Checked);
                 if (txtQtdProduto.Text != string.Empty)
                     p.QTDMinEstoque = Convert.ToInt16(txtQtdProduto.Text);
                 p.Imagem = ConverterImgBytes();
@@ -187,12 +187,16 @@ namespace Prototipo
 
                 DataGridProduto.DataSource = Produto;
                 DataGridProduto.Columns["ID"].Width = 20;
-                DataGridProduto.Columns["Nome"].Width = 85;
-                DataGridProduto.Columns["Descricao"].Visible = false;
+                DataGridProduto.Columns["Nome"].Width = 85;                
                 DataGridProduto.Columns["Preco"].Width = 30;
-                DataGridProduto.Columns["Imagem"].Visible = false;
-                DataGridProduto.Columns["QTDMinEstoque"].Visible = false;
+                DataGridProduto.Columns["Desconto"].Width = 30;
+                DataGridProduto.Columns["Desconto"].Width = 30;
+
+                DataGridProduto.Columns["Ativo"].Visible = false;
+                DataGridProduto.Columns["Descricao"].Visible = false;
+                DataGridProduto.Columns["QTDMinEstoque"].Visible = false;                
                 DataGridProduto.Columns["IDUsuario"].Visible = false;
+                DataGridProduto.Columns["Imagem"].Visible = false;
             }
             else
             {
@@ -206,6 +210,7 @@ namespace Prototipo
             {
                 if (DataGridProduto.SelectedRows[0].Cells[1].Value != null)
                 {
+                    btnEditar.Enabled = true;
                     imagem = new byte[0];
                     imagem = (byte[])(DataGridProduto.SelectedRows[0].Cells["Imagem"].Value);
                     mostraFoto(imagem);
@@ -214,6 +219,7 @@ namespace Prototipo
             else
             {
                 imgBox.Image = null;
+                btnEditar.Enabled = false;
             }
         }
 
@@ -227,6 +233,23 @@ namespace Prototipo
             else
             {
                 imgBox.Image = null;
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (DataGridProduto.Visible)
+            {
+                DataGridProduto.Visible = false;
+                txtNome.Text = Convert.ToString(DataGridProduto.SelectedRows[0].Cells["Nome"].Value);
+                txtDescricao.Text = Convert.ToString(DataGridProduto.SelectedRows[0].Cells["Descricao"].Value);
+                txtPreco.Text = Convert.ToString(DataGridProduto.SelectedRows[0].Cells["Preco"].Value);
+                txtQtdProduto.Text = Convert.ToString(DataGridProduto.SelectedRows[0].Cells["QTDMinEstoque"].Value);
+                //chkBoxAtivo.Checked = (bool) DataGridProduto.SelectedRows[0].Cells["Ativo"].Value;
+            }
+            else
+            {
+                DataGridProduto.Visible = true;
             }
         }
     }

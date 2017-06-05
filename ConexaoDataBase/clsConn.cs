@@ -10,19 +10,19 @@ namespace ConexaoDataBase
     class clsConn
     {
         //CONEXÃO LOCAL
-        /*public static SqlConnection Conectar()
+        public static SqlConnection Conectar()
         {
             SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder();
             sb.UserID = "sa";
             sb.Password = "123456";
-            sb.DataSource = "localhost";
+            sb.DataSource = "FISCHER2016NEW\\SQLEXPRESS";
             sb.InitialCatalog = "LOJA";
 
             SqlConnection cn = new SqlConnection(sb.ConnectionString);
             cn.Open();
             return cn;
-        }*/
-
+        }
+        /*
         //CONEXÃO AZURE
         public static SqlConnection Conectar()
         {
@@ -42,7 +42,7 @@ namespace ConexaoDataBase
                 //
             }
             return cn;
-        }
+        }*/
          
     }
 }

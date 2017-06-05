@@ -145,7 +145,7 @@ namespace Prototipo
             DataGridUsuario.Columns["Nome"].Width = 85;
             DataGridUsuario.Columns["Senha"].Visible = false;
             DataGridUsuario.Columns["Tipo"].Width = 30;
-            DataGridUsuario.Columns["Ativo"].Width = 30;
+            DataGridUsuario.Columns["Ativo"].Visible = false;
         }
 
         private void DataGridUsuario_SelectionChanged(object sender, EventArgs e)

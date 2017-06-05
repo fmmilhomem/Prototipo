@@ -53,6 +53,7 @@
             this.lblDesconto = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.DataGridProduto = new System.Windows.Forms.DataGridView();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridProduto)).BeginInit();
             this.SuspendLayout();
@@ -198,7 +199,7 @@
             this.btnEstoque.ForeColor = System.Drawing.Color.Black;
             this.btnEstoque.Image = global::Prototipo.Properties.Resources.iconEstoque;
             this.btnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstoque.Location = new System.Drawing.Point(229, 37);
+            this.btnEstoque.Location = new System.Drawing.Point(180, 37);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(92, 31);
             this.btnEstoque.TabIndex = 36;
@@ -316,6 +317,18 @@
             this.DataGridProduto.Visible = false;
             this.DataGridProduto.SelectionChanged += new System.EventHandler(this.DataGridProduto_SelectionChanged);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Enabled = false;
+            this.btnEditar.ForeColor = System.Drawing.Color.Black;
+            this.btnEditar.Image = global::Prototipo.Properties.Resources.iconEditar;
+            this.btnEditar.Location = new System.Drawing.Point(277, 37);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(45, 31);
+            this.btnEditar.TabIndex = 56;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // FormCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,6 +338,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(661, 335);
             this.Controls.Add(this.DataGridProduto);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblDesconto);
             this.Controls.Add(this.txtDesconto);
@@ -380,5 +394,6 @@
         private System.Windows.Forms.Label lblDesconto;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView DataGridProduto;
+        private System.Windows.Forms.Button btnEditar;
     }
 }
