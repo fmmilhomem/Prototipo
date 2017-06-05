@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroProduto));
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -49,7 +51,10 @@
             this.lblQtdMin = new System.Windows.Forms.Label();
             this.txtDesconto = new System.Windows.Forms.TextBox();
             this.lblDesconto = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.DataGridProduto = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPreco
@@ -116,7 +121,6 @@
             this.cbCategoria.Size = new System.Drawing.Size(256, 21);
             this.cbCategoria.TabIndex = 28;
             this.cbCategoria.DropDown += new System.EventHandler(this.cbCategoria_DropDown);
-            this.cbCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbCategoria_KeyPress);
             // 
             // btnVoltar
             // 
@@ -133,7 +137,7 @@
             // 
             this.btnSalvar.Enabled = false;
             this.btnSalvar.ForeColor = System.Drawing.Color.Black;
-            this.btnSalvar.Location = new System.Drawing.Point(525, 282);
+            this.btnSalvar.Location = new System.Drawing.Point(534, 282);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 31);
             this.btnSalvar.TabIndex = 29;
@@ -194,7 +198,7 @@
             this.btnEstoque.ForeColor = System.Drawing.Color.Black;
             this.btnEstoque.Image = global::Prototipo.Properties.Resources.iconEstoque;
             this.btnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstoque.Location = new System.Drawing.Point(230, 27);
+            this.btnEstoque.Location = new System.Drawing.Point(229, 37);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(92, 31);
             this.btnEstoque.TabIndex = 36;
@@ -216,7 +220,7 @@
             this.imgBox.InitialImage = null;
             this.imgBox.Location = new System.Drawing.Point(381, 41);
             this.imgBox.Name = "imgBox";
-            this.imgBox.Size = new System.Drawing.Size(244, 218);
+            this.imgBox.Size = new System.Drawing.Size(253, 235);
             this.imgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgBox.TabIndex = 37;
             this.imgBox.TabStop = false;
@@ -272,6 +276,46 @@
             this.lblDesconto.TabIndex = 53;
             this.lblDesconto.Text = "Desc Promoção:";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscar.Image = global::Prototipo.Properties.Resources.iconsearch;
+            this.btnBuscar.Location = new System.Drawing.Point(327, 37);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(45, 31);
+            this.btnBuscar.TabIndex = 54;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // DataGridProduto
+            // 
+            this.DataGridProduto.AllowUserToAddRows = false;
+            this.DataGridProduto.AllowUserToDeleteRows = false;
+            this.DataGridProduto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridProduto.BackgroundColor = System.Drawing.Color.Silver;
+            this.DataGridProduto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DataGridProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridProduto.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridProduto.Location = new System.Drawing.Point(25, 96);
+            this.DataGridProduto.MultiSelect = false;
+            this.DataGridProduto.Name = "DataGridProduto";
+            this.DataGridProduto.ReadOnly = true;
+            this.DataGridProduto.RowHeadersVisible = false;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.DataGridProduto.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridProduto.Size = new System.Drawing.Size(347, 180);
+            this.DataGridProduto.TabIndex = 55;
+            this.DataGridProduto.Visible = false;
+            this.DataGridProduto.SelectionChanged += new System.EventHandler(this.DataGridProduto_SelectionChanged);
+            // 
             // FormCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,6 +324,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(661, 335);
+            this.Controls.Add(this.DataGridProduto);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblDesconto);
             this.Controls.Add(this.txtDesconto);
             this.Controls.Add(this.lblQtdMin);
@@ -305,6 +351,7 @@
             this.Name = "FormCadastroProduto";
             this.Text = "Cadastro de Produto";
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,5 +378,7 @@
         private System.Windows.Forms.Label lblQtdMin;
         private System.Windows.Forms.TextBox txtDesconto;
         private System.Windows.Forms.Label lblDesconto;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridView DataGridProduto;
     }
 }

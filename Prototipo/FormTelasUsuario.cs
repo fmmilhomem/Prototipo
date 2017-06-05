@@ -43,9 +43,15 @@ namespace Prototipo
     
         private void btnCadastroCliente_Click(object sender, EventArgs e)
         {            
+            FormCadastroCliente frm = new FormCadastroCliente();
+            frm.ShowDialog();
+        }
+
+        private void btnCadastroUsuario_Click(object sender, EventArgs e)
+        {
             FormCadastroUsuario frm = new FormCadastroUsuario();
             frm.ShowDialog();
-        }        
+        }
 
         private void btnCadastroProduto_Click(object sender, EventArgs e)
         {

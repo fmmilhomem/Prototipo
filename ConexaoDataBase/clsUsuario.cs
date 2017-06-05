@@ -59,7 +59,9 @@ namespace ConexaoDataBase
         public static List<clsUsuario> ConsultarUsuario()
         {
             string sql = @"SELECT idusuario, nomeusuario ,loginusuario, senhausuario, tipoperfil, usuarioativo
-                           FROM usuario";
+                           FROM usuario 
+                           WHERE tipoperfil <> 'C' ";
+
             SqlConnection cn = clsConn.Conectar();
             SqlCommand cmd = cn.CreateCommand();
             cmd.CommandText = sql;
@@ -83,15 +85,72 @@ namespace ConexaoDataBase
                         u.Ativo = dr.GetBoolean(dr.GetOrdinal("usuarioativo"));
                     }
                     Usuarios.Add(u);
-                }                         
+                }
+
                 cn.Close();
                 cn.Dispose();                
             }
             catch (InvalidOperationException e)
             {
-                //
+                //return Usuarios = null; 
             }
             return Usuarios;            
+        }
+
+        public void Salvar()
+        {
+            bool inserir = (this.ID == 0);
+
+            SqlConnection cn = clsConn.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+
+            if (inserir)
+                cmd.CommandText = @"INSERT INTO usuario 
+                                    (nomeusuario, loginusuario, senhausuario, tipoperfil, usuarioativo)
+                                    VALUES 
+                                    (@Nome, @Usuario, @Senha, @Tipo, @Ativo)";
+            else
+            {
+                cmd.CommandText = @"UPDATE usuario 
+                                    SET nomeusuario = @Nome, 
+                                    loginusuario = @Usuario, 
+                                    senhausuario = @Senha, 
+                                    tipoperfil = @Tipo, 
+                                    usuarioativo = @Ativo
+                                    WHERE idusuario = @ID";
+
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+            }
+
+            cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = this.Nome;
+            cmd.Parameters.Add("@Usuario", SqlDbType.NVarChar).Value = this.Usuario;
+            cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = this.Senha;
+            cmd.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = this.Tipo;
+            cmd.Parameters.Add("@Ativo", SqlDbType.Bit).Value = this.Ativo;
+            cmd.ExecuteNonQuery();
+
+            if (inserir)
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "SELECT @@Identity";
+                this.ID = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            cn.Close();
+            cn.Dispose();
+        }
+
+        public void Deletar()
+        {
+            SqlConnection cn = clsConn.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+
+            cmd.CommandText = @"DELETE FROM usuario 
+                                WHERE idusuario = @ID";
+
+            cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;      
+            cmd.ExecuteNonQuery();
+            cn.Close();
+            cn.Dispose();
         }
     }
 }

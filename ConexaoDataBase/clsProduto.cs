@@ -12,42 +12,60 @@ namespace ConexaoDataBase
 {
     public class clsProduto
     {
-        public int idProduto { get; set; }
-        public string nomeProduto { get; set; }
-        public string descProduto { get; set; }
-        public decimal precProduto { get; set; }
-        public decimal descontoPromocao { get; set; }
-        public int idCategoria { get; set; }
-        public bool ativoProduto { get; set; }
-        public int idUsuario { get; set; }
-        public int qtdMinEstoque { get; set; }
-        public byte[] imagem { get; set; }
+        public int ID { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
+        public decimal Preco { get; set; }
+        public decimal Desconto { get; set; }
+        public int IDCategoria { get; set; }
+        public bool Ativo { get; set; }
+        public int IDUsuario { get; set; }
+        public int QTDMinEstoque { get; set; }
+        public byte[] Imagem { get; set; }
 
-        public clsProduto SalvarProduto(string nomeProduto,string descProduto,decimal precProduto, decimal descontoPromocao,int idCategoria,bool ativo,int usuarioId,int qtdMinima,byte[] imagem)
+        public void Salvar()
         {
             clsConn conn = new clsConn();
             clsProduto p = null;
+            bool inserir = (this.ID == 0);
 
             try
             {
-                //TODO: INSERT SEM IMAGEM
-                string sql = (@"INSERT INTO PRODUTO
-                             (nomeProduto,descProduto,precProduto,descontoPromocao,idCategoria,ativoProduto,idUsuario,qtdMinEstoque,imagem)
-                      VALUES (@nomeProduto,@descProduto,@precProduto,@descontoPromocao,@idCategoria,@ativo,@idUsuario,@qtdMinima,@imagem)"); 
-
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = sql;
 
-                cmd.Parameters.Add("@nomeProduto", SqlDbType.VarChar).Value = nomeProduto;
-                cmd.Parameters.Add("@descProduto", SqlDbType.VarChar).Value = descProduto;
-                cmd.Parameters.Add("@precProduto", SqlDbType.Decimal).Value = precProduto;
-                cmd.Parameters.Add("@descontoPromocao", SqlDbType.Decimal).Value = descontoPromocao;
-                cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
-                cmd.Parameters.Add("@ativo", SqlDbType.Bit).Value = ativo;
-                cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
-                cmd.Parameters.Add("@qtdMinima", SqlDbType.Int).Value = qtdMinima;
-                cmd.Parameters.Add("@imagem", SqlDbType.Image).Value = imagem;
+                if (inserir)
+                {
+                    cmd.CommandText = (@"INSERT INTO PRODUTO
+                                   (nomeProduto,descProduto,precProduto,descontoPromocao,idCategoria,ativoProduto,idUsuario,qtdMinEstoque,imagem)
+                                   VALUES (@Nome,@Descricao,@Preco,@Desconto,@IDCategoria,@Ativo,@IDUsuario,@QTDMinEstoque,@Imagem)");
+                }
+                else
+                {
+                    cmd.CommandText = (@"UPDATE  PRODUTO
+                           SET (nomeProduto = @Nome
+                                descProduto = @Descricao,
+                                precProduto = @Preco,
+                                descontoPromocao = @Desconto,
+                                idCategoria = @IDCategoria,
+                                ativoProduto = @Ativo,
+                                idUsuario = @IDUsuario,
+                                qtdMinEstoque = @QTDMinEstoque,
+                                imagem = @Imagem)
+                            WHERE idusuario = @ID");
+
+                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+                }
+
+                cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = Nome;
+                cmd.Parameters.Add("@Descricao", SqlDbType.VarChar).Value = Descricao;
+                cmd.Parameters.Add("@Preco", SqlDbType.Decimal).Value = Preco;
+                cmd.Parameters.Add("@Desconto", SqlDbType.Decimal).Value = Desconto;
+                cmd.Parameters.Add("@IDCategoria", SqlDbType.Int).Value = IDCategoria;
+                cmd.Parameters.Add("@Ativo", SqlDbType.Bit).Value = Ativo;
+                cmd.Parameters.Add("@IDUsuario", SqlDbType.Int).Value = IDUsuario;
+                cmd.Parameters.Add("@QTDMinEstoque", SqlDbType.Int).Value = QTDMinEstoque;
+                cmd.Parameters.Add("@Imagem", SqlDbType.Image).Value = Imagem;
 
                 cmd.ExecuteNonQuery();
                 cn.Close();
@@ -72,55 +90,51 @@ namespace ConexaoDataBase
             }
             catch (InvalidOperationException e)
             {
-                p = null;
+                //
             }
-            return p;
         }
 
         public static List<clsProduto> SelecionarProdutos()
         {
-            string sql = "SELECT idProduto, nomeProduto, Imagem FROM Produto";
+            string sql = @"SELECT idProduto, 
+                           nomeProduto, 
+                           descProduto,
+                           precProduto,
+                           descontoPromocao,
+                           idCategoria,
+                           ativoProduto,
+                           idUsuario,
+                           qtdMinEstoque,
+                           Imagem FROM Produto";
+
             SqlConnection cn = clsConn.Conectar();
             SqlCommand cmd = cn.CreateCommand();
             cmd.CommandText = sql;
 
             SqlDataReader dr = cmd.ExecuteReader();
-
+            
             List<clsProduto> Produtos = new List<clsProduto>();
-            while (dr.Read())
+            try {
+                while (dr.Read())
+                {
+                    clsProduto p = new clsProduto();
+
+                    p.ID = dr.GetInt32(dr.GetOrdinal("idProduto"));
+                    p.Nome = dr.GetString(dr.GetOrdinal("nomeProduto"));
+                    //p.Preco = (dr.GetDouble(dr.GetOrdinal("precProduto"));
+                    if (dr["Imagem"] != DBNull.Value)
+                        p.Imagem = (byte[])dr["Imagem"];
+                    else
+                        p.Imagem = new byte[0];
+
+                    Produtos.Add(p);
+                }
+            } 
+            catch(SqlException e)
             {
-                clsProduto P = new clsProduto();
-
-                P.idProduto = dr.GetInt32(dr.GetOrdinal("idProduto"));
-                P.nomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
-                if (dr["Imagem"] != DBNull.Value)
-                    P.imagem = (byte[])dr["Imagem"];
-                else
-                    P.imagem = new byte[0];
-
-                Produtos.Add(P);
+                //return Produtos = null;
             }
             return Produtos;
-        }
-
-        public static string RetornaIMG(int idProduto)
-        {
-            SqlConnection cn = clsConn.Conectar();
-            SqlCommand cmd = cn.CreateCommand();
-
-            cmd.CommandText = (@"select imagem from Produto where idProduto=@idProduto");
-            cmd.Parameters.Add("@idProduto", SqlDbType.Int, 4);
-
-            cmd.Parameters["@idProduto"].Value = idProduto;           
-
-            byte[] vetorImagem = (byte[])cmd.ExecuteScalar();
-            string strNomeArquivo = Convert.ToString(DateTime.Now.ToFileTime());
-            FileStream fs = new FileStream(strNomeArquivo, FileMode.CreateNew, FileAccess.Write);
-            fs.Write(vetorImagem, 0, vetorImagem.Length);
-            fs.Flush();
-            fs.Close();
-
-            return strNomeArquivo;
-        }        
+        }       
     }
 }

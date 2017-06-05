@@ -106,7 +106,7 @@
             this.btnCadastroUsuario.Text = "Cadastro Usuários";
             this.btnCadastroUsuario.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnCadastroUsuario.UseVisualStyleBackColor = true;
-            this.btnCadastroUsuario.Click += new System.EventHandler(this.btnCadastroCliente_Click);
+            this.btnCadastroUsuario.Click += new System.EventHandler(this.btnCadastroUsuario_Click);
             // 
             // menuToolStripMenuItem
             // 

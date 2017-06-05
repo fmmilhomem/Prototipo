@@ -60,7 +60,6 @@ namespace Prototipo
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             clsCliente c = new clsCliente();
-
             
             c.nomeCompletoCliente = txtNome.Text;
             c.cpfCliente = txtCPF.Text;
@@ -71,7 +70,6 @@ namespace Prototipo
             c.senhaCliente = txtSenha.Text;
             c.dtNascCliente = dtDataNasc.Value;
             c.recebeNewsLetter = chkBoxNew.Checked;
-
 
             c.Salvar();
             MessageBox.Show("Cadastrado com sucesso!");
