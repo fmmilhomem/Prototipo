@@ -79,26 +79,21 @@ namespace Prototipo
 
         private void imgBox_DoubleClick(object sender, EventArgs e)
         {
-            if (abrirArqImg.ShowDialog() == DialogResult.OK)
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "Arquivos de imagem (*.jpg)|*.jpg";
+
+            if (file.ShowDialog() == DialogResult.OK)
             {
                 string fileName = abrirArqImg.FileName;
-
-                //Le o tamanho do arquivo
-                FileInfo file = new FileInfo(fileName);
-                long tamanhoArquivoImagem = file.Length;
-
-                //Verifica se tem menos de 1MB (1MB em bytes = 1048576)
-                if (file.Length <= 1048576)
+                if (file.CheckFileExists)
                 {
-                    imgBox.Image = Image.FromFile(fileName);
-                    FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read);
-                    byte[] vetorImagens = new byte[Convert.ToInt32(tamanhoArquivoImagem)];
-                    int iBytesRead = fs.Read(vetorImagens, 0, Convert.ToInt32(tamanhoArquivoImagem));
-                    fs.Close();
+                    imagem = File.ReadAllBytes(file.FileName);
+                    mostraFoto(imagem);
                 }
                 else
                 {
-                    MessageBox.Show("Arquivo Maior que 1 MB!");
+                    imagem = new byte[0];
+                    MessageBox.Show("Arquivo Inválido! Tente novamente...");
                 }
             }
         }
@@ -137,13 +132,12 @@ namespace Prototipo
                 clsProduto p = new clsProduto();
 
                 p.Ativo = Convert.ToString(chkBoxAtivo.Checked);
-                if (DataGridProduto.Visible)
+                if (btnEditar.Enabled)
                 {
                     p.ID = Convert.ToInt32(DataGridProduto.SelectedRows[0].Cells["ID"].Value);
                 }
                 p.Nome = txtNome.Text;
                 p.Descricao = txtDescricao.Text;
-                MessageBox.Show(Convert.ToString(cbCategoria.SelectedValue));
                 p.IDCategoria = Convert.ToInt32(cbCategoria.SelectedValue);
                 p.Preco = Convert.ToDecimal(txtPreco.Text);
                 if (txtDesconto.Text != string.Empty)
@@ -278,7 +272,7 @@ namespace Prototipo
                 e.Handled = true;
             }
         }
-
+        
         private void DataGridProduto_SelectionChanged(object sender, EventArgs e)
         {
             if (DataGridProduto.SelectedRows.Count > 0)
