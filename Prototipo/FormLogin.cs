@@ -28,7 +28,7 @@ namespace Prototipo
             u = u.LogarDB(txtLogin.Text, txtSenha.Text);
             if(u != null)
             {
-                MessageBox.Show("SUCESSO! LOGOU!");
+                MessageBox.Show("Seja Bem-Vindo - " + u.Nome);
                 FormTelasUsuario F = new FormTelasUsuario(u);
                 this.Hide();
                 F.ShowDialog();                

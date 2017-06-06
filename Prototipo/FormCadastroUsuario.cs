@@ -13,9 +13,27 @@ namespace Prototipo
 {
     public partial class FormCadastroUsuario : Form
     {
-        public FormCadastroUsuario()
+        public FormCadastroUsuario(clsUsuario u)
         {
             InitializeComponent();
+            if (u.Tipo != "A")
+            {
+                List<clsUsuario> Usuario = null;
+                Usuario = clsUsuario.ConsultarPorUsuario(u.Usuario);
+                                
+                DataGridUsuario.DataSource = Usuario;
+                DataGridUsuario.Columns["ID"].Visible = false;
+                DataGridUsuario.Columns["Senha"].Visible = false;
+                DataGridUsuario.Columns["Ativo"].Visible = false;
+                txtNome.Enabled = true;
+                txtSenha.Enabled = true;
+                btnBuscar.Enabled = false;
+                btnNovo.Visible = false;
+                btnEditar.Visible = false;
+                btnDeletar.Visible = false;
+                btnSalvar.Enabled = true;
+                chkBoxAtivo.Enabled = false;
+            }
         }
 
         private void btnTelaLogin_Click(object sender, EventArgs e)
@@ -88,14 +106,10 @@ namespace Prototipo
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             //TODO: VERIFICAR COMO INSTANCIAR A CLASSE USUARIOS DO BANCO E VALIDAR AQUI PARA SE CADASTRAR
-            if((string.IsNullOrEmpty(txtNome.Text)) || 
-                (string.IsNullOrEmpty(txtLogin.Text)) ||
-                (string.IsNullOrEmpty(txtSenha.Text)) ||
-                (cbTipoPerfil.SelectedItem == null))
-            {
-                MessageBox.Show("PREENCHA OS CAMPOS(*) PARA SALVAR!");
-            }
-            else
+            if (!(string.IsNullOrEmpty(txtNome.Text)) &&
+                !(string.IsNullOrEmpty(txtLogin.Text)) &&
+                !(string.IsNullOrEmpty(txtSenha.Text)) &&
+                !(cbTipoPerfil.SelectedItem == null))
             {
                 clsUsuario u = new clsUsuario();
 
@@ -109,8 +123,13 @@ namespace Prototipo
                 u.Ativo = chkBoxAtivo.Checked;
 
                 u.Salvar();
-                MessageBox.Show("SALVO COM SUCESSO!");
-                btnNovo_Click(sender, e); //Chama o metodo para cadastrar um novo
+                MessageBox.Show("Usuario salvo com sucesso!");
+                if(btnEditar.Visible)
+                    btnNovo_Click(sender, e); //Chama o metodo para cadastrar um novo
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos necessários! (*)");
             }
         }
 
@@ -148,10 +167,16 @@ namespace Prototipo
             DataGridUsuario.Columns["Ativo"].Visible = false;
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void DataGridUsuario_SelectionChanged(object sender, EventArgs e)
         {
             if (DataGridUsuario.SelectedRows.Count > 0)
             {
+                
                 btnEditar.Enabled = true;
                 if (DataGridUsuario.SelectedRows[0].Cells[1].Value != null)
                 {
@@ -175,11 +200,5 @@ namespace Prototipo
                 btnEditar.Enabled = false;
             }
         }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
     }
 }

@@ -19,7 +19,13 @@ namespace Prototipo
         {
             InitializeComponent();
             this.u = u;
-            lblUsuarioLogado.Text = u.Usuario;     
+            lblUsuarioLogado.Text = u.Usuario;    
+            if(u.Tipo != "A")
+            {
+                btnCadastroCliente.Enabled = false;
+                subClientes.Enabled = false;
+                subCategorias.Enabled = false;
+            }
         }
 
         //Atalho do teclado para sub menus F8,F9 e F10
@@ -49,7 +55,7 @@ namespace Prototipo
 
         private void btnCadastroUsuario_Click(object sender, EventArgs e)
         {
-            FormCadastroUsuario frm = new FormCadastroUsuario();
+            FormCadastroUsuario frm = new FormCadastroUsuario(u);
             frm.ShowDialog();
         }
 
@@ -85,7 +91,7 @@ namespace Prototipo
 
         private void subUsuarios_Click(object sender, EventArgs e)
         {
-            FormCadastroUsuario frm = new FormCadastroUsuario();
+            FormCadastroUsuario frm = new FormCadastroUsuario(u);
             frm.ShowDialog();
         }
 

@@ -46,7 +46,7 @@
             this.btnEstoque = new System.Windows.Forms.Button();
             this.abrirArqImg = new System.Windows.Forms.OpenFileDialog();
             this.imgBox = new System.Windows.Forms.PictureBox();
-            this.bntCategoria = new System.Windows.Forms.Button();
+            this.btnCategoria = new System.Windows.Forms.Button();
             this.txtQtdProduto = new System.Windows.Forms.TextBox();
             this.lblQtdMin = new System.Windows.Forms.Label();
             this.txtDesconto = new System.Windows.Forms.TextBox();
@@ -54,6 +54,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.DataGridProduto = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.btnDeletar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridProduto)).BeginInit();
             this.SuspendLayout();
@@ -65,17 +66,17 @@
             this.txtPreco.Location = new System.Drawing.Point(25, 227);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(92, 20);
-            this.txtPreco.TabIndex = 25;
+            this.txtPreco.TabIndex = 4;
             this.txtPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreco_KeyPress);
             // 
             // txtNome
             // 
             this.txtNome.ForeColor = System.Drawing.Color.Black;
-            this.txtNome.Location = new System.Drawing.Point(25, 74);
+            this.txtNome.Location = new System.Drawing.Point(25, 72);
             this.txtNome.MaxLength = 70;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(297, 20);
-            this.txtNome.TabIndex = 22;
+            this.txtNome.Size = new System.Drawing.Size(299, 20);
+            this.txtNome.TabIndex = 1;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblPreco
@@ -105,7 +106,7 @@
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.ForeColor = System.Drawing.Color.Black;
-            this.lblNome.Location = new System.Drawing.Point(22, 58);
+            this.lblNome.Location = new System.Drawing.Point(22, 55);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(45, 13);
             this.lblNome.TabIndex = 16;
@@ -119,8 +120,8 @@
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(25, 187);
             this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(256, 21);
-            this.cbCategoria.TabIndex = 28;
+            this.cbCategoria.Size = new System.Drawing.Size(258, 21);
+            this.cbCategoria.TabIndex = 3;
             this.cbCategoria.DropDown += new System.EventHandler(this.cbCategoria_DropDown);
             // 
             // btnVoltar
@@ -129,7 +130,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(25, 282);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(100, 31);
-            this.btnVoltar.TabIndex = 30;
+            this.btnVoltar.TabIndex = 13;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -141,7 +142,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(534, 282);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 31);
-            this.btnSalvar.TabIndex = 29;
+            this.btnSalvar.TabIndex = 12;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -151,7 +152,7 @@
             this.lblImgProduto.AutoSize = true;
             this.lblImgProduto.BackColor = System.Drawing.Color.Transparent;
             this.lblImgProduto.ForeColor = System.Drawing.Color.Black;
-            this.lblImgProduto.Location = new System.Drawing.Point(378, 25);
+            this.lblImgProduto.Location = new System.Drawing.Point(378, 13);
             this.lblImgProduto.Name = "lblImgProduto";
             this.lblImgProduto.Size = new System.Drawing.Size(206, 13);
             this.lblImgProduto.TabIndex = 32;
@@ -165,10 +166,10 @@
             this.chkBoxAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBoxAtivo.Enabled = false;
             this.chkBoxAtivo.ForeColor = System.Drawing.Color.Black;
-            this.chkBoxAtivo.Location = new System.Drawing.Point(25, 27);
+            this.chkBoxAtivo.Location = new System.Drawing.Point(25, 35);
             this.chkBoxAtivo.Name = "chkBoxAtivo";
             this.chkBoxAtivo.Size = new System.Drawing.Size(50, 17);
-            this.chkBoxAtivo.TabIndex = 33;
+            this.chkBoxAtivo.TabIndex = 7;
             this.chkBoxAtivo.Text = "Ativo";
             this.chkBoxAtivo.UseVisualStyleBackColor = false;
             // 
@@ -180,8 +181,8 @@
             this.txtDescricao.MaxLength = 500;
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(297, 55);
-            this.txtDescricao.TabIndex = 35;
+            this.txtDescricao.Size = new System.Drawing.Size(299, 55);
+            this.txtDescricao.TabIndex = 2;
             // 
             // lblDescricao
             // 
@@ -199,10 +200,10 @@
             this.btnEstoque.ForeColor = System.Drawing.Color.Black;
             this.btnEstoque.Image = global::Prototipo.Properties.Resources.iconEstoque;
             this.btnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstoque.Location = new System.Drawing.Point(180, 37);
+            this.btnEstoque.Location = new System.Drawing.Point(179, 35);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(92, 31);
-            this.btnEstoque.TabIndex = 36;
+            this.btnEstoque.TabIndex = 11;
             this.btnEstoque.Text = "Estoque";
             this.btnEstoque.UseVisualStyleBackColor = true;
             this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
@@ -219,59 +220,59 @@
             this.imgBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.imgBox.Enabled = false;
             this.imgBox.InitialImage = null;
-            this.imgBox.Location = new System.Drawing.Point(381, 41);
+            this.imgBox.Location = new System.Drawing.Point(381, 35);
             this.imgBox.Name = "imgBox";
-            this.imgBox.Size = new System.Drawing.Size(253, 235);
+            this.imgBox.Size = new System.Drawing.Size(253, 241);
             this.imgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgBox.TabIndex = 37;
             this.imgBox.TabStop = false;
             this.imgBox.DoubleClick += new System.EventHandler(this.imgBox_DoubleClick);
             // 
-            // bntCategoria
+            // btnCategoria
             // 
-            this.bntCategoria.ForeColor = System.Drawing.Color.Black;
-            this.bntCategoria.Location = new System.Drawing.Point(287, 187);
-            this.bntCategoria.Name = "bntCategoria";
-            this.bntCategoria.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bntCategoria.Size = new System.Drawing.Size(35, 21);
-            this.bntCategoria.TabIndex = 38;
-            this.bntCategoria.Text = "+";
-            this.bntCategoria.UseVisualStyleBackColor = true;
-            this.bntCategoria.Click += new System.EventHandler(this.bntCategoria_Click);
+            this.btnCategoria.ForeColor = System.Drawing.Color.Black;
+            this.btnCategoria.Location = new System.Drawing.Point(289, 187);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCategoria.Size = new System.Drawing.Size(35, 21);
+            this.btnCategoria.TabIndex = 38;
+            this.btnCategoria.Text = "+";
+            this.btnCategoria.UseVisualStyleBackColor = true;
+            this.btnCategoria.Click += new System.EventHandler(this.bntCategoria_Click);
             // 
             // txtQtdProduto
             // 
             this.txtQtdProduto.Enabled = false;
-            this.txtQtdProduto.Location = new System.Drawing.Point(230, 227);
+            this.txtQtdProduto.Location = new System.Drawing.Point(232, 227);
             this.txtQtdProduto.Name = "txtQtdProduto";
             this.txtQtdProduto.Size = new System.Drawing.Size(92, 20);
-            this.txtQtdProduto.TabIndex = 50;
+            this.txtQtdProduto.TabIndex = 6;
             this.txtQtdProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdProduto_TextChanged);
             // 
             // lblQtdMin
             // 
             this.lblQtdMin.AutoSize = true;
             this.lblQtdMin.BackColor = System.Drawing.Color.Transparent;
-            this.lblQtdMin.Location = new System.Drawing.Point(227, 211);
+            this.lblQtdMin.Location = new System.Drawing.Point(229, 211);
             this.lblQtdMin.Name = "lblQtdMin";
-            this.lblQtdMin.Size = new System.Drawing.Size(65, 13);
+            this.lblQtdMin.Size = new System.Drawing.Size(85, 13);
             this.lblQtdMin.TabIndex = 51;
-            this.lblQtdMin.Text = "Quantidade:";
+            this.lblQtdMin.Text = "Quantidade Min:";
             // 
             // txtDesconto
             // 
             this.txtDesconto.Enabled = false;
-            this.txtDesconto.Location = new System.Drawing.Point(128, 227);
+            this.txtDesconto.Location = new System.Drawing.Point(129, 227);
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.Size = new System.Drawing.Size(92, 20);
-            this.txtDesconto.TabIndex = 52;
+            this.txtDesconto.TabIndex = 5;
             this.txtDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesconto_KeyPress);
             // 
             // lblDesconto
             // 
             this.lblDesconto.AutoSize = true;
             this.lblDesconto.BackColor = System.Drawing.Color.Transparent;
-            this.lblDesconto.Location = new System.Drawing.Point(125, 211);
+            this.lblDesconto.Location = new System.Drawing.Point(128, 211);
             this.lblDesconto.Name = "lblDesconto";
             this.lblDesconto.Size = new System.Drawing.Size(86, 13);
             this.lblDesconto.TabIndex = 53;
@@ -281,10 +282,10 @@
             // 
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.Image = global::Prototipo.Properties.Resources.iconsearch;
-            this.btnBuscar.Location = new System.Drawing.Point(327, 37);
+            this.btnBuscar.Location = new System.Drawing.Point(330, 70);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(45, 31);
-            this.btnBuscar.TabIndex = 54;
+            this.btnBuscar.Size = new System.Drawing.Size(45, 22);
+            this.btnBuscar.TabIndex = 8;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -312,7 +313,7 @@
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             this.DataGridProduto.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridProduto.Size = new System.Drawing.Size(347, 180);
+            this.DataGridProduto.Size = new System.Drawing.Size(350, 180);
             this.DataGridProduto.TabIndex = 55;
             this.DataGridProduto.Visible = false;
             this.DataGridProduto.SelectionChanged += new System.EventHandler(this.DataGridProduto_SelectionChanged);
@@ -322,12 +323,24 @@
             this.btnEditar.Enabled = false;
             this.btnEditar.ForeColor = System.Drawing.Color.Black;
             this.btnEditar.Image = global::Prototipo.Properties.Resources.iconEditar;
-            this.btnEditar.Location = new System.Drawing.Point(277, 37);
+            this.btnEditar.Location = new System.Drawing.Point(277, 35);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(45, 31);
-            this.btnEditar.TabIndex = 56;
+            this.btnEditar.TabIndex = 9;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.Enabled = false;
+            this.btnDeletar.ForeColor = System.Drawing.Color.Black;
+            this.btnDeletar.Image = global::Prototipo.Properties.Resources.iconLixeira;
+            this.btnDeletar.Location = new System.Drawing.Point(330, 35);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(45, 31);
+            this.btnDeletar.TabIndex = 10;
+            this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // FormCadastroProduto
             // 
@@ -338,13 +351,14 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(661, 335);
             this.Controls.Add(this.DataGridProduto);
+            this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblDesconto);
             this.Controls.Add(this.txtDesconto);
             this.Controls.Add(this.lblQtdMin);
             this.Controls.Add(this.txtQtdProduto);
-            this.Controls.Add(this.bntCategoria);
+            this.Controls.Add(this.btnCategoria);
             this.Controls.Add(this.btnEstoque);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lblDescricao);
@@ -387,7 +401,7 @@
         private System.Windows.Forms.Button btnEstoque;
         private System.Windows.Forms.PictureBox imgBox;
         private System.Windows.Forms.OpenFileDialog abrirArqImg;
-        private System.Windows.Forms.Button bntCategoria;
+        private System.Windows.Forms.Button btnCategoria;
         private System.Windows.Forms.TextBox txtQtdProduto;
         private System.Windows.Forms.Label lblQtdMin;
         private System.Windows.Forms.TextBox txtDesconto;
@@ -395,5 +409,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView DataGridProduto;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnDeletar;
     }
 }

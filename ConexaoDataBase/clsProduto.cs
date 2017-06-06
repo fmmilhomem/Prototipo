@@ -18,6 +18,7 @@ namespace ConexaoDataBase
         public decimal Preco { get; set; }
         public decimal Desconto { get; set; }
         public int IDCategoria { get; set; }
+        public string Categoria { get; set; }
         public string Ativo { get; set; }
         public int IDUsuario { get; set; }
         public int QTDMinEstoque { get; set; }
@@ -42,51 +43,34 @@ namespace ConexaoDataBase
                 }
                 else
                 {
-                    cmd.CommandText = (@"UPDATE  PRODUTO
-                           SET (nomeProduto = @Nome
-                                descProduto = @Descricao,
-                                precProduto = @Preco,
-                                descontoPromocao = @Desconto,
-                                idCategoria = @IDCategoria,
-                                ativoProduto = @Ativo,
-                                idUsuario = @IDUsuario,
-                                qtdMinEstoque = @QTDMinEstoque,
-                                imagem = @Imagem)
-                            WHERE idusuario = @ID");
+                    cmd.CommandText = (@"UPDATE PRODUTO
+                                         SET nomeProduto = @Nome,
+                                             descProduto = @Descricao,
+                                             precProduto = @Preco,
+                                             descontoPromocao = @Desconto,
+                                             idCategoria = @IDCategoria,
+                                             ativoProduto = @Ativo,
+                                             idUsuario = @IDUsuario,
+                                             qtdMinEstoque = @QTDMinEstoque,
+                                             imagem = @Imagem
+                                             WHERE idproduto = @ID");
 
                     cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
                 }
 
-                cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = Nome;
-                cmd.Parameters.Add("@Descricao", SqlDbType.VarChar).Value = Descricao;
-                cmd.Parameters.Add("@Preco", SqlDbType.Decimal).Value = Preco;
-                cmd.Parameters.Add("@Desconto", SqlDbType.Decimal).Value = Desconto;
-                cmd.Parameters.Add("@IDCategoria", SqlDbType.Int).Value = IDCategoria;
-                cmd.Parameters.Add("@Ativo", SqlDbType.Bit).Value = Ativo;
-                cmd.Parameters.Add("@IDUsuario", SqlDbType.Int).Value = IDUsuario;
-                cmd.Parameters.Add("@QTDMinEstoque", SqlDbType.Int).Value = QTDMinEstoque;
-                cmd.Parameters.Add("@Imagem", SqlDbType.Image).Value = Imagem;
+                cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = this.Nome;
+                cmd.Parameters.Add("@Descricao", SqlDbType.VarChar).Value = this.Descricao;
+                cmd.Parameters.Add("@Preco", SqlDbType.Decimal).Value = this.Preco;
+                cmd.Parameters.Add("@Desconto", SqlDbType.Decimal).Value = this.Desconto;
+                cmd.Parameters.Add("@IDCategoria", SqlDbType.Int).Value = this.IDCategoria;
+                cmd.Parameters.Add("@Ativo", SqlDbType.Bit).Value = this.Ativo;
+                cmd.Parameters.Add("@IDUsuario", SqlDbType.Int).Value = this.IDUsuario;
+                cmd.Parameters.Add("@QTDMinEstoque", SqlDbType.Int).Value = this.QTDMinEstoque;
+                cmd.Parameters.Add("@Imagem", SqlDbType.Image).Value = this.Imagem;
 
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 cn.Dispose();
-                /*
-                cmd.Parameters.Add("@D");
-                
-                SqlDataReader dr = cmd.ExecuteReader();
-                p = new clsProduto();
-                dr.Read();
-
-                p.nomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
-                p.descProduto = dr.GetString(dr.GetOrdinal("descProduto"));
-                p.precProduto = dr.GetDecimal(dr.GetOrdinal("precProduto"));
-                p.descontoPromocao = dr.GetDecimal(dr.GetOrdinal("descontoPromocao"));
-                p.idCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
-                p.ativoProduto = dr.GetBoolean(dr.GetOrdinal("ativo"));
-                p.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
-                p.qtdMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinima"));
-                p.qtdMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinima"));
-                */
             }
             catch (InvalidOperationException e)
             {
@@ -94,27 +78,59 @@ namespace ConexaoDataBase
             }
         }
 
-        public static List<clsProduto> SelecionarProdutos()
+        public void Deletar()
         {
-            string sql = @"SELECT idProduto, 
-                           nomeProduto, 
-                           descProduto,
-                           precProduto,
-                           descontoPromocao,
-                           idCategoria,
-                           ativoProduto,
-                           idUsuario,
-                           qtdMinEstoque,
-                           Imagem FROM Produto";
+            clsConn conn = new clsConn();
 
             SqlConnection cn = clsConn.Conectar();
             SqlCommand cmd = cn.CreateCommand();
-            cmd.CommandText = sql;
 
+            cmd.CommandText = (@"DELETE FROM produto
+                                 WHERE idproduto = @ID
+
+                                 DELETE FROM estoque
+                                 WHERE idproduto = @ID");
+
+            cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+
+            }
+            cn.Close();
+            cn.Dispose();
+        }
+
+        public static List<clsProduto> SelecionarProdutoNome(string nomeProduto)
+        {
+            SqlConnection cn = clsConn.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+
+            string sql = @"SELECT P.idProduto, 
+                           P.nomeProduto, 
+                           P.descProduto,
+                           P.precProduto,
+                           P.descontoPromocao,
+                           P.idcategoria,
+                           C.nomeCategoria,
+                           P.ativoProduto,
+                           P.idUsuario,
+                           P.qtdMinEstoque,
+                           P.Imagem FROM Produto AS P
+                           INNER JOIN categoria AS C ON P.idcategoria = C.idcategoria
+                           WHERE P.nomeProduto LIKE  '%'+ @nomeProduto + '%'";
+
+            cmd.Parameters.Add("@nomeProduto", SqlDbType.VarChar).Value = nomeProduto;
+            cmd.CommandText = sql;
             SqlDataReader dr = cmd.ExecuteReader();
             
             List<clsProduto> Produtos = new List<clsProduto>();
             try {
+
                 while (dr.Read())
                 {
                     clsProduto p = new clsProduto();
@@ -126,8 +142,8 @@ namespace ConexaoDataBase
                         p.Desconto = dr.GetDecimal(dr.GetOrdinal("descontoPromocao"));
                     else
                         p.Desconto = 0;
-
                     p.IDCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
+                    p.Categoria = dr.GetString(dr.GetOrdinal("nomeCategoria"));
                     p.Ativo = dr.GetString(dr.GetOrdinal("ativoProduto"));
                     if(!dr.IsDBNull(dr.GetOrdinal("idUsuario")))
                         p.IDUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
@@ -148,6 +164,66 @@ namespace ConexaoDataBase
                 //return Produtos = null;
             }
             return Produtos;
-        }       
+        }
+
+        public static List<clsProduto> SelecionarProdutos()
+        {
+            string sql = @"SELECT P.idProduto, 
+                           P.nomeProduto, 
+                           P.descProduto,
+                           P.precProduto,
+                           P.descontoPromocao,
+                           P.idcategoria,
+                           C.nomeCategoria,
+                           P.ativoProduto,
+                           P.idUsuario,
+                           P.qtdMinEstoque,
+                           P.Imagem FROM Produto AS P
+                           INNER JOIN categoria AS C ON P.idcategoria = C.idcategoria";
+
+            SqlConnection cn = clsConn.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = sql;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            List<clsProduto> Produtos = new List<clsProduto>();
+            try
+            {
+                while (dr.Read())
+                {
+                    clsProduto p = new clsProduto();
+
+                    p.ID = dr.GetInt32(dr.GetOrdinal("idProduto"));
+                    p.Nome = dr.GetString(dr.GetOrdinal("nomeProduto"));
+                    p.Preco = dr.GetDecimal(dr.GetOrdinal("precProduto"));
+                    if (!dr.IsDBNull(dr.GetOrdinal("descontoPromocao")))
+                        p.Desconto = dr.GetDecimal(dr.GetOrdinal("descontoPromocao"));
+                    else
+                        p.Desconto = 0;
+                    p.IDCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
+                    p.Categoria = dr.GetString(dr.GetOrdinal("nomeCategoria"));
+                    p.Ativo = dr.GetString(dr.GetOrdinal("ativoProduto"));
+                    if (!dr.IsDBNull(dr.GetOrdinal("idUsuario")))
+                        p.IDUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
+                    if (!dr.IsDBNull(dr.GetOrdinal("qtdMinEstoque")))
+                        p.QTDMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinEstoque"));
+                    else
+                        p.QTDMinEstoque = 0;
+                    if (dr["Imagem"] != DBNull.Value)
+                        p.Imagem = (byte[])dr["Imagem"];
+                    else
+                        p.Imagem = new byte[0];
+
+                    Produtos.Add(p);
+                }
+            }
+            catch (SqlException e)
+            {
+                //return Produtos = null;
+            }
+            return Produtos;
+        }
+
     }
 }

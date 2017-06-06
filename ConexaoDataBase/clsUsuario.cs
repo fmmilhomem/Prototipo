@@ -25,7 +25,7 @@ namespace ConexaoDataBase
             clsUsuario u = null;
 
 
-            string sql = (@"SELECT idUsuario, loginusuario, senhausuario, tipoperfil 
+            string sql = (@"SELECT idUsuario, nomeusuario, loginusuario, senhausuario, tipoperfil 
                             FROM usuario 
                             WHERE usuarioativo=1 AND loginusuario = @login AND senhausuario = @senha");
             try
@@ -44,7 +44,9 @@ namespace ConexaoDataBase
                 u.Usuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
                 u.Senha = dr.GetString(dr.GetOrdinal("senhaUsuario"));
                 u.ID = dr.GetInt32(dr.GetOrdinal("idUsuario"));
-      
+                u.Nome = dr.GetString(dr.GetOrdinal("nomeUsuario"));
+                u.Tipo = dr.GetString(dr.GetOrdinal("tipoPerfil"));
+
                 cn.Close();
                 cn.Dispose();
             }
@@ -59,8 +61,7 @@ namespace ConexaoDataBase
         public static List<clsUsuario> ConsultarUsuario()
         {
             string sql = @"SELECT idusuario, nomeusuario ,loginusuario, senhausuario, tipoperfil, usuarioativo
-                           FROM usuario 
-                           WHERE tipoperfil <> 'C' ";
+                           FROM usuario";
 
             SqlConnection cn = clsConn.Conectar();
             SqlCommand cmd = cn.CreateCommand();
@@ -69,9 +70,7 @@ namespace ConexaoDataBase
             List<clsUsuario> Usuarios = new List<clsUsuario>();
 
             try
-            {                
-                dr.Read();
-
+            {           
                 while (dr.Read())
                 {
                     clsUsuario u = new clsUsuario(); //Criar uma nova Lista
@@ -95,6 +94,45 @@ namespace ConexaoDataBase
                 //return Usuarios = null; 
             }
             return Usuarios;            
+        }
+
+        public static List<clsUsuario> ConsultarPorUsuario(string Usuario)
+        {
+            SqlConnection cn = clsConn.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            string sql = @"SELECT idusuario, nomeusuario ,loginusuario, senhausuario, tipoperfil, usuarioativo
+                           FROM usuario WHERE loginusuario = @Usuario";
+
+            cmd.Parameters.Add("@Usuario", SqlDbType.VarChar).Value = Usuario;
+            cmd.CommandText = sql;
+            SqlDataReader dr = cmd.ExecuteReader();
+            List<clsUsuario> Usuarios = new List<clsUsuario>();
+
+            try
+            {
+                while (dr.Read())
+                {
+                    clsUsuario u = new clsUsuario(); //Criar uma nova Lista
+                    u.ID = dr.GetInt32(dr.GetOrdinal("idusuario"));
+                    u.Nome = dr.GetString(dr.GetOrdinal("nomeusuario"));
+                    u.Usuario = dr.GetString(dr.GetOrdinal("loginusuario"));
+                    u.Senha = dr.GetString(dr.GetOrdinal("senhausuario"));
+                    u.Tipo = dr.GetString(dr.GetOrdinal("tipoperfil"));
+                    if (!dr.IsDBNull(dr.GetOrdinal("usuarioativo")))
+                    {
+                        u.Ativo = dr.GetBoolean(dr.GetOrdinal("usuarioativo"));
+                    }
+                    Usuarios.Add(u);
+                }
+
+                cn.Close();
+                cn.Dispose();
+            }
+            catch (InvalidOperationException e)
+            {
+                //return Usuarios = null; 
+            }
+            return Usuarios;
         }
 
         public void Salvar()
@@ -147,8 +185,15 @@ namespace ConexaoDataBase
             cmd.CommandText = @"DELETE FROM usuario 
                                 WHERE idusuario = @ID";
 
-            cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;      
-            cmd.ExecuteNonQuery();
+            cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+
+            }
             cn.Close();
             cn.Dispose();
         }
