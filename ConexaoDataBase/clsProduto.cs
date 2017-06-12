@@ -81,31 +81,39 @@ namespace ConexaoDataBase
             return msg;
         }
 
-        public void Deletar()
+        public string Deletar()
         {
+            string msg=null;
             clsConn conn = new clsConn();
 
             SqlConnection cn = clsConn.Conectar();
             SqlCommand cmd = cn.CreateCommand();
-
-            cmd.CommandText = (@"DELETE FROM produto
+            if (ID > 10)
+            {
+                cmd.CommandText = (@"DELETE FROM produto
                                  WHERE idproduto = @ID
 
                                  DELETE FROM estoque
                                  WHERE idproduto = @ID");
 
-            cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
 
-            try
-            {
-                cmd.ExecuteNonQuery();
-            }
-            catch (SqlException e)
-            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    msg = "Produto deletado com sucesso!";
+                }
+                catch (SqlException e)
+                {
 
+                }
+            }else
+            {
+                msg = "Não pode deletar os 10 primeiros!";
             }
             cn.Close();
             cn.Dispose();
+            return msg;
         }
 
         public static List<clsProduto> SelecionarProdutoNome(string nomeProduto)
@@ -130,9 +138,10 @@ namespace ConexaoDataBase
             cmd.Parameters.Add("@nomeProduto", SqlDbType.VarChar).Value = nomeProduto;
             cmd.CommandText = sql;
             SqlDataReader dr = cmd.ExecuteReader();
-            
+
             List<clsProduto> Produtos = new List<clsProduto>();
-            try {
+            try
+            {
 
                 while (dr.Read())
                 {
@@ -148,7 +157,7 @@ namespace ConexaoDataBase
                     p.IDCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
                     p.Categoria = dr.GetString(dr.GetOrdinal("nomeCategoria"));
                     p.Ativo = dr.GetString(dr.GetOrdinal("ativoProduto"));
-                    if(!dr.IsDBNull(dr.GetOrdinal("idUsuario")))
+                    if (!dr.IsDBNull(dr.GetOrdinal("idUsuario")))
                         p.IDUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
                     if (!dr.IsDBNull(dr.GetOrdinal("qtdMinEstoque")))
                         p.QTDMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinEstoque"));
@@ -161,8 +170,8 @@ namespace ConexaoDataBase
 
                     Produtos.Add(p);
                 }
-            } 
-            catch(SqlException e)
+            }
+            catch (SqlException e)
             {
                 //return Produtos = null;
             }

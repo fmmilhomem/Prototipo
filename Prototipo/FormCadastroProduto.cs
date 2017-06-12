@@ -224,8 +224,8 @@ namespace Prototipo
                 if (DataGridProduto.SelectedRows[0].Cells[1].Value != null)
                 {
                     p.ID = Convert.ToInt32(DataGridProduto.SelectedRows[0].Cells["ID"].Value);
-                    p.Deletar();
-                    MessageBox.Show("Deletado com sucesso!");
+                    string msg=p.Deletar();
+                    MessageBox.Show(msg);
                     DataGridProduto.Visible = false;
                     txtNome.Clear();
                     btnBuscar_Click(sender, e);
