@@ -35,12 +35,10 @@
             this.btnCadastroUsuario = new System.Windows.Forms.Button();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCadastroCliente = new System.Windows.Forms.Button();
             this.mnSubArquivo = new System.Windows.Forms.ToolStripMenuItem();
             this.subLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.subSair = new System.Windows.Forms.ToolStripMenuItem();
             this.mnSubEditar = new System.Windows.Forms.ToolStripMenuItem();
-            this.subClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.subCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.subEstoque = new System.Windows.Forms.ToolStripMenuItem();
             this.subProdutos = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +48,7 @@
             this.mnPrincipal = new System.Windows.Forms.MenuStrip();
             this.lblUsuarioLogado = new System.Windows.Forms.Label();
             this.lblUsuarioSair = new System.Windows.Forms.Label();
+            this.btnEstoque = new System.Windows.Forms.Button();
             this.mnPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +84,7 @@
             this.btnCadastroProduto.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnCadastroProduto.ForeColor = System.Drawing.Color.Black;
             this.btnCadastroProduto.Image = global::Prototipo.Properties.Resources.iconProduto;
-            this.btnCadastroProduto.Location = new System.Drawing.Point(256, 183);
+            this.btnCadastroProduto.Location = new System.Drawing.Point(261, 29);
             this.btnCadastroProduto.Name = "btnCadastroProduto";
             this.btnCadastroProduto.Size = new System.Drawing.Size(180, 149);
             this.btnCadastroProduto.TabIndex = 5;
@@ -121,89 +120,67 @@
             this.usersToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.usersToolStripMenuItem1.Text = "Users";
             // 
-            // btnCadastroCliente
-            // 
-            this.btnCadastroCliente.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastroCliente.ForeColor = System.Drawing.Color.Black;
-            this.btnCadastroCliente.Image = global::Prototipo.Properties.Resources.iconCliente;
-            this.btnCadastroCliente.Location = new System.Drawing.Point(256, 28);
-            this.btnCadastroCliente.Name = "btnCadastroCliente";
-            this.btnCadastroCliente.Size = new System.Drawing.Size(180, 149);
-            this.btnCadastroCliente.TabIndex = 10;
-            this.btnCadastroCliente.Text = "Cadastro Clientes";
-            this.btnCadastroCliente.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnCadastroCliente.UseVisualStyleBackColor = true;
-            this.btnCadastroCliente.Click += new System.EventHandler(this.btnCadastroCliente_Click);
-            // 
             // mnSubArquivo
             // 
             this.mnSubArquivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.subLogout,
             this.subSair});
             this.mnSubArquivo.Name = "mnSubArquivo";
-            this.mnSubArquivo.Size = new System.Drawing.Size(61, 20);
+            this.mnSubArquivo.Size = new System.Drawing.Size(56, 20);
             this.mnSubArquivo.Text = "Arquivo";
             this.mnSubArquivo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // subLogout
             // 
             this.subLogout.Name = "subLogout";
-            this.subLogout.Size = new System.Drawing.Size(162, 22);
+            this.subLogout.Size = new System.Drawing.Size(161, 22);
             this.subLogout.Text = "Logoff            F9";
             this.subLogout.Click += new System.EventHandler(this.subLogout_Click);
             // 
             // subSair
             // 
             this.subSair.Name = "subSair";
-            this.subSair.Size = new System.Drawing.Size(162, 22);
+            this.subSair.Size = new System.Drawing.Size(161, 22);
             this.subSair.Text = "Sair                 F10";
             this.subSair.Click += new System.EventHandler(this.subSair_Click);
             // 
             // mnSubEditar
             // 
             this.mnSubEditar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.subClientes,
             this.subCategorias,
             this.subEstoque,
             this.subProdutos,
             this.subUsuarios});
             this.mnSubEditar.Name = "mnSubEditar";
-            this.mnSubEditar.Size = new System.Drawing.Size(49, 20);
+            this.mnSubEditar.Size = new System.Drawing.Size(47, 20);
             this.mnSubEditar.Text = "Editar";
             this.mnSubEditar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // subClientes
-            // 
-            this.subClientes.Name = "subClientes";
-            this.subClientes.Size = new System.Drawing.Size(130, 22);
-            this.subClientes.Text = "Clientes";
-            this.subClientes.Click += new System.EventHandler(this.subClientes_Click);
             // 
             // subCategorias
             // 
             this.subCategorias.Name = "subCategorias";
-            this.subCategorias.Size = new System.Drawing.Size(130, 22);
+            this.subCategorias.Size = new System.Drawing.Size(126, 22);
             this.subCategorias.Text = "Categorias";
             this.subCategorias.Click += new System.EventHandler(this.subCategorias_Click);
             // 
             // subEstoque
             // 
             this.subEstoque.Name = "subEstoque";
-            this.subEstoque.Size = new System.Drawing.Size(130, 22);
+            this.subEstoque.Size = new System.Drawing.Size(126, 22);
             this.subEstoque.Text = "Estoque";
             this.subEstoque.Click += new System.EventHandler(this.subEstoque_Click);
             // 
             // subProdutos
             // 
             this.subProdutos.Name = "subProdutos";
-            this.subProdutos.Size = new System.Drawing.Size(130, 22);
+            this.subProdutos.Size = new System.Drawing.Size(126, 22);
             this.subProdutos.Text = "Produtos";
             this.subProdutos.Click += new System.EventHandler(this.subProdutos_Click);
             // 
             // subUsuarios
             // 
             this.subUsuarios.Name = "subUsuarios";
-            this.subUsuarios.Size = new System.Drawing.Size(130, 22);
+            this.subUsuarios.Size = new System.Drawing.Size(126, 22);
             this.subUsuarios.Text = "Usuários";
             this.subUsuarios.Click += new System.EventHandler(this.subUsuarios_Click);
             // 
@@ -212,14 +189,14 @@
             this.mnSubAjuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.subSobre});
             this.mnSubAjuda.Name = "mnSubAjuda";
-            this.mnSubAjuda.Size = new System.Drawing.Size(50, 20);
+            this.mnSubAjuda.Size = new System.Drawing.Size(47, 20);
             this.mnSubAjuda.Text = "Ajuda";
             this.mnSubAjuda.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // subSobre
             // 
             this.subSobre.Name = "subSobre";
-            this.subSobre.Size = new System.Drawing.Size(104, 22);
+            this.subSobre.Size = new System.Drawing.Size(102, 22);
             this.subSobre.Text = "Sobre";
             // 
             // mnPrincipal
@@ -259,6 +236,20 @@
             this.lblUsuarioSair.TabIndex = 12;
             this.lblUsuarioSair.Text = "logoff (F9)          Usuário:";
             // 
+            // btnEstoque
+            // 
+            this.btnEstoque.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstoque.ForeColor = System.Drawing.Color.Black;
+            this.btnEstoque.Image = global::Prototipo.Properties.Resources.iconEstoqueBox;
+            this.btnEstoque.Location = new System.Drawing.Point(261, 184);
+            this.btnEstoque.Name = "btnEstoque";
+            this.btnEstoque.Size = new System.Drawing.Size(180, 149);
+            this.btnEstoque.TabIndex = 10;
+            this.btnEstoque.Text = "Estoque";
+            this.btnEstoque.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnEstoque.UseVisualStyleBackColor = true;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
+            // 
             // FormTelasUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -269,7 +260,7 @@
             this.ClientSize = new System.Drawing.Size(661, 335);
             this.Controls.Add(this.lblUsuarioSair);
             this.Controls.Add(this.lblUsuarioLogado);
-            this.Controls.Add(this.btnCadastroCliente);
+            this.Controls.Add(this.btnEstoque);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCadastroProduto);
             this.Controls.Add(this.btnCadastroUsuario);
@@ -301,14 +292,12 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem1;
-        private System.Windows.Forms.Button btnCadastroCliente;
         private System.Windows.Forms.ToolStripMenuItem mnSubArquivo;
         private System.Windows.Forms.ToolStripMenuItem subLogout;
         private System.Windows.Forms.ToolStripMenuItem subSair;
         private System.Windows.Forms.ToolStripMenuItem mnSubEditar;
         private System.Windows.Forms.ToolStripMenuItem mnSubAjuda;
         private System.Windows.Forms.MenuStrip mnPrincipal;
-        private System.Windows.Forms.ToolStripMenuItem subClientes;
         private System.Windows.Forms.ToolStripMenuItem subCategorias;
         private System.Windows.Forms.ToolStripMenuItem subEstoque;
         private System.Windows.Forms.ToolStripMenuItem subProdutos;
@@ -316,5 +305,6 @@
         private System.Windows.Forms.ToolStripMenuItem subSobre;
         private System.Windows.Forms.Label lblUsuarioLogado;
         private System.Windows.Forms.Label lblUsuarioSair;
+        private System.Windows.Forms.Button btnEstoque;
     }
 }

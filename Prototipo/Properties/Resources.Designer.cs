@@ -73,6 +73,16 @@ namespace Prototipo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconCancel {
+            get {
+                object obj = ResourceManager.GetObject("iconCancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconCliente {
             get {
                 object obj = ResourceManager.GetObject("iconCliente", resourceCulture);
@@ -106,6 +116,16 @@ namespace Prototipo.Properties {
         internal static System.Drawing.Bitmap iconEstoque {
             get {
                 object obj = ResourceManager.GetObject("iconEstoque", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconEstoqueBox {
+            get {
+                object obj = ResourceManager.GetObject("iconEstoqueBox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

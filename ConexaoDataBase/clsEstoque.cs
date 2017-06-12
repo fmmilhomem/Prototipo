@@ -113,9 +113,9 @@ namespace ConexaoDataBase
             return Estoque;
         }
 
-        public static void Salvar(int idProduto, int qtdProdutoDisponivel)
+        public static string Salvar(int idProduto, int qtdProdutoDisponivel)
         {
-            string returnMsg = null;
+            string msg = null;
 
             string sql = (@"UPDATE estoque SET
                             qtdProdutoDisponivel = @qtdProdutoDisponivel
@@ -128,9 +128,19 @@ namespace ConexaoDataBase
             cmd.Parameters.Add("@idProduto", SqlDbType.Int).Value = idProduto;
             cmd.CommandText = sql;
 
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                msg = "Salvo com sucesso!";
+            }
+            catch (SqlException e)
+            {
+                msg = e.Message;
+            }
             cn.Dispose();
             cn.Close();
+
+            return msg;
         }
     }
 }

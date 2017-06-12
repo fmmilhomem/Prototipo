@@ -54,8 +54,7 @@ namespace ConexaoDataBase
         public static string SelecionarCategoriaDesc(string nomeCategoria)
         {
             string descCategoria = "";
-            try
-            {
+
                 string sql = (@"SELECT ISNULL(descCategoria, 'Não possui.') AS descCategoria FROM categoria WHERE nomeCategoria = @nomeCategoria");
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
@@ -71,19 +70,14 @@ namespace ConexaoDataBase
                 }
                 cn.Close();
                 cn.Dispose();
-            }
-            catch (Exception e)
-            {
 
-            }
             return descCategoria;
         }
 
         public static int SelecionarCategoriaId(string nomeCategoria)
         {
             int idCategoria = 0;
-            try
-            {
+
                 string sql = (@"SELECT idCategoria FROM categoria WHERE nomeCategoria = @nomeCategoria");
                 SqlConnection cn = clsConn.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
@@ -100,16 +94,13 @@ namespace ConexaoDataBase
 
                 cn.Close();
                 cn.Dispose();
-            }
-            catch (Exception e)
-            {
-
-            }
+            
             return idCategoria;
         }
 
-        public void Salvar(int idCategoria)
+        public string Salvar(int idCategoria)
         {
+            string msg = null;
             SqlConnection cn = clsConn.Conectar();
             SqlCommand cmd = cn.CreateCommand();
 
@@ -142,17 +133,20 @@ namespace ConexaoDataBase
             try
             {
                 cmd.ExecuteNonQuery();
+                msg = "Salvo com sucesso!";
             }
             catch (SqlException e)
             {
-                //
+                msg = e.Message;
             }
             cn.Close();
             cn.Dispose();
+            return msg;
         }
 
-        public static void Deletar(int idCategoria)
+        public static string Deletar(int idCategoria)
         {
+            string msg = null;
             SqlConnection cn = clsConn.Conectar();
             SqlCommand cmd = cn.CreateCommand();
 
@@ -162,13 +156,16 @@ namespace ConexaoDataBase
             try
             {
                 cmd.ExecuteNonQuery();
+                msg = "Deletado com sucesso!";
             }
             catch (SqlException e)
             {
-                //
+                msg = e.Message;
             }
+
             cn.Close();
             cn.Dispose();
+            return msg;
         }
     }
 }

@@ -174,8 +174,9 @@ namespace Prototipo
         {
             if (DataGridEstoque.SelectedRows[0].Cells[1].Value != null)
             {
-                clsEstoque.Salvar(Convert.ToInt32(DataGridEstoque.SelectedRows[0].Cells[0].Value), Convert.ToInt32(txtQtd.Text));
-                btnBuscar_Click(sender, e); //REFRESH
+                string msg = clsEstoque.Salvar(Convert.ToInt32(DataGridEstoque.SelectedRows[0].Cells[0].Value), Convert.ToInt32(txtQtd.Text));
+                MessageBox.Show(msg);
+                btnBuscar_Click(sender, e); //REFRESH                
             }
         }
 

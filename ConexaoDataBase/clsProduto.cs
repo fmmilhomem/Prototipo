@@ -24,8 +24,9 @@ namespace ConexaoDataBase
         public int QTDMinEstoque { get; set; }
         public byte[] Imagem { get; set; }
 
-        public void Salvar()
+        public string Salvar()
         {
+            string msg = null;
             clsConn conn = new clsConn();
             clsProduto p = null;
             bool inserir = (this.ID == 0);
@@ -71,11 +72,13 @@ namespace ConexaoDataBase
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 cn.Dispose();
+                msg = "Salvo com sucesso!";
             }
             catch (InvalidOperationException e)
             {
-                //
+                msg = e.Message;
             }
+            return msg;
         }
 
         public void Deletar()

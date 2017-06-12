@@ -43,7 +43,6 @@
             this.chkBoxAtivo = new System.Windows.Forms.CheckBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
-            this.btnEstoque = new System.Windows.Forms.Button();
             this.abrirArqImg = new System.Windows.Forms.OpenFileDialog();
             this.imgBox = new System.Windows.Forms.PictureBox();
             this.btnCategoria = new System.Windows.Forms.Button();
@@ -55,6 +54,7 @@
             this.DataGridProduto = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridProduto)).BeginInit();
             this.SuspendLayout();
@@ -166,7 +166,7 @@
             this.chkBoxAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBoxAtivo.Enabled = false;
             this.chkBoxAtivo.ForeColor = System.Drawing.Color.Black;
-            this.chkBoxAtivo.Location = new System.Drawing.Point(25, 35);
+            this.chkBoxAtivo.Location = new System.Drawing.Point(25, 33);
             this.chkBoxAtivo.Name = "chkBoxAtivo";
             this.chkBoxAtivo.Size = new System.Drawing.Size(50, 17);
             this.chkBoxAtivo.TabIndex = 7;
@@ -194,19 +194,6 @@
             this.lblDescricao.Size = new System.Drawing.Size(58, 13);
             this.lblDescricao.TabIndex = 34;
             this.lblDescricao.Text = "Descrição:";
-            // 
-            // btnEstoque
-            // 
-            this.btnEstoque.ForeColor = System.Drawing.Color.Black;
-            this.btnEstoque.Image = global::Prototipo.Properties.Resources.iconEstoque;
-            this.btnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstoque.Location = new System.Drawing.Point(179, 35);
-            this.btnEstoque.Name = "btnEstoque";
-            this.btnEstoque.Size = new System.Drawing.Size(92, 31);
-            this.btnEstoque.TabIndex = 11;
-            this.btnEstoque.Text = "Estoque";
-            this.btnEstoque.UseVisualStyleBackColor = true;
-            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             // 
             // abrirArqImg
             // 
@@ -320,27 +307,39 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Enabled = false;
             this.btnEditar.ForeColor = System.Drawing.Color.Black;
             this.btnEditar.Image = global::Prototipo.Properties.Resources.iconEditar;
-            this.btnEditar.Location = new System.Drawing.Point(277, 35);
+            this.btnEditar.Location = new System.Drawing.Point(279, 33);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(45, 31);
             this.btnEditar.TabIndex = 9;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Visible = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnDeletar
             // 
-            this.btnDeletar.Enabled = false;
             this.btnDeletar.ForeColor = System.Drawing.Color.Black;
             this.btnDeletar.Image = global::Prototipo.Properties.Resources.iconLixeira;
-            this.btnDeletar.Location = new System.Drawing.Point(330, 35);
+            this.btnDeletar.Location = new System.Drawing.Point(228, 33);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(45, 31);
             this.btnDeletar.TabIndex = 10;
             this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Visible = false;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Image = global::Prototipo.Properties.Resources.iconCancel;
+            this.btnCancelar.Location = new System.Drawing.Point(330, 33);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(45, 31);
+            this.btnCancelar.TabIndex = 57;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FormCadastroProduto
             // 
@@ -350,6 +349,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(661, 335);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.DataGridProduto);
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnEditar);
@@ -359,7 +359,6 @@
             this.Controls.Add(this.lblQtdMin);
             this.Controls.Add(this.txtQtdProduto);
             this.Controls.Add(this.btnCategoria);
-            this.Controls.Add(this.btnEstoque);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.chkBoxAtivo);
@@ -398,7 +397,6 @@
         private System.Windows.Forms.CheckBox chkBoxAtivo;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblDescricao;
-        private System.Windows.Forms.Button btnEstoque;
         private System.Windows.Forms.PictureBox imgBox;
         private System.Windows.Forms.OpenFileDialog abrirArqImg;
         private System.Windows.Forms.Button btnCategoria;
@@ -410,5 +408,6 @@
         private System.Windows.Forms.DataGridView DataGridProduto;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnDeletar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

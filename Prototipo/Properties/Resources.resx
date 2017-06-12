@@ -148,11 +148,11 @@
   <data name="iconEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconEdit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconEstoque" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconEstoque.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="imgLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconEstoque" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconEstoque.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconCliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconCliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,10 +160,16 @@
   <data name="iconLixeira" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconLixeira.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconUsuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconUsuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconSair" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconSair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconUsuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconUsuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconCancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconCancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconEstoqueBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconEstoqueBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

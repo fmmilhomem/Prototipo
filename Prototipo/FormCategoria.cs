@@ -69,14 +69,13 @@ namespace Prototipo
             if(btnNovo.Enabled == true)
             {
                 c.Salvar(0);
-                MessageBox.Show("Salvo com sucesso!"); //Acertar
             }
             else if(btnEditar.Enabled == true && cbCategoria.SelectedValue != null)
             {
                 if (Convert.ToInt16(cbCategoria.SelectedValue) > 6)
                 {
-                    c.Salvar(Convert.ToInt16(cbCategoria.SelectedValue));
-                    MessageBox.Show("Salvo com sucesso!"); //Acertar
+                    string msg = c.Salvar(Convert.ToInt16(cbCategoria.SelectedValue));
+                    MessageBox.Show(msg); //Acertar
                     refresh_cbCategoria(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
                 }
                 else
@@ -94,8 +93,8 @@ namespace Prototipo
 
                 if (idCategoria > 6)
                 {
-                    clsCategoria.Deletar(idCategoria);
-                    MessageBox.Show("Salvo com sucesso!");
+                    string msg = clsCategoria.Deletar(idCategoria);
+                    MessageBox.Show(msg);
                     refresh_cbCategoria(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.  
                 }
                 else

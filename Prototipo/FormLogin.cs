@@ -43,5 +43,13 @@ namespace Prototipo
             //Saindo
             Application.Exit();
         }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnEntrar_Click(sender, e);
+            }
+        }
     }
 }

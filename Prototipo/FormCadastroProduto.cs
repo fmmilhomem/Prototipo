@@ -103,17 +103,9 @@ namespace Prototipo
             CarregarCategoria();
         }
 
-        private void btnEstoque_Click(object sender, EventArgs e)
-        {
-            FormEstoque frm = new FormEstoque();
-            frm.ShowDialog();
-        }
-
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
-            //FormTelasUsuario frm = new FormTelasUsuario();
-            //frm.Show();
         }
 
         private void bntCategoria_Click(object sender, EventArgs e)
@@ -123,7 +115,8 @@ namespace Prototipo
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
-        {            
+        {
+            string msg = null;
 
             if (!(string.IsNullOrEmpty(txtNome.Text)) &&
                 !(string.IsNullOrEmpty(txtPreco.Text)) &&
@@ -132,23 +125,41 @@ namespace Prototipo
                 clsProduto p = new clsProduto();
 
                 p.Ativo = Convert.ToString(chkBoxAtivo.Checked);
-                if (btnEditar.Enabled)
+                if (btnEditar.Visible)
                 {
                     p.ID = Convert.ToInt32(DataGridProduto.SelectedRows[0].Cells["ID"].Value);
                 }
                 p.Nome = txtNome.Text;
                 p.Descricao = txtDescricao.Text;
-                p.IDCategoria = Convert.ToInt32(cbCategoria.SelectedValue);
-                p.Preco = Convert.ToDecimal(txtPreco.Text);
-                if (txtDesconto.Text != string.Empty)
-                    p.Desconto = Convert.ToDecimal(txtDesconto.Text);
-                if (txtQtdProduto.Text != string.Empty)
-                    p.QTDMinEstoque = Convert.ToInt16(txtQtdProduto.Text);
-                p.Imagem = ConverterImgBytes();
-                p.IDUsuario = u.ID;
+                try
+                {
+                    if (cbCategoria.SelectedValue != null)
+                        p.IDCategoria = Convert.ToInt32(cbCategoria.SelectedValue);
+                    else
+                        p.IDCategoria = Convert.ToInt32(cbCategoria.ValueMember);
+ 
+                        p.Preco = Convert.ToDecimal(txtPreco.Text);
+                
+                    if (txtDesconto.Text != string.Empty)
+                        p.Desconto = Convert.ToDecimal(txtDesconto.Text);
+                    if (txtQtdProduto.Text != string.Empty)
+                        p.QTDMinEstoque = Convert.ToInt16(txtQtdProduto.Text);
+                    p.Imagem = ConverterImgBytes();
+                    p.IDUsuario = u.ID;
 
-                p.Salvar();
-                MessageBox.Show("Produto salvo com sucesso!");
+                    msg = p.Salvar();
+                    
+                    if (DataGridProduto.Visible)
+                    {
+                        txtNome.Clear();
+                        btnBuscar_Click(sender, e);
+                    }
+                }
+                catch (FormatException)
+                {
+                    msg = "Formato invalido verifique os campos digitados!";
+                }
+                MessageBox.Show(msg);
             }
             else
             {
@@ -159,44 +170,47 @@ namespace Prototipo
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             List<clsProduto> Produto;
-            if (!DataGridProduto.Visible)
+
+            DataGridProduto.Visible = true;
+            btnCancelar.Visible = true;
+            if (string.IsNullOrEmpty(txtNome.Text))
             {
-                DataGridProduto.Visible = true;
-                if (string.IsNullOrEmpty(txtNome.Text))
-                {
-                    Produto = clsProduto.SelecionarProdutos();
-                }
-                else
-                {
-                    Produto = clsProduto.SelecionarProdutoNome(txtNome.Text);
-                }
-                LayoutGrid(Produto);
+                Produto = clsProduto.SelecionarProdutos();
             }
             else
             {
-                DataGridProduto.DataSource = null;
-                DataGridProduto.Visible = false;
-                txtNome.Clear();
-                txtDescricao.Clear();
-                txtPreco.Clear();
-                cbCategoria.DataSource = null;
-                cbCategoria.Items.Remove(cbCategoria.SelectedItem);
-                txtPreco.Clear();
-                txtDesconto.Clear();
-                txtQtdProduto.Clear();
+                Produto = clsProduto.SelecionarProdutoNome(txtNome.Text);
             }
-        }        
+            LayoutGrid(Produto);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DataGridProduto.DataSource = null;
+            DataGridProduto.Visible = false;
+            btnEditar.Visible = false;
+            btnDeletar.Visible = false;
+            btnCancelar.Visible = false;
+            txtNome.Clear();
+            txtDescricao.Clear();
+            txtPreco.Clear();
+            cbCategoria.DataSource = null;
+            cbCategoria.Items.Remove(cbCategoria.SelectedItem);
+            txtPreco.Clear();
+            txtDesconto.Clear();
+            txtQtdProduto.Clear();
+        }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (DataGridProduto.Visible)
             {
-                btnDeletar.Enabled = false;
+                btnDeletar.Visible = true;
                 DataGridProduto.Visible = false;
             }
             else
             {
-                btnDeletar.Enabled = true;
+                btnDeletar.Visible = false;
                 DataGridProduto.Visible = true;
             }
         }        
@@ -225,7 +239,7 @@ namespace Prototipo
 
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
-            if ((txtNome.Text != string.Empty) && (btnEditar.Visible == true))
+            if (txtNome.Text != string.Empty)
             {
                 chkBoxAtivo.Enabled = true;
                 txtDescricao.Enabled = true;
@@ -234,7 +248,7 @@ namespace Prototipo
                 txtDesconto.Enabled = true;
                 txtQtdProduto.Enabled = true;
                 imgBox.Enabled = true;
-                btnSalvar.Enabled = true;
+                btnSalvar.Enabled = true;                
             }
             else
             {
@@ -259,17 +273,23 @@ namespace Prototipo
 
         private void txtDesconto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            if (e.KeyChar.ToString() != ",")
             {
-                e.Handled = true;
+                if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+                {
+                    e.Handled = true;
+                }
             }
         }
 
         private void txtPreco_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            if (e.KeyChar.ToString() != ",")
             {
-                e.Handled = true;
+                if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+                {
+                    e.Handled = true;
+                }
             }
         }
         
@@ -279,8 +299,7 @@ namespace Prototipo
             {
                 if (DataGridProduto.SelectedRows[0].Cells[1].Value != null)
                 {
-                    btnEditar.Enabled = true;
-                    btnDeletar.Enabled = true;
+                    btnEditar.Visible = true;
 
                     txtNome.Text = DataGridProduto.SelectedRows[0].Cells["Nome"].Value.ToString();
 
@@ -318,8 +337,7 @@ namespace Prototipo
             else
             {
                 imgBox.Image = null;
-                btnEditar.Enabled = false;
-                btnDeletar.Enabled = false;
+                btnEditar.Visible = false;
             }
         }
 

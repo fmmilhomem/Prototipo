@@ -22,8 +22,7 @@ namespace Prototipo
             lblUsuarioLogado.Text = u.Usuario;    
             if(u.Tipo != "A")
             {
-                btnCadastroCliente.Enabled = false;
-                subClientes.Enabled = false;
+                btnEstoque.Enabled = false;
                 subCategorias.Enabled = false;
             }
         }
@@ -47,9 +46,9 @@ namespace Prototipo
             }
         }
     
-        private void btnCadastroCliente_Click(object sender, EventArgs e)
+        private void btnEstoque_Click(object sender, EventArgs e)
         {            
-            FormCadastroCliente frm = new FormCadastroCliente();
+            FormEstoque frm = new FormEstoque();
             frm.ShowDialog();
         }
 
@@ -63,12 +62,6 @@ namespace Prototipo
         {
             FormCadastroProduto frm = new FormCadastroProduto(u);
             frm.ShowDialog();            
-        }
-
-        private void subClientes_Click(object sender, EventArgs e)
-        {
-            FormCadastroCliente frm = new FormCadastroCliente();
-            frm.ShowDialog();
         }
 
         private void subCategorias_Click(object sender, EventArgs e)
